@@ -514,6 +514,12 @@
   /* 연락처 링크는 값처럼 보이게 */
   .contact-rows .v a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule-strong); padding-bottom: 1px; }
   .contact-rows .v a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+
+  /* 한글은 어절 단위로 끊는다 — 낱글자 단위로 넘어가면 제목이 무너진다 */
+  body, h1, h2, h3, h4, p, li, td, th, dt, dd, figcaption, .lede, .v, .k {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
 </style>
 </head>
 <body>
