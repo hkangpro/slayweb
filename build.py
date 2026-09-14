@@ -106,18 +106,31 @@ def build(lang):
     s = re.sub(r"document\.querySelectorAll\('\.lang button'\).*?\n\}\) ?;\n", '', s, count=1, flags=re.S)
     s = re.sub(r"try \{\n  const saved = localStorage.*?\n\} catch \(e\) \{\}\n", '', s, count=1, flags=re.S)
 
-    # 인트로를 끝나면 DOM에서 지운다 (덮고 있어서 버튼이 안 눌리던 문제)
+    # 인트로는 한 방문에 한 번만. 로고로 돌아오거나 언어를 바꿀 땐 바로 화면이 뜬다.
+    # (깜빡임이 없도록 <head> 에서 먼저 판단한다)
+    s = s.replace('</head>', '''<script>
+try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElement.setAttribute('data-intro','skip');
+      else sessionStorage.setItem('weave-intro','1'); } catch (e) {}
+</script>
+</head>''', 1)
     s = s.replace('</script>\n</body>', '''(function () {
   const el = document.getElementById('intro');
   if (!el) return;
   const kill = () => { el.remove(); };
-  el.addEventListener('animationend', kill, { once: true });
-  setTimeout(kill, 4200);
+  if (document.documentElement.getAttribute('data-intro') === 'skip') { kill(); return; }
+  // animationend 는 자식 애니메이션에서도 올라온다. 마지막 퇴장 동작만 본다.
+  el.addEventListener('animationend', (e) => {
+    if (e.target === el && e.animationName === 'introOut') kill();
+  });
+  setTimeout(kill, 3400);
 })();
 </script>
 </body>''', 1)
     s = s.replace('#intro{position:fixed;inset:0;z-index:80;',
                   '#intro{position:fixed;inset:0;z-index:80;pointer-events:none;', 1)
+    s = s.replace('@keyframes introOut{to{opacity:0;visibility:hidden}}',
+                  '@keyframes introOut{to{opacity:0;visibility:hidden}}\n'
+                  'html[data-intro="skip"] #intro{display:none}', 1)
     return s
 
 en = build('en'); ko = build('ko')
