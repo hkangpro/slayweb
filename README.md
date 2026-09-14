@@ -2,11 +2,26 @@
 
 정적 사이트 한 장입니다. 빌드 과정이 없고, `index.html`을 그대로 올립니다.
 
+## 고치는 법
+
+**`index.html` 을 직접 고치지 마십시오.** 두 언어가 다 들어 있는 원본은
+`../slay-weave-design/site/index.html` 입니다. 거기를 고치고 이 폴더에서
+
+```
+python3 build.py
+```
+
+를 돌리면 영문 `/index.html` 과 국문 `/ko/index.html` 이 다시 만들어집니다.
+빌드가 hreflang, canonical, 언어 전환 링크, sitemap 까지 알아서 채웁니다.
+
 ## 파일
 
 | 파일 | 내용 |
 |---|---|
-| `index.html` | 페이지 전체. CSS와 스크립트 인라인. 배경 천은 canvas, 영한 전환은 `data-lang` 하나로 |
+| `index.html` | 영문 페이지 (빌드 산출물) |
+| `ko/index.html` | 국문 페이지 (빌드 산출물) |
+| `build.py` | 원본 한 벌에서 두 페이지를 만드는 스크립트 |
+| `sitemap.xml`, `robots.txt` | 검색엔진용 (빌드 산출물) |
 | `og.png` | 카톡·문자·링크드인에 링크를 붙였을 때 뜨는 미리보기 이미지 |
 | `favicon.svg`, `apple-touch-icon.png` | 브라우저 탭 아이콘, 폰 홈 화면 아이콘 |
 
