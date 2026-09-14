@@ -1,1076 +1,550 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Weave by Slay Solution — 쓰던 시스템은 그대로, 반복 작업은 AI가</title>
-<meta name="description" content="회계 프로그램도 급여 시스템도 바꾸지 않습니다. 그 사이에서 사람이 옮겨 적고 찾아 붙이던 일을 Weave가 대신합니다. 건설·주문제작·식당·소매 업종을 맡습니다.">
+<title>Weave — Your systems stay. The work between them goes.</title>
+<meta name="description" content="Weave connects the accounting, payroll and field systems you already run and takes over the work between them. Nothing reaches your books until a person approves it. Retail, restaurants, custom fabrication and construction.">
 <link rel="canonical" href="https://www.slaysolution.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#f2efe7">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Slay Solution">
-<meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="Weave — 쓰던 시스템은 그대로, 반복 작업만 자동으로">
-<meta property="og:description" content="쓰던 회계·급여 시스템은 그대로 두고, 그 사이의 반복 작업만 자동으로. 장부에 올라가는 것은 사람이 확인한 뒤에만 올라갑니다.">
+<meta property="og:title" content="Weave — Your systems stay. The work between them goes.">
+<meta property="og:description" content="We connect the systems you already run and take over the work between them. Nothing reaches your books until a person approves it.">
 <meta property="og:url" content="https://www.slaysolution.com/">
 <meta property="og:image" content="https://www.slaysolution.com/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f3f5f0">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Slay Solution","url":"https://www.slaysolution.com/","description":"Weave — an operations layer that connects the accounting, payroll and field systems a company already uses.","areaServed":"US","makesOffer":{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Weave","applicationCategory":"BusinessApplication","operatingSystem":"Web"}}}
+{"@context":"https://schema.org","@type":"Organization","name":"Slay Solution","url":"https://www.slaysolution.com/","email":"info@slaysolution.com","telephone":"+1-571-419-2673","areaServed":"US","makesOffer":{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Weave","applicationCategory":"BusinessApplication","operatingSystem":"Web"}}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap">
 <style>
-  :root {
-    color-scheme: light;
-    --paper: #f3f5f0;
-    --card: #ffffff;
-    --sunk: #eaeee6;
-    --ink: #151d18;
-    --ink-2: #4d5a51;
-    --ink-3: #7d8a80;
-    --rule: #d2d9cd;
-    --rule-strong: #b6c0af;
-    --accent: #0f5c4a;
-    --accent-soft: #e0ece5;
-    --flag: #a13320;
-    --flag-soft: #f6e3de;
-    --hold: #8a6a12;
-    --hold-soft: #f4ecd6;
+:root{
+  --paper:#f2efe7; --paper-2:#eae6db; --rail:#0e1c17;
+  --ink:#12201a; --ink-2:rgba(18,32,26,.7); --ink-3:rgba(18,32,26,.45);
+  --rule:rgba(18,32,26,.16); --rule-2:rgba(18,32,26,.3);
+  --acc:#0f5c4a; --acc-soft:rgba(15,92,74,.08);
+  --bb:"Bebas Neue",sans-serif;
+  --os:"Open Sans","Noto Sans KR",system-ui,sans-serif;
+  --disp:var(--bb); --dtrack:.012em; --dscale:1;
+}
+html[data-lang="ko"]{ --disp:"Noto Sans KR",sans-serif; --dtrack:-.035em; --dscale:.76; }
+html[data-lang="en"] .l-ko{display:none!important}
+html[data-lang="ko"] .l-en{display:none!important}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--os);
+  font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all}
+a{text-decoration:none;color:inherit}
+h1,h2,h3{font-family:var(--disp);font-weight:400;letter-spacing:var(--dtrack);margin:0}
+html[data-lang="ko"] h1,html[data-lang="ko"] h2,html[data-lang="ko"] h3{font-weight:700}
+.lab{font-family:var(--os);font-weight:600;font-size:10px;letter-spacing:.24em;text-transform:uppercase}
 
-    --sans: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
-    --display: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
-    --mono: "IBM Plex Mono", "IBM Plex Sans KR", "Apple SD Gothic Neo", ui-monospace, monospace;
-  }
+/* ── 인트로: 실이 마크를 그린다 ── */
+#intro{position:fixed;inset:0;z-index:80;background:var(--paper);display:grid;place-items:center;
+  animation:introOut .8s 2.35s cubic-bezier(.7,0,.3,1) forwards}
+@keyframes introOut{to{opacity:0;visibility:hidden}}
+#intro svg{width:min(240px,42vw);height:auto;overflow:visible}
+.tp{fill:none;stroke:var(--ink);stroke-width:5.5;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:420;stroke-dashoffset:420;animation:tdraw 1.1s .2s cubic-bezier(.35,0,.25,1) forwards}
+@keyframes tdraw{to{stroke-dashoffset:0}}
+.tn{fill:var(--acc);opacity:0;transform:scale(0);transform-origin:center;transform-box:fill-box;
+  animation:pop .32s cubic-bezier(.2,1.5,.4,1) forwards}
+@keyframes pop{to{transform:scale(1);opacity:1}}
+.tw{text-align:center;margin-top:20px;font-family:var(--bb);font-size:25px;letter-spacing:.15em;
+  opacity:0;animation:rise .6s 1.24s cubic-bezier(.16,.84,.3,1) forwards}
+.tw small{display:block;font-family:var(--os);font-weight:600;font-size:7.5px;letter-spacing:.3em;
+  color:var(--ink-3);margin-top:3px}
+@keyframes rise{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
 
+/* ── 기둥 ── */
+.rail{position:fixed;left:0;top:0;bottom:0;width:236px;z-index:40;background:var(--rail);color:var(--paper);
+  display:flex;flex-direction:column;justify-content:space-between;padding:26px 0 30px}
+.badge{width:52px;height:52px;margin-left:28px;background:var(--paper);display:grid;place-items:center}
+.badge svg{width:25px;height:25px;color:var(--acc)}
+.rnav{display:flex;flex-direction:column;padding:0 28px}
+.rnav a{font-family:var(--disp);font-size:27px;line-height:1.36;color:rgba(242,239,231,.8);transition:.22s}
+html[data-lang="ko"] .rnav a{font-size:18px;font-weight:500;line-height:1.9;letter-spacing:-.02em}
+.rnav a:hover{color:#8fe0c2;transform:translateX(7px)}
+.rfoot{padding:0 28px}
+.rfoot .lab{color:rgba(242,239,231,.45);display:block;margin-bottom:9px}
+.lang{display:inline-flex;border:1px solid rgba(242,239,231,.26)}
+.lang button{font-family:var(--os);font-weight:600;font-size:10px;letter-spacing:.16em;padding:7px 13px;
+  border:0;background:transparent;color:rgba(242,239,231,.55);cursor:pointer;transition:.2s}
+.lang button.on{background:var(--paper);color:var(--rail)}
+.lang button:hover:not(.on){color:var(--paper)}
+main{margin-left:236px}
 
-  * { box-sizing: border-box; }
+/* ── 히어로 ── */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end}
+#cloth{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.veil{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(242,239,231,0) 0,rgba(242,239,231,0) 42%,rgba(242,239,231,.74) 74%,rgba(242,239,231,.97) 94%)}
+.hcopy{position:relative;z-index:2;padding:0 56px 40px}
+.eyebrow{display:flex;align-items:center;gap:13px;margin-bottom:22px;color:var(--ink-3)}
+.eyebrow .ln{width:48px;height:1px;background:var(--acc)}
+.eyebrow .lab{color:var(--acc)}
+h1{font-size:calc(clamp(44px,6.7vw,104px) * var(--dscale));line-height:.96}
+html[data-lang="ko"] h1{line-height:1.2}
+h1 .o{display:block;color:transparent;-webkit-text-stroke:1.25px rgba(18,32,26,.42)}
+.hsub{margin:22px 0 0;max-width:50ch;font-size:16px;line-height:1.85;color:var(--ink-2)}
+.cards{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  border-top:1px solid var(--rule);background:rgba(242,239,231,.9)}
+.cd{padding:22px 24px 28px;border-right:1px solid var(--rule);transition:.3s}
+.cd:last-child{border-right:0}
+.cd:hover{background:var(--acc-soft)}
+.cn{font-family:var(--os);font-weight:600;font-size:9.5px;letter-spacing:.22em;color:var(--acc)}
+.cd h3{margin:9px 0 7px;font-size:calc(23px * var(--dscale));line-height:1.16}
+html[data-lang="ko"] .cd h3{font-size:17px}
+.cd p{margin:0;font-size:12.5px;line-height:1.72;color:var(--ink-2)}
 
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-size: 16px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
+/* ── 공통 ── */
+section{border-top:1px solid var(--rule)}
+.wrap{padding:88px 56px}
+.shead{max-width:60ch;margin-bottom:40px}
+h2{font-size:calc(clamp(30px,4.4vw,58px) * var(--dscale));line-height:1.04;margin-bottom:14px}
+html[data-lang="ko"] h2{line-height:1.3}
+.shead p{margin:0;font-size:16px;line-height:1.82;color:var(--ink-2)}
+.n{display:block;font-family:var(--os);font-weight:600;font-size:10px;letter-spacing:.2em;
+  color:var(--acc);margin-bottom:14px}
+.reveal{opacity:0;transform:translateY(20px);
+  transition:opacity .85s cubic-bezier(.16,.84,.3,1),transform .85s cubic-bezier(.16,.84,.3,1)}
+.reveal.in{opacity:1;transform:none}
 
-  .wrap {
-    max-width: 1120px;
-    margin-inline: auto;
-    padding-inline: clamp(16px, 4vw, 40px);
-  }
+/* 이름 */
+.name{background:var(--paper-2)}
+.name .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:64px;align-items:center}
+.name h2{max-width:15ch}
+.name .body{font-size:17px;line-height:1.88;color:var(--ink-2);margin:0}
+.pull{margin-top:30px;padding-top:22px;border-top:1px solid var(--rule-2);
+  font-family:var(--disp);font-size:calc(27px * var(--dscale));line-height:1.24;color:var(--acc)}
+html[data-lang="ko"] .pull{font-size:21px;font-weight:700}
 
-  /* ---------- top bar ---------- */
-  .topbar {
-    border-bottom: 1px solid var(--rule);
-    background: var(--paper);
-    position: sticky;
-    top: 0;
-    z-index: 20;
-  }
-  .topbar-in {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding-block: 14px;
-    flex-wrap: wrap;
-  }
-  .brand {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    font-family: var(--display);
-  }
-  .brand b { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
-  .brand span {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-  }
-  .navlinks {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    font-family: var(--mono);
-    font-size: 12.5px;
-    letter-spacing: 0.02em;
-  }
-  .navlinks a { color: var(--ink-2); text-decoration: none; padding-block: 2px; }
-  .navlinks a:hover { color: var(--accent); }
+.sigs,.stps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);
+  border:1px solid var(--rule)}
+.stps{grid-template-columns:repeat(4,minmax(0,1fr))}
+.sig,.stp{background:#fbfaf6;padding:32px 30px 38px}
+.sig h3{font-size:calc(21px * var(--dscale));line-height:1.34;margin-bottom:11px}
+html[data-lang="ko"] .sig h3{font-size:17px;line-height:1.5}
+.stp h3{font-size:calc(21px * var(--dscale));margin-bottom:10px}
+html[data-lang="ko"] .stp h3{font-size:17px}
+.sig p,.stp p{margin:0;font-size:14px;line-height:1.78;color:var(--ink-2)}
+.mkts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);
+  border:1px solid var(--rule)}
+.mkc{background:#fbfaf6;padding:32px 26px 38px}
+.mkc h3{font-size:calc(26px * var(--dscale));margin-bottom:6px}
+html[data-lang="ko"] .mkc h3{font-size:19px}
+.mkc .who{margin:0 0 18px;font-size:12.5px;line-height:1.6;color:var(--ink-3)}
+.mkc ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.mkc li{position:relative;padding-left:16px;font-size:13.5px;line-height:1.66;color:var(--ink-2)}
+.mkc li::before{content:"";position:absolute;left:0;top:.64em;width:7px;height:1px;background:var(--acc)}
+.gfig{width:100%;height:auto;display:block;margin:0 0 42px;overflow:visible}
+.gt{stroke:var(--rule-2);stroke-width:1;stroke-dasharray:2 6}
+.gp{stroke:var(--ink);stroke-width:1;opacity:.3}
+.gr{fill:var(--paper);stroke:var(--acc);stroke-width:2}
+.gc{fill:none;stroke:var(--acc);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:24;stroke-dashoffset:24;animation:tick 3s ease-in-out infinite}
+@keyframes tick{0%,32%{stroke-dashoffset:24}48%,82%{stroke-dashoffset:0}100%{stroke-dashoffset:24}}
+.gl{font-family:var(--os);font-weight:600;font-size:9px;letter-spacing:.2em;fill:var(--acc);text-anchor:middle}
+.gchip rect{fill:var(--paper);stroke:var(--acc);stroke-width:1.3}
+.gchip{animation:flow 3s cubic-bezier(.3,0,.2,1) infinite}
+@keyframes flow{0%{transform:translate(20px,58px);opacity:0}12%{opacity:1}
+  34%,46%{transform:translate(560px,58px);opacity:1}72%{transform:translate(830px,58px)}
+  90%{transform:translate(1210px,58px);opacity:1}100%{transform:translate(1270px,58px);opacity:0}}
+.wrs{border-top:1px solid var(--rule)}
+.wr{display:grid;grid-template-columns:260px minmax(0,1fr);gap:34px;padding:24px 0;
+  border-bottom:1px solid var(--rule)}
+.wk{font-family:var(--disp);font-size:calc(23px * var(--dscale));letter-spacing:var(--dtrack)}
+html[data-lang="ko"] .wk{font-size:17px;font-weight:700}
+.wv{font-size:14px;line-height:1.8;color:var(--ink-2)}
+.sub-h{font-family:var(--disp);font-size:calc(30px * var(--dscale));margin:64px 0 10px}
+html[data-lang="ko"] .sub-h{font-size:22px;font-weight:700}
+.css{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);
+  border:1px solid var(--rule);margin-top:28px}
+.cs{background:#fbfaf6;padding:22px 24px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px}
+.ck{font-family:var(--os);font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.cv{font-size:13.5px;line-height:1.72;color:var(--ink-2)}
+.role{margin-top:34px;padding:26px 30px;background:var(--acc-soft);border-left:2px solid var(--acc)}
+.role p{margin:0;font-size:15px;line-height:1.8;color:var(--ink-2)}
+.role b{color:var(--ink);font-weight:600}
+.faqs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);
+  border:1px solid var(--rule)}
+.qa{background:#fbfaf6;padding:30px 30px 36px}
+.qa h3{font-size:calc(20px * var(--dscale));margin-bottom:11px}
+html[data-lang="ko"] .qa h3{font-size:16px}
+.qa p{margin:0;font-size:14px;line-height:1.8;color:var(--ink-2)}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:64px;align-items:start}
+.crow{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--rule)}
+.crow .k{font-family:var(--os);font-weight:600;font-size:10px;letter-spacing:.14em;
+  color:var(--ink-3);text-transform:uppercase}
+.crow .v{font-size:15px}
+.crow .v a:hover{color:var(--acc)}
+.foot{padding:26px 56px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;
+  font-size:11.5px;color:var(--ink-3)}
+@media(max-width:1080px){
+  .rail{position:static;width:auto;flex-direction:row;align-items:center;justify-content:space-between;
+    padding:14px 22px} .rnav{display:none} .badge{margin-left:0;width:40px;height:40px}
+  main{margin-left:0}
+  .hcopy,.wrap,.foot{padding-left:22px;padding-right:22px}
+  .cards,.mkts,.stps,.faqs,.css{grid-template-columns:repeat(2,1fr)}
+  .sigs{grid-template-columns:1fr}
+  .name .wrap,.contact .wrap{grid-template-columns:1fr;gap:34px}
+  .wr{grid-template-columns:1fr;gap:8px}
+}
+@media(max-width:620px){ .cards,.mkts,.stps,.faqs,.css{grid-template-columns:1fr} }
 
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
+  /* 히어로 글자 뒤 바탕 — 실이 글씨를 먹지 않게 */
+  .hcopy::before{content:"";position:absolute;inset:auto 0 0 0;height:150%;z-index:-1;
+    background:linear-gradient(180deg,rgba(242,239,231,0) 0,rgba(242,239,231,.86) 38%,rgba(242,239,231,.97) 100%)}
+  .hcopy{position:relative}
+  .mnav{display:none}
+  @media(max-width:1080px){
+    .mnav{display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+      background:var(--rail);border-top:1px solid rgba(242,239,231,.12);position:sticky;top:0;z-index:39}
+    .mnav::-webkit-scrollbar{display:none}
+    .mnav a{flex:none;padding:13px 16px;font-family:var(--os);font-weight:600;font-size:10.5px;
+      letter-spacing:.14em;text-transform:uppercase;color:rgba(242,239,231,.72);white-space:nowrap}
+    .mnav a:active{color:#8fe0c2}
+    .hero{min-height:auto;padding-top:40px}
+    h1{font-size:calc(clamp(34px,8.6vw,54px) * var(--dscale))}
+    .hsub{font-size:15px;line-height:1.8}
+    .wrap{padding:56px 22px}
+    .cards{background:var(--paper)}
+    .cd{border-right:0;border-bottom:1px solid var(--rule)}
+    .cd:last-child{border-bottom:0}
+    .sub-h{margin-top:44px}
+    .cs{grid-template-columns:1fr;gap:7px}
+    .foot{flex-direction:column;gap:7px;padding:22px}
   }
-
-  /* ---------- shared type ---------- */
-  .eyebrow {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    margin: 0 0 14px;
+  @media(max-width:620px){
+    h2{font-size:calc(clamp(26px,7.4vw,38px) * var(--dscale))}
+    .shead{margin-bottom:28px}
+    .name .wrap{gap:26px}
+    .gfig{min-width:0}
   }
-  h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
-  h1 {
-    font-size: clamp(29px, 5.1vw, 50px);
-    line-height: 1.22;
-    font-weight: 700;
-    letter-spacing: -0.025em;
-  }
-  h2 {
-    font-size: clamp(22px, 3vw, 30px);
-    line-height: 1.3;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-  h3 {
-    font-size: 17px;
-    line-height: 1.45;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-  p { margin: 0; }
-  .lede { color: var(--ink-2); font-size: clamp(15.5px, 1.6vw, 17.5px); max-width: 62ch; }
-  .note { color: var(--ink-3); font-size: 13.5px; line-height: 1.65; }
-
-  .band { border-top: 1px solid var(--rule); }
-  .band-in { padding-block: clamp(44px, 6vw, 76px); }
-  .band-head { display: grid; gap: 12px; max-width: 70ch; margin-bottom: 34px; }
-
-  /* ---------- hero ---------- */
-  .hero-in {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: clamp(30px, 5vw, 64px);
-    align-items: start;
-    padding-block: clamp(40px, 6vw, 80px) clamp(36px, 5vw, 64px);
-  }
-  .hero-copy { display: grid; gap: 22px; }
-  .hero-copy h1 span { color: var(--accent); }
-  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
-  .btn {
-    font-family: var(--display);
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 12px 22px;
-    border: 1px solid var(--accent);
-    display: inline-block;
-  }
-  .btn-solid { background: var(--accent); color: var(--paper); }
-  .btn-solid:hover { filter: brightness(1.1); }
-  .btn-line { color: var(--accent); background: transparent; }
-  .btn-line:hover { background: var(--accent-soft); }
-
-  /* ---------- ledger panel (hero mock) ---------- */
-  .panel {
-    background: var(--card);
-    border: 1px solid var(--rule-strong);
-  }
-  .panel-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 11px 14px;
-    border-bottom: 1px solid var(--rule-strong);
-    background: var(--sunk);
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-2);
-  }
-  .tag {
-    font-family: var(--mono);
-    font-size: 10.5px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border: 1px solid var(--rule-strong);
-    padding: 2px 7px;
-    color: var(--ink-3);
-    white-space: nowrap;
-  }
-  .qrow {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 10px 14px;
-    align-items: center;
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--rule);
-    font-size: 14px;
-  }
-  .qrow:last-child { border-bottom: 0; }
-  .qrow em {
-    display: block;
-    font-style: normal;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    margin-bottom: 2px;
-  }
-  .pill {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    padding: 3px 9px;
-    white-space: nowrap;
-    border: 1px solid transparent;
-  }
-  .p-hold { background: var(--hold-soft); color: var(--hold); border-color: var(--hold); }
-  .p-stop { background: var(--flag-soft); color: var(--flag); border-color: var(--flag); }
-  .p-done { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
-  .panel-foot {
-    padding: 10px 14px;
-    border-top: 1px solid var(--rule-strong);
-    background: var(--sunk);
-    font-family: var(--mono);
-    font-size: 11.5px;
-    color: var(--ink-3);
-    letter-spacing: 0.03em;
-  }
-
-  /* ---------- definition strip ---------- */
-  .defs {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    border-top: 1px solid var(--rule);
-  }
-  .defs dt {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    padding: 14px 22px 14px 0;
-    border-bottom: 1px solid var(--rule);
-    white-space: nowrap;
-  }
-  .defs dd {
-    margin: 0;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--rule);
-    font-size: 15px;
-    color: var(--ink);
-  }
-  .defs dd b { color: var(--accent); font-weight: 600; }
-  .defs dd s { color: var(--ink-3); text-decoration-color: var(--flag); }
-
-  /* ---------- fit cards ---------- */
-  .fit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule-strong); border: 1px solid var(--rule-strong); }
-  .fit {
-    background: var(--card);
-    padding: 24px 22px;
-    display: grid;
-    gap: 10px;
-    align-content: start;
-  }
-  .fit .sys {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-  .fit p { font-size: 14.5px; color: var(--ink-2); }
-
-  /* ---------- industry ---------- */
-  .trade { border-top: 1px solid var(--rule); padding-block: 30px; display: grid; gap: 18px; }
-  .trade:first-of-type { border-top: 1px solid var(--rule-strong); }
-  .trade-head { display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; }
-  .trade-head .idx {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--ink-3);
-    letter-spacing: 0.08em;
-  }
-  .trade-head p { font-size: 14.5px; color: var(--ink-2); }
-  table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
-  .tbl-scroll { overflow-x: auto; }
-  th, td { text-align: left; vertical-align: top; padding: 11px 14px 11px 0; border-bottom: 1px solid var(--rule); }
-  th {
-    font-family: var(--mono);
-    font-weight: 500;
-    font-size: 11.5px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    border-bottom: 1px solid var(--rule-strong);
-    white-space: nowrap;
-  }
-  td:last-child, th:last-child { padding-right: 0; }
-  .col-now { color: var(--ink-2); width: 46%; }
-  .col-weave { color: var(--ink); }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-  .chips .lab {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    margin-right: 4px;
-  }
-  .chip {
-    font-size: 12.5px;
-    padding: 3px 10px;
-    background: var(--sunk);
-    border: 1px solid var(--rule);
-    color: var(--ink-2);
-  }
-  .exclude {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 14px;
-    border-top: 1px solid var(--rule-strong);
-    border-left: 3px solid var(--flag);
-    background: var(--flag-soft);
-    padding: 14px 16px;
-    margin-top: 26px;
-    font-size: 14.5px;
-  }
-  .exclude .lab {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--flag);
-    white-space: nowrap;
-    padding-top: 3px;
-  }
-
-  /* ---------- flow ---------- */
-  .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule-strong); border: 1px solid var(--rule-strong); }
-  .step { background: var(--card); padding: 22px 20px; display: grid; gap: 8px; align-content: start; position: relative; }
-  .step .num {
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-  }
-  .step p { font-size: 14px; color: var(--ink-2); }
-  .guards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 30px; }
-  .guard { display: grid; gap: 6px; border-top: 2px solid var(--accent); padding-top: 12px; }
-  .guard b { font-family: var(--display); font-size: 15px; font-weight: 600; }
-  .guard p { font-size: 13.5px; color: var(--ink-2); }
-
-  /* ---------- inventory of features ---------- */
-  .feat { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 36px; }
-  .feat div {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 14px;
-    padding-block: 12px;
-    border-bottom: 1px solid var(--rule);
-    font-size: 14.5px;
-    align-items: baseline;
-  }
-  .feat .k {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent);
-    white-space: nowrap;
-  }
-  .feat span.v { color: var(--ink-2); }
-
-  /* ---------- pricing ---------- */
-  .price-tbl td, .price-tbl th { padding: 14px 16px 14px 0; }
-  .price-tbl thead th { font-size: 12px; }
-  .price-tbl .rowlab {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    white-space: nowrap;
-    width: 1%;
-  }
-  .price-tbl .plan { font-family: var(--display); font-weight: 600; font-size: 16px; color: var(--ink); }
-  .price-tbl ul { margin: 0; padding-left: 17px; color: var(--ink-2); font-size: 14px; }
-  .price-tbl ul li { margin-bottom: 4px; }
-  .ask { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.04em; }
-
-  .num { font-variant-numeric: tabular-nums; }
-
-  /* ---------- faq ---------- */
-  .faq { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 44px; }
-  .qa { padding-block: 20px; border-bottom: 1px solid var(--rule); display: grid; gap: 8px; }
-  .qa b { font-family: var(--display); font-size: 15.5px; font-weight: 600; }
-  .qa p { font-size: 14.5px; color: var(--ink-2); }
-
-  /* ---------- contact ---------- */
-  .contact-in { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 5vw, 60px); align-items: start; }
-  .contact-rows { border-top: 1px solid var(--rule-strong); }
-  .crow {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 18px;
-    padding-block: 15px;
-    border-bottom: 1px solid var(--rule);
-    align-items: baseline;
-  }
-  .crow .k {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    white-space: nowrap;
-  }
-  .crow .v { font-family: var(--mono); font-size: 15px; color: var(--ink); }
-
-  /* ---------- footer ---------- */
-  .foot { border-top: 1px solid var(--rule-strong); background: var(--sunk); }
-  .foot-in {
-    padding-block: 28px;
-    display: flex;
-    justify-content: space-between;
-    gap: 18px;
-    flex-wrap: wrap;
-    align-items: baseline;
-  }
-  .foot .en { font-family: var(--mono); font-size: 12.5px; color: var(--ink-3); max-width: 60ch; line-height: 1.6; }
-  .foot .mark { font-family: var(--display); font-size: 14px; font-weight: 600; }
-  .foot .mark span { color: var(--ink-3); font-weight: 400; }
-
-  @media (max-width: 900px) {
-    .hero-in { grid-template-columns: 1fr; }
-    .fit-grid, .flow, .guards, .feat, .faq, .contact-in { grid-template-columns: 1fr; }
-    .guards { gap: 18px; }
-    .feat { gap: 0; }
-    .flow .step { border-bottom: 0; }
-  }
-  @media (max-width: 620px) {
-    .defs { grid-template-columns: 1fr; }
-    .defs dt { padding-bottom: 0; border-bottom: 0; }
-    .defs dd { padding-top: 4px; }
-    .col-now { width: auto; }
-    table, thead, tbody, tr, th, td { display: block; }
-    thead { display: none; }
-    .trade tbody tr { border-bottom: 1px solid var(--rule-strong); padding-block: 8px; }
-    .trade td { border-bottom: 0; padding-block: 4px; }
-    .trade .col-now::before { content: "지금 손으로 — "; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--ink-3); }
-    .trade .col-weave::before { content: "Weave에서는 — "; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--accent); }
-    .price-tbl tbody tr { border-bottom: 1px solid var(--rule-strong); padding-block: 10px; }
-    .price-tbl td { border-bottom: 0; }
-    .exclude { grid-template-columns: 1fr; gap: 6px; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; animation: none !important; }
-  }
-
-  /* 연락처 링크는 값처럼 보이게 */
-  .contact-rows .v a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule-strong); padding-bottom: 1px; }
-  .contact-rows .v a:hover { border-bottom-color: var(--accent); color: var(--accent); }
-
-  /* 한글은 어절 단위로 끊는다 — 낱글자 단위로 넘어가면 제목이 무너진다 */
-  body, h1, h2, h3, h4, p, li, td, th, dt, dd, figcaption, .lede, .v, .k {
-    word-break: keep-all;
-    overflow-wrap: anywhere;
-  }
-
-  /* 업종 카드 */
-  .mkt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
-  .mkt { background: var(--card); padding: 26px 22px 28px; }
-  .mkt .idx { display: block; font-family: var(--mono); font-size: 12px; color: var(--ink-3); letter-spacing: .08em; margin-bottom: 14px; }
-  .mkt h3 { font-family: var(--display); font-size: 20px; font-weight: 600; margin: 0 0 6px; letter-spacing: -.01em; }
-  .mkt .who { font-size: 13.5px; color: var(--ink-3); margin: 0 0 16px; line-height: 1.5; }
-  .mkt ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-  .mkt li { position: relative; padding-left: 15px; font-size: 14.5px; line-height: 1.6; color: var(--ink-2); }
-  .mkt li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 1px; background: var(--accent); }
-  @media (max-width: 1000px) { .mkt-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 620px) { .mkt-grid { grid-template-columns: 1fr; } }
-
-  /* 그림 */
-  .fig-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .fig { margin: 0; min-width: 700px; }
-  .fig svg { width: 100%; height: auto; display: block; }
-  .fig .bx { stroke-width: 1; }
-  .fig .bx.hm { fill: var(--card); stroke: var(--ink); stroke-width: 1.4; }
-  .fig .bx.wv { fill: var(--accent-soft); stroke: var(--accent); }
-  .fig text { font-family: var(--sans); }
-  .fig .rw { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; fill: var(--ink-3); }
-  .fig .tg { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-anchor: middle; }
-  .fig .tg.hmt { fill: var(--ink-3); }
-  .fig .tg.wvt { fill: var(--accent); }
-  .fig .lb { font-size: 14.5px; text-anchor: middle; fill: var(--ink); }
-  .fig-note { margin: 18px 0 0; font-size: 14.5px; line-height: 1.7; color: var(--ink-2); max-width: 62ch; }
-
-  /* 로고 마크 */
-  .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: inherit; }
-  .brand .mark { width: 19px; height: 19px; flex: none; color: var(--accent); }
-
-  /* 이런 회사 */
-  .sig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
-  .sig { background: var(--card); padding: 28px 24px 30px; }
-  .sig .idx { display: block; font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: .08em; margin-bottom: 14px; }
-  .sig h3 { font-family: var(--display); font-size: 18px; font-weight: 600; margin: 0 0 10px; line-height: 1.45; letter-spacing: -.01em; }
-  .sig p { margin: 0; font-size: 14.5px; line-height: 1.75; color: var(--ink-2); }
-  @media (max-width: 860px) { .sig-grid { grid-template-columns: 1fr; } }
-
-  .sub-h { font-family: var(--display); font-size: clamp(20px, 2.2vw, 25px); font-weight: 600; letter-spacing: -.02em; margin: 0 0 10px; }
+  @media(hover:none){ .hint{display:none} }
 </style>
 </head>
-<body id="top">
-<header class="topbar">
-  <div class="wrap topbar-in">
-    <a class="brand" href="#top" aria-label="Weave by Slay Solution"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 18 L21 46 L32 26 L43 46 L54 18" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/><g fill="currentColor"><circle cx="10" cy="18" r="5.6"/><circle cx="21" cy="46" r="5.6"/><circle cx="32" cy="26" r="5.6"/><circle cx="43" cy="46" r="5.6"/><circle cx="54" cy="18" r="5.6"/></g></svg><b>Weave</b><span>by Slay Solution</span></a>
-    <nav class="navlinks">
-      <a href="#who">이런 회사</a>
-      <a href="#markets">업종</a>
-      <a href="#how">일하는 방식</a>
-      <a href="#close">월 마감</a>
-      <a href="#credits">세액공제</a>
-      <a href="#pricing">구축·요금</a>
-      <a href="#contact">문의</a>
-    </nav>
+<body>
+<div id="intro">
+  <div>
+    <svg viewBox="0 0 260 210" role="img" aria-label="A single thread draws the Weave mark">
+      <path class="tp" d="M52 66 L92 158 L130 88 L168 158 L208 66"/>
+      <circle class="tn" cx="52" cy="66" r="8" style="animation-delay:.24s"/>
+      <circle class="tn" cx="92" cy="158" r="8" style="animation-delay:.5s"/>
+      <circle class="tn" cx="130" cy="88" r="8" style="animation-delay:.75s"/>
+      <circle class="tn" cx="168" cy="158" r="8" style="animation-delay:1s"/>
+      <circle class="tn" cx="208" cy="66" r="8" style="animation-delay:1.24s"/>
+    </svg>
+    <div class="tw">WEAVE<small>BY SLAY SOLUTION</small></div>
   </div>
-</header>
-
-<main>
-  <section class="hero">
-    <div class="wrap hero-in">
-      <div class="hero-copy">
-        <p class="eyebrow">한국계 미국 회사를 위한 업무 자동화</p>
-        <h1>쓰던 시스템은 그대로.<br><span>그 사이의 반복 작업은 AI가 합니다.</span></h1>
-        <p class="lede">회계 프로그램도, 급여 시스템도 바꾸지 않습니다. 두 시스템 사이에서 사람이 옮겨 적고, 찾아 붙이고, 맞춰 보던 일을 Weave가 대신합니다. 장부에 올라가는 것은 사람이 한 번 보고 눌러야 합니다.</p>
-        <div class="cta-row">
-          <a class="btn btn-solid" href="#contact">상담 문의</a>
-          <a class="btn btn-line" href="#close">마감 패키지 보기</a>
-        </div>
-      </div>
-
-      <div class="panel" aria-label="작업함 예시 화면">
-        <div class="panel-head"><span>작업함 / Work Queue</span><span class="tag">예시 화면</span></div>
-        <div class="qrow"><div><em>은행</em>분류 안 된 내역 12건 — 분류안을 만들었습니다</div><span class="pill p-hold">확인 대기</span></div>
-        <div class="qrow"><div><em>영수증</em>카드 내역에 붙일 영수증을 찾았습니다</div><span class="pill p-hold">확인 대기</span></div>
-        <div class="qrow"><div><em>거래처</em>같은 청구서가 두 번 들어왔습니다</div><span class="pill p-stop">반영 차단</span></div>
-        <div class="qrow"><div><em>일한 시간</em>이번 주 시간을 일감별로 나눴습니다</div><span class="pill p-hold">확인 대기</span></div>
-        <div class="qrow"><div><em>월 마감</em>이번 달 마감 자료 초안을 만들었습니다</div><span class="pill p-done">실행·기록</span></div>
-        <div class="panel-foot">사람이 눌러야 장부에 올라갑니다. 확인 없이 올라가는 항목은 없습니다.</div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="band" id="who">
-    <div class="wrap band-in">
-      <div class="band-head">
-        <p class="eyebrow">이런 회사</p>
-        <h2>소프트웨어는 잘 쓰고 있는데, 사람이 계속 옮겨 적고 있는 회사</h2>
-        <p class="lede">업종보다 이 세 가지가 더 정확한 기준입니다. 하나라도 해당되면 한번 이야기해 볼 만합니다.</p>
-      </div>
-      <div class="sig-grid">
-        <div class="sig">
-          <span class="idx num">01</span>
-          <h3>이 일만 할 사람을 뽑기는 애매하다</h3>
-          <p>자동화가 필요한 건 압니다. 그런데 그것만 맡길 사람을 정규직으로 앉히기에는 일이 애매하게 걸쳐 있습니다.</p>
-        </div>
-        <div class="sig">
-          <span class="idx num">02</span>
-          <h3>같은 내용을 두 번 세 번 입력한다</h3>
-          <p>프로그램은 이미 여러 개 쓰고 있습니다. 문제는 그 사이를 사람이 손으로 이어 주고 있다는 것입니다.</p>
-        </div>
-        <div class="sig">
-          <span class="idx num">03</span>
-          <h3>더 나은 방법이 있는지 봐 줬으면 한다</h3>
-          <p>찾아보면 도구는 많습니다. 우리 회사에 뭐가 맞는지 골라 주고, 붙여 주고, 계속 돌봐 줄 사람이 없을 뿐입니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="markets">
-    <div class="wrap band-in">
-      <div class="band-head">
-        <p class="eyebrow">어떤 회사를 맡습니까</p>
-        <h2>업종에 따라 대신하는 일이 다릅니다</h2>
-        <p class="lede">회사마다 매달 손으로 하는 일이 다릅니다. 네 가지 형태로 나눠 맡고 있습니다.</p>
-      </div>
-
-      <div class="mkt-grid">
-        <div class="mkt">
-          <span class="idx num">01</span>
-          <h3>소매 · 도매</h3>
-          <p class="who">파는 곳이 여러 군데인 회사</p>
-          <ul>
-            <li>Shopify·Amazon 같은 채널 매출을 장부로</li>
-            <li>재고가 떨어질 때를 미리 알려주기</li>
-            <li>받을 돈과 발주를 한자리에서 보기</li>
-          </ul>
-        </div>
-        <div class="mkt">
-          <span class="idx num">02</span>
-          <h3>식당</h3>
-          <p class="who">POS와 배달앱 정산이 매일 쌓이는 회사</p>
-          <ul>
-            <li>POS·배달앱 매출과 통장 입금을 매일 맞추기</li>
-            <li>팁과 출퇴근 기록을 급여로 넘기기</li>
-            <li>인건비 비율을 월말 말고 아침마다 보기</li>
-          </ul>
-        </div>
-        <div class="mkt">
-          <span class="idx num">03</span>
-          <h3>주문 제작 · 가공</h3>
-          <p class="who">작업지시 단위로 일하는 회사 — 펩숍·간판·금속</p>
-          <ul>
-            <li>작업지시마다 원가를 따로 모으기</li>
-            <li>자재 발주를 작업지시에 걸어 남은 금액 추적</li>
-            <li>작업 시간을 작업지시별로 나눠 넣기</li>
-          </ul>
-        </div>
-        <div class="mkt">
-          <span class="idx num">04</span>
-          <h3>건설 · 하청</h3>
-          <p class="who">현장마다 돈이 따로 도는 회사</p>
-          <ul>
-            <li>현장별로 얼마 쓰고 얼마 남았는지 언제든 확인</li>
-            <li>일한 시간을 현장 원가로 나눠 넣기</li>
-            <li>하도급·발주 금액을 넘기 전에 알려주기</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap band-in" style="padding-block: clamp(30px, 4vw, 48px);">
-      <dl class="defs">
-        <dt>카테고리</dt>
-        <dd>AI 기반 업무 자동화·시스템 연동 서비스</dd>
-        <dt>아닌 것</dt>
-        <dd><s>ERP 대체</s> · <s>IT 지원(MSP)</s> · <s>회계법인</s> — CPA와 <b>짝을 이루는</b> 서비스입니다.</dd>
-        <dt>핵심 원칙</dt>
-        <dd><b>장부에 올라가는 모든 것은 제안 → 사람이 확인 → 실행 → 기록.</b> AI가 회계 시스템에 혼자 손대지 않습니다.</dd>
-        <dt>화면</dt>
-        <dd>한글·영어 두 언어로 보는 화면. 사장님용 아침 브리핑, 현장별 보기 등 한국식 보고 습관을 그대로 반영합니다.</dd>
-      </dl>
-    </div>
-  </section>
-
-
-  <section class="band" id="change">
-    <div class="wrap band-in">
-      <div class="band-head">
-        <p class="eyebrow">무엇이 달라지나</p>
-        <h2>사람이 손대는 자리가 하나로 줄어듭니다</h2>
-        <p class="lede">일이 없어지는 것이 아닙니다. 사람이 꼭 해야 하는 것만 남습니다. 판단이 필요한 그 한 자리입니다.</p>
-      </div>
-      <div class="fig-scroll">
-        <figure class="fig"><svg viewBox="0 0 848 236" role="img" aria-label="지금은 사람이 다섯 단계를 모두 손으로 하고, Weave에서는 사람이 확인 한 단계만 합니다">
-  <text x="0" y="24" class="rw">지금</text>
-  <rect x="0" y="44" width="160" height="58" rx="3" class="bx hm"/><text x="80.0" y="64" class="tg hmt">사람</text><text x="80.0" y="86" class="lb">내역 내려받기</text><rect x="172" y="44" width="160" height="58" rx="3" class="bx hm"/><text x="252.0" y="64" class="tg hmt">사람</text><text x="252.0" y="86" class="lb">엑셀로 분류</text><rect x="344" y="44" width="160" height="58" rx="3" class="bx hm"/><text x="424.0" y="64" class="tg hmt">사람</text><text x="424.0" y="86" class="lb">장부에 입력</text><rect x="516" y="44" width="160" height="58" rx="3" class="bx hm"/><text x="596.0" y="64" class="tg hmt">사람</text><text x="596.0" y="86" class="lb">영수증 찾기</text><rect x="688" y="44" width="160" height="58" rx="3" class="bx hm"/><text x="768.0" y="64" class="tg hmt">사람</text><text x="768.0" y="86" class="lb">맞는지 대조</text>
-  <text x="0" y="146" class="rw">Weave가 하면</text>
-  <rect x="0" y="166" width="352" height="58" rx="3" class="bx wv"/><text x="176.0" y="186" class="tg wvt">Weave</text><text x="176.0" y="208" class="lb">정리하고 처리안을 만듦</text><rect x="364" y="166" width="180" height="58" rx="3" class="bx hm"/><text x="454.0" y="186" class="tg hmt">사람</text><text x="454.0" y="208" class="lb">보고 확인</text><rect x="556" y="166" width="292" height="58" rx="3" class="bx wv"/><text x="702.0" y="186" class="tg wvt">Weave</text><text x="702.0" y="208" class="lb">장부 기록까지 자동</text>
-</svg></figure>
-      </div>
-      <p class="fig-note">확인하는 단계는 없애지 않습니다. 장부에 올라가는 일이라 사람이 봐야 합니다. 나머지를 없앱니다.</p>
-    </div>
-  </section>
-
-  <section class="band" id="fit">
-    <div class="wrap band-in">
-      <div class="band-head">
-        <p class="eyebrow">지금 쓰는 장부에 따라</p>
-        <h2>이런 회사에 맞습니다</h2>
-        <p class="lede">지금 쓰는 장부가 무엇이냐에 따라 붙는 방식만 달라집니다. 장부를 옮기실 필요는 없습니다.</p>
-      </div>
-      <div class="fit-grid">
-        <div class="fit">
-          <p class="sys">Acumatica 사용</p>
-          <h3>깊게 연동합니다</h3>
-          <p>프로젝트 원가, 발주, 하도급, 은행 피드 처리, 급여 저널, 법인 간 배분까지 Acumatica 안에서 돌아가는 흐름에 직접 붙습니다.</p>
-        </div>
-        <div class="fit">
-          <p class="sys">QuickBooks Online 사용·도입 예정</p>
-          <h3>QBO는 장부로 그대로</h3>
-          <p>QuickBooks는 장부로 두고, Weave가 프로젝트 원가·발주 약정·승인·은행 대조·마감을 그 위에 얹습니다. 급여는 QBO Payroll + QuickBooks Time(키오스크 얼굴인식 체크인 포함), 또는 Gusto·Rippling을 그대로 붙입니다.</p>
-        </div>
-        <div class="fit">
-          <p class="sys">개인 Gmail 사용</p>
-          <h3>그래도 시작할 수 있습니다</h3>
-          <p>개인 Gmail로 일하고 있어도 시작 가능합니다. 회사 메일(Google Workspace / Microsoft 365) 정리는 구축 항목으로 같이 해 드립니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="trades">
-    <div class="wrap band-in">
-      <div class="band-head">
-        <p class="eyebrow">업종별 · 자세히</p>
-        <h2>매달 손으로 하던 일이 이렇게 바뀝니다</h2>
-        <p class="lede">위의 네 가지를 실제 업무 단위로 풀면 이렇습니다.</p>
-      </div>
-
-      <div class="trade">
-        <div class="trade-head">
-          <span class="idx num">01</span>
-          <h3>소매 · 도매</h3>
-          <p>채널이 여러 개인 회사</p>
-        </div>
-        <div class="tbl-scroll">
-          <table>
-            <thead><tr><th class="col-now">지금 손으로</th><th>Weave에서는</th></tr></thead>
-            <tbody>
-              <tr><td class="col-now">Shopify·Square·Amazon 판매 내역을 장부로 옮겨 적는다</td><td class="col-weave">채널 판매 → 장부 분개를 제안, 확인 후 반영</td></tr>
-              <tr><td class="col-now">재고와 다시 주문할 시점을 감으로 짐작한다</td><td class="col-weave">재고·재주문 알림</td></tr>
-              <tr><td class="col-now">미수금과 발주를 각각 따로 확인한다</td><td class="col-weave">미수금·발주 대조</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="chips"><span class="lab">함께 들어가는 것</span><span class="chip">거래처 포털</span><span class="chip">월 마감 패키지</span></div>
-      </div>
-
-    </div>
-  </section>
-
-  
-
-      <div class="trade">
-        <div class="trade-head">
-          <span class="idx num">02</span>
-          <h3>식당</h3>
-          <p>POS와 배달앱 정산이 매일 쌓이는 회사</p>
-        </div>
-        <div class="tbl-scroll">
-          <table>
-            <thead><tr><th class="col-now">지금 손으로</th><th>Weave에서는</th></tr></thead>
-            <tbody>
-              <tr><td class="col-now">POS와 배달앱 매출을 뽑아 입금·정산과 하나씩 맞춘다</td><td class="col-weave">POS(Toast·Square·Clover)·배달앱(DoorDash·Uber Eats) 일 매출과 정산을 대조해 장부 분개를 제안</td></tr>
-              <tr><td class="col-now">팁과 출퇴근 기록을 급여 쪽에 다시 입력한다</td><td class="col-weave">팁·출퇴근 기록을 급여로 연결</td></tr>
-              <tr><td class="col-now">인건비 비율은 월말 마감 후에야 알게 된다</td><td class="col-weave">인건비 비율을 사장님용 아침 브리핑에 올림</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="chips"><span class="lab">함께 들어가는 것</span><span class="chip">은행 대조</span><span class="chip">월 마감 패키지</span></div>
-      </div>
-
-      <div class="trade">
-        <div class="trade-head">
-          <span class="idx num">03</span>
-          <h3>주문 제작 · 가공</h3>
-          <p>펩숍 · 간판 · 금속</p>
-        </div>
-        <div class="tbl-scroll">
-          <table>
-            <thead><tr><th class="col-now">지금 손으로</th><th>Weave에서는</th></tr></thead>
-            <tbody>
-              <tr><td class="col-now">작업지시를 종이·엑셀로 따로 관리한다</td><td class="col-weave">작업지시 = 프로젝트. 건설과 같은 모델로 원가를 집계</td></tr>
-              <tr><td class="col-now">자재 발주와 작업지시가 서로 연결되어 있지 않다</td><td class="col-weave">자재 발주를 작업지시에 걸어 얼마 남았는지 추적</td></tr>
-              <tr><td class="col-now">작업 시간을 작업지시별로 다시 옮겨 적는다</td><td class="col-weave">급여 시간 → 작업지시 원가 배분을 제안, 확인 후 반영</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="chips"><span class="lab">함께 들어가는 것</span><span class="chip">승인 흐름</span><span class="chip">거래처 포털</span><span class="chip">월 마감</span></div>
-      </div>
-
-      <div class="trade">
-        <div class="trade-head">
-          <span class="idx num">04</span>
-          <h3>건설 · 하청</h3>
-          <p>프로젝트가 원가 단위인 회사</p>
-        </div>
-        <div class="tbl-scroll">
-          <table>
-            <thead><tr><th class="col-now">지금 손으로</th><th>Weave에서는</th></tr></thead>
-            <tbody>
-              <tr><td class="col-now">월말에 엑셀로 프로젝트별 손익을 예산과 맞춰 본다</td><td class="col-weave">예산 대비 프로젝트별 손익을 상시 집계하고, 현장별 보기로 확인</td></tr>
-              <tr><td class="col-now">하도급·발주 약정 금액을 계약서와 장부에서 따로 확인한다</td><td class="col-weave">약정을 프로젝트에 걸어두고 얼마 남았는지 추적, 넘으면 작업함에 올림</td></tr>
-              <tr><td class="col-now">급여 시간을 프로젝트 원가로 옮겨 적는다</td><td class="col-weave">급여 시간 → 프로젝트 원가 배분을 제안, 확인 후 반영</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="chips"><span class="lab">함께 들어가는 것</span><span class="chip">현장 일일보고</span><span class="chip">사진</span><span class="chip">장비</span><span class="chip">차량</span><span class="chip">거래처 포털 — W-9·ACH 종이 없이</span></div>
-      </div><section class="band" id="how">
-    <div class="wrap band-in">
-      <div class="band-head">
-        <p class="eyebrow">propose → approve → execute → log</p>
-        <h2>일하는 순서</h2>
-        <p class="lede">순서가 곧 원칙입니다. 네 단계를 건너뛰는 길은 없습니다.</p>
-      </div>
-      <div class="flow">
-        <div class="step">
-          <span class="num">STEP 01</span>
-          <h3>제안</h3>
-          <p>분류되지 않은 은행 내역, 일한 시간 배분, 약정 초과, 마감 항목을 AI가 분류하고 처리안을 만듭니다. 필요한 서류도 같이 만듭니다.</p>
-        </div>
-        <div class="step">
-          <span class="num">STEP 02</span>
-          <h3>확인</h3>
-          <p>담당자가 작업함에서 내용을 보고 승인하거나 고칩니다. 사람이 확인하지 않은 항목은 그대로 대기합니다.</p>
-        </div>
-        <div class="step">
-          <span class="num">STEP 03</span>
-          <h3>실행</h3>
-          <p>승인된 내용만 회계·급여·현장 시스템에 들어갑니다. AI가 혼자 장부에 손대는 길은 없습니다.</p>
-        </div>
-        <div class="step">
-          <span class="num">STEP 04</span>
-          <h3>기록</h3>
-          <p>누가 무엇을 언제 확인하고 실행했는지 기록으로 남습니다. 나중에 되짚어 볼 수 있게 보관합니다.</p>
-        </div>
-      </div>
-
-      <div class="guards">
-        <div class="guard">
-          <b>자동 짝맞춤 재확인</b>
-          <p>Acumatica가 자동으로 맞춰 놓은 짝을 AI가 다시 확인합니다. 잘못 맞춰진 것이 있으면 장부에 올리지 않고 작업함으로 보냅니다.</p>
-        </div>
-        <div class="guard">
-          <b>야간 자동 점검</b>
-          <p>정해 둔 기준으로 밤마다 스스로 점검해, 어긋난 항목을 아침에 올려 둡니다.</p>
-        </div>
-        <div class="guard">
-          <b>전체 기록</b>
-          <p>제안·확인·실행이 모두 기록으로 남아, 월 마감과 연말 준비에서 근거가 됩니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap band-in">
-      <div class="band-head">
-        <p class="eyebrow">기능과 연결</p>
-        <h2>그 밖에 들어 있는 것</h2>
-      </div>
-      <div class="feat">
-        <div><span class="k">은행 내역</span><span class="v">분류 안 된 내역을 분류하고 필요한 서류까지</span></div>
-        <div><span class="k">작업함</span><span class="v">제안 → 확인 → 실행 → 기록이 한 화면에</span></div>
-        <div><span class="k">AI 질문</span><span class="v">채팅·메일로 질문 — "이 현장 이번 달 얼마 썼어?"</span></div>
-        <div><span class="k">브리핑</span><span class="v">사장님용 아침 브리핑, 현장별 보기</span></div>
-        <div><span class="k">일정</span><span class="v">팀 캘린더·스케줄</span></div>
-        <div><span class="k">관리 항목</span><span class="v">휴가·출장·차량·장비</span></div>
-        <div><span class="k">거래처</span><span class="v">거래처 포털 — W-9·ACH를 종이 없이</span></div>
-        <div><span class="k">점검</span><span class="v">밤마다 자동으로 점검</span></div>
-      </div>
-      <div class="chips" style="margin-top: 26px;">
-        <span class="lab">연결되는 시스템</span>
-        <span class="chip">Acumatica</span><span class="chip">QuickBooks Online</span><span class="chip">QuickBooks Time</span><span class="chip">Gusto</span><span class="chip">Rippling</span><span class="chip">Navan</span><span class="chip">Fleetio</span><span class="chip">Google Workspace</span><span class="chip">Microsoft 365</span><span class="chip">Teams</span><span class="chip">은행 피드</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="close">
-    <div class="wrap band-in">
-      <div class="band-head">
-        <p class="eyebrow">monthly close package</p>
-        <h2>월 마감 패키지</h2>
-        <p class="lede">매월 같은 항목을 같은 방식으로 돌립니다. 그 결과가 쌓여 연말 보고와 감사 준비가 된 상태가 됩니다.</p>
-      </div>
-      <div class="tbl-scroll">
-        <table>
-          <thead><tr><th style="width: 34%;">항목</th><th>매월 하는 일</th></tr></thead>
-          <tbody>
-            <tr><td>은행 · 카드 대조</td><td class="col-weave">계좌와 카드 내역을 장부와 맞추고, 남는 항목을 예외로 올림</td></tr>
-            <tr><td>급여 대조</td><td class="col-weave">급여 시스템 금액과 장부 급여 저널을 맞춤</td></tr>
-            <tr><td>미지급금 · 미수금 연령</td><td class="col-weave">미지급금·미수금을 기간별로 나누고, 예외 항목을 정리</td></tr>
-            <tr><td>보험 · 401(k) 부채 대조</td><td class="col-weave">보험료와 401(k) 관련 부채 잔액을 대조</td></tr>
-            <tr><td>법인 간 잔액</td><td class="col-weave">법인 간 거래와 잔액을 맞춤</td></tr>
-            <tr><td>고정자산 · 감가</td><td class="col-weave">고정자산 대장과 감가 — §179 · 보너스 감가 · MACRS</td></tr>
-            <tr><td>1099 준비</td><td class="col-weave">1099 대상과 필요한 정보를 미리 정리</td></tr>
-            <tr><td>건설 WIP 스케줄</td><td class="col-weave">진행 중 공사에 대한 WIP 스케줄 작성</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="exclude" style="border-left-color: var(--accent); background: var(--accent-soft); border-top-color: var(--rule-strong);">
-        <span class="lab" style="color: var(--accent);">선 긋기</span>
-        <p>Weave는 감사 준비 상태를 만드는 일까지 합니다. <b>감사 의견과 세무 판단은 CPA 몫입니다.</b> Weave는 회계법인이 아닙니다.</p>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="band" id="credits">
-    <div class="wrap band-in">
-      <div class="band-head">
-        <p class="eyebrow">CPA와 함께</p>
-        <h2>회계사가 하던 일까지 같이 가져갑니다</h2>
-        <p class="lede">세액공제와 보험 정산이 깨지는 이유는 대부분 하나입니다. 그때그때 남긴 기록이 없어서 나중에 짜 맞추기 때문입니다. Weave는 그 기록을 매주 자동으로 쌓고, 회계사와 한 팀으로 붙어 그 자료가 실제로 돈이 되게 만듭니다.</p>
-      </div>
-      <div class="tbl-scroll">
-        <table>
-          <thead><tr><th style="width: 30%;">항목</th><th>Weave가 내놓는 자료</th></tr></thead>
-          <tbody>
-            <tr><td>빠진 영수증</td><td class="col-weave">카드 내역 하나하나에 영수증이 붙어 있는지 봅니다. 영수증이 없으면 근거가 없어 비용으로 넣기 어렵습니다. 회사 대부분이 여기서 적지 않은 금액을 그냥 흘리고 있습니다.</td></tr>
-            <tr><td>잘못 분류된 비용</td><td class="col-weave">식사비·접대비·출장비·차량비처럼 인정 범위가 다른 항목이 섞여 있는 경우를 찾아냅니다. 개인 카드로 사고 정산하지 않은 것, 장부에 아예 안 들어간 것도 잡습니다.</td></tr>
-            <tr><td>자산이냐 비용이냐</td><td class="col-weave">한 번에 털 수 있는 것을 몇 년에 나눠 떨고 있는 경우가 많습니다. 반대인 경우도 있습니다. 구매 내역이 전부 남아 있어 회계사가 판단할 자료를 바로 만듭니다.</td></tr>
-            <tr><td>R&amp;D 세액공제</td><td class="col-weave">누가 어느 프로젝트에 몇 시간을 썼는지가 매주 기록됩니다. 이 공제가 세무조사에서 깨지는 이유가 대개 이 기록이 없어서입니다. 새 제품·공정·치구를 만드는 회사가 대상입니다.</td></tr>
-            <tr><td>산재 · 배상책임 보험 연말 정산</td><td class="col-weave">직종별 급여와 하도급 업체 보험증서를 모아 둡니다. 코드를 잘못 붙이거나 증서가 빠지면 그 금액이 전부 원청 보험료로 붙습니다. 매년 반복되고, 줄어든 만큼 바로 현금입니다.</td></tr>
-            <tr><td>여러 주에 걸친 급여와 신고</td><td class="col-weave">누가 어느 현장에서 며칠 일했는지가 남습니다. 원천징수·실업보험·법인세 신고 의무가 어느 주에서 생기는지 여기서 나옵니다.</td></tr>
-            <tr><td>WOTC 고용 세액공제</td><td class="col-weave">대상자는 채용일로부터 28일 안에 주 기관에 신고해야 합니다. 이 기한 때문에 대부분 놓칩니다. 입사 절차에서 그 시점에 띄워 줍니다.</td></tr>
-            <tr><td>조지아 재교육 세액공제</td><td class="col-weave">직원 1인당 연 최대 $1,250, 직접 교육비의 50%입니다. 새로 들인 시스템 때문에 재교육이 필요한 경우가 대상입니다. 조지아 기술대학시스템의 사전 승인과 인증이 필요합니다.</td></tr>
-            <tr><td>판매세 · 사용세</td><td class="col-weave">모든 구매가 남습니다. 제조 장비 면세를 못 받고 있거나, 타주에서 산 물건의 사용세를 빠뜨린 것을 찾아냅니다.</td></tr>
-            <tr><td>Cost Segregation</td><td class="col-weave">건물을 직접 지었다면 항목별 실제 공사 원가가 그대로 남아 있습니다. 보통 이 연구는 그 자료가 없어 도면에서 역산합니다.</td></tr>
-            <tr><td>179D · 45L</td><td class="col-weave">에너지 효율 관련 공제입니다. 설계나 시공을 하는 회사가 대상이고, 인증은 별도 업체가 합니다.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="band-head" style="margin-top: 52px;">
-        <h3 class="sub-h">회계사와 같이 손보는 것</h3>
-        <p class="lede">위가 이미 벌어진 일을 정리하는 쪽이라면, 아래는 앞으로 덜 내게 만드는 쪽입니다. 판단이 필요한 영역이라 회계사가 결정하고, Weave는 그 판단에 필요한 숫자를 언제든 내놓습니다.</p>
-      </div>
-      <div class="feat">
-        <div><span class="k">법인 구조</span><span class="v">법인 형태, 급여와 배당의 비율, 여러 법인을 두는 경우의 배분</span></div>
-        <div><span class="k">은퇴연금</span><span class="v">이익이 나는 회사가 세금을 미루면서 돈을 남기는 가장 큰 수단</span></div>
-        <div><span class="k">인식 시점</span><span class="v">현금주의냐 발생주의냐, 건설은 공사 진행을 어떻게 잡느냐</span></div>
-        <div><span class="k">자산 매입 시기</span><span class="v">언제 사고 어떻게 떨 것인지. 한 달 차이로 한 해가 갈립니다</span></div>
-        <div><span class="k">가족 고용</span><span class="v">실제로 일하는 가족을 급여에 올릴 때의 조건</span></div>
-        <div><span class="k">주별 부담</span><span class="v">현장이 여러 주에 걸칠 때 어디에 얼마를 내게 되는지</span></div>
-      </div>
-
-      <div class="exclude" style="border-left-color: var(--accent); background: var(--accent-soft); border-top-color: var(--rule-strong);">
-        <span class="lab" style="color: var(--accent);">어디까지 맡습니까</span>
-        <p><b>지금 회계사나 부기 담당에게 매달 맡기시는 일 — 장부 정리, 은행·카드 대조, 급여 저널, 월 마감, 1099 준비, WIP 스케줄 — 은 Weave가 가져갑니다.</b> 회계사는 판단과 신고에 집중하게 되고, 그만큼 회계사에게 나가던 비용도 줄어듭니다. 쓰시는 회계사가 있으면 그분과 한 팀으로 움직이고, 없으면 소개해 드립니다. 창구는 하나로 두겠습니다. 다만 감사 의견과 세무 신고는 면허가 있어야 하는 일이라 그건 회계사가 합니다.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="pricing">
-    <div class="wrap band-in">
-      <div class="band-head">
-        <p class="eyebrow">setup + monthly</p>
-        <h2>구축 · 요금 구조</h2>
-        <p class="lede">처음 구축 1회, 그다음 월 관리비. 기본 구성은 구축비를 낮게 잡고, 회사별 맞춤은 들어간 시간만큼 받습니다.</p>
-      </div>
-      <div class="tbl-scroll">
-        <table class="price-tbl">
-          <thead>
-            <tr>
-              <th class="rowlab"></th>
-              <th>기본 구축 — 1회</th>
-              <th>맞춤 구축 — 1회</th>
-              <th>월 관리</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="rowlab">성격</td>
-              <td class="plan">표준 구성으로 바로 시작</td>
-              <td class="plan">회사에 맞춰 추가로 짜는 부분</td>
-              <td class="plan">계속 돌아가게 하는 비용</td>
-            </tr>
-            <tr>
-              <td class="rowlab">포함</td>
-              <td>
-                <ul>
-                  <li>회계 시스템 연결 — Acumatica 또는 QuickBooks Online</li>
-                  <li>급여·현장 시스템 연결</li>
-                  <li>작업함과 승인 흐름 설정</li>
-                  <li>회사 메일(Google Workspace / M365) 정리</li>
-                  <li>한글·영어 두 언어 화면</li>
-                </ul>
-              </td>
-              <td>
-                <ul>
-                  <li>회사별 원가·승인 규칙 반영</li>
-                  <li>업종에 맞춘 보고 화면 — 현장별 보기, 아침 브리핑</li>
-                  <li>추가 시스템 연결 · 기존 자료 옮기기</li>
-                  <li>법인 간 배분 등 개별 구조</li>
-                </ul>
-              </td>
-              <td>
-                <ul>
-                  <li>연결 유지와 변경 대응</li>
-                  <li>밤마다 자동 점검 운영</li>
-                  <li>월 마감 패키지 실행</li>
-                  <li>작업함 운영 지원</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td class="rowlab">비용 기준</td>
-              <td class="ask">낮게 잡습니다 — 문의</td>
-              <td class="ask">들어간 시간만큼 — 문의</td>
-              <td class="ask">월 정액 — 문의</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap band-in">
-      <div class="band-head">
-        <p class="eyebrow">faq</p>
-        <h2>자주 받는 질문</h2>
-      </div>
-      <div class="faq">
-        <div class="qa">
-          <b>ERP를 바꿔야 하나요?</b>
-          <p>아니요. Weave는 ERP를 대체하지 않습니다. 쓰고 있는 Acumatica 또는 QuickBooks Online을 장부로 그대로 두고, 그 사이에서 반복되는 일만 Weave가 맡습니다.</p>
-        </div>
-        <div class="qa">
-          <b>AI가 장부를 마음대로 건드리나요?</b>
-          <p>아니요. 장부에 올라가는 모든 것은 제안 → 사람이 확인 → 실행 → 기록 순서를 거칩니다. 확인 없이 장부에 올라가는 항목은 없습니다. Acumatica가 자동으로 맞춰 놓은 짝도 AI가 다시 보고, 잘못 맞춰진 것이 있으면 막습니다.</p>
-        </div>
-        <div class="qa">
-          <b>Zapier 같은 건가요?</b>
-          <p>다릅니다. Zapier는 조건이 맞으면 옮기는 도구입니다. 여기서 어려운 건 옮기는 일이 아니라 <b>어디로 옮길지 정하는 일</b>입니다. 이 영수증이 어느 현장 어느 항목인지는 규칙만으로 정해지지 않습니다. 그리고 그렇게 정한 것을 확인 없이 장부에 넣으면 안 됩니다. Weave는 회사의 처리 방식을 배워 판단하고, 사람이 눌러야 들어가게 만들어 둔 다음, 매달 계속 돌아가도록 관리해 드리는 서비스입니다.</p>
-        </div>
-        <div class="qa">
-          <b>QuickBooks Desktop은 되나요?</b>
-          <p>Weave가 연동하는 대상은 QuickBooks Online입니다. Desktop을 쓰고 있다면 어떤 방식으로 붙일지 상담에서 먼저 확인해야 합니다.</p>
-        </div>
-        <div class="qa">
-          <b>지금 개인 Gmail을 쓰는데요.</b>
-          <p>그대로 시작할 수 있습니다. 회사 메일(Google Workspace 또는 Microsoft 365) 정리는 구축 항목으로 같이 해 드립니다.</p>
-        </div>
-        <div class="qa">
-          <b>제조업도 되나요?</b>
-          <p>주문 제작·가공(펩숍·간판·금속)은 맞습니다. 작업지시를 프로젝트로 두는 같은 모델입니다. 다만 재고 기반 양산 제조는 대상이 아닙니다 — ERP가 필요한 영역입니다.</p>
-        </div>
-        <div class="qa">
-          <b>회계사와는 어떻게 나눠 일하나요?</b>
-          <p>Weave는 회계법인이 아니라 CPA와 짝을 이루는 서비스입니다. 매월 마감 패키지를 돌려 감사 준비 상태를 만드는 것이 Weave 몫이고, 감사 의견과 세무 판단은 CPA 몫입니다. R&amp;D 세액공제나 보험 연말 정산처럼 <b>기록이 있어야 되는 항목</b>은 Weave가 자료를 만들고 CPA가 판단합니다. 어떤 항목이 있는지는 <a href="#credits">위 표</a>에 있습니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="contact">
-    <div class="wrap band-in contact-in">
-      <div class="band-head" style="margin-bottom: 0;">
-        <p class="eyebrow">contact</p>
-        <h2>상담 문의</h2>
-        <p class="lede">지금 쓰는 회계 시스템과 급여 시스템을 알려주시면 상담이 빨라집니다. 별도 신청 양식은 없습니다 — 메일이나 전화로 바로 연락 주십시오.</p>
-      </div>
-      <div class="contact-rows">
-        <div class="crow"><span class="k">이메일</span><span class="v"><a href="mailto:info@slaysolution.com">info@slaysolution.com</a></span></div>
-        <div class="crow"><span class="k">전화</span><span class="v"><a href="tel:+15714192673">571-419-2673</a></span></div>
-        <div class="crow"><span class="k">담당</span><span class="v">JB Yoon</span></div>
-        <div class="crow"><span class="k">회사</span><span class="v">Slay Solution — USA</span></div>
-        <div class="crow"><span class="k">제품</span><span class="v">Weave</span></div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="foot">
-  <div class="wrap foot-in">
-    <p class="mark">Slay Solution <span>· Weave</span></p>
-    <p class="en">We connect the systems you already use and let AI handle the work in between — with a person approving every write.</p>
+</div>
+<div class="rail">
+  <div class="badge"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 18 L21 46 L32 26 L43 46 L54 18" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><g fill="currentColor"><circle cx="10" cy="18" r="6"/><circle cx="21" cy="46" r="6"/><circle cx="32" cy="26" r="6"/><circle cx="43" cy="46" r="6"/><circle cx="54" cy="18" r="6"/></g></svg></div>
+  <nav class="rnav">
+    <a href="#name"><span class="l-en">The name</span><span class="l-ko">이름</span></a>
+    <a href="#fit"><span class="l-en">Who it fits</span><span class="l-ko">이런 회사</span></a>
+    <a href="#industries"><span class="l-en">Industries</span><span class="l-ko">업종</span></a>
+    <a href="#how"><span class="l-en">How it works</span><span class="l-ko">일하는 순서</span></a>
+    <a href="#worth"><span class="l-en">What it's worth</span><span class="l-ko">돌아오는 것</span></a>
+    <a href="#pricing"><span class="l-en">Pricing</span><span class="l-ko">요금</span></a>
+    <a href="#faq"><span class="l-en">Questions</span><span class="l-ko">자주 받는 질문</span></a>
+    <a href="#contact"><span class="l-en">Contact</span><span class="l-ko">문의</span></a>
+  </nav>
+  <div class="rfoot">
+    <span class="lab"><span class="l-en">Language</span><span class="l-ko">언어</span></span>
+    <div class="lang"><button data-l="en" class="on">EN</button><button data-l="ko">KO</button></div>
   </div>
-</footer>
+</div>
+<nav class="mnav" aria-label="Sections"></nav>
+<main><section class="hero" style="border-top:0">
+  <canvas id="cloth"></canvas>
+  <div class="veil"></div>
+  <div class="hcopy">
+    <div class="eyebrow"><span class="ln"></span><span class="lab"><span class="l-en">Operations layer</span><span class="l-ko">운영 레이어</span></span></div>
+    <h1>
+      <span class="l-en"><span class="o">Your systems stay.</span><span class="s">The work between them goes.</span></span>
+      <span class="l-ko"><span class="o">쓰던 시스템은 그대로.</span><span class="s">그 사이 일은 저희가 합니다.</span></span>
+    </h1>
+    <p class="hsub"><span class="l-en">Weave connects the accounting, payroll and field systems you already run, then takes over the copying and matching between them. Nothing reaches your books until a person approves it.</span><span class="l-ko">지금 쓰시는 Accounting, Payroll, 현장 시스템 그대로 둡니다. 그 사이에서 옮겨 적고 맞춰 보던 일만 저희가 가져갑니다. 장부에 올라가는 건 사람이 한 번 보고 눌러야 들어갑니다.</span></p>
+  </div>
+  <div class="cards">
+    <a class="cd" href="#industries"><span class="cn">01</span><h3><span class="l-en">Retail &amp; Wholesale</span><span class="l-ko">소매 · 도매</span></h3><p><span class="l-en">Channel sales into the books.</span><span class="l-ko">Channel 매출을 장부로.</span></p></a>
+    <a class="cd" href="#industries"><span class="cn">02</span><h3><span class="l-en">Restaurants</span><span class="l-ko">식당</span></h3><p><span class="l-en">Daily sales matched to the bank.</span><span class="l-ko">매출이랑 Deposit 매일 대조.</span></p></a>
+    <a class="cd" href="#industries"><span class="cn">03</span><h3><span class="l-en">Custom Fabrication</span><span class="l-ko">주문 제작 · 가공</span></h3><p><span class="l-en">Cost gathered per work order.</span><span class="l-ko">Work order별 원가 집계.</span></p></a>
+    <a class="cd" href="#industries"><span class="cn">04</span><h3><span class="l-en">Construction</span><span class="l-ko">건설 · 하청</span></h3><p><span class="l-en">Spent and remaining, per jobsite.</span><span class="l-ko">Job site별 쓴 돈, 남은 돈.</span></p></a>
+  </div>
+</section>
+<section class="name" id="name">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow"><span class="ln"></span><span class="lab"><span class="l-en">The name</span><span class="l-ko">이름</span></span></div>
+      <h2><span class="l-en">Weaving doesn't replace the threads.</span><span class="l-ko">짜는 일은 실을 없애지 않습니다.</span></h2>
+    </div>
+    <div class="reveal">
+      <p class="body"><span class="l-en">It runs them through each other until they hold. Same with your systems. Your accounting, your payroll, your POS — nothing gets replaced. We run what goes between them.</span><span class="l-ko">실을 서로 지나가게 해서 천을 만들 뿐입니다. 시스템도 같습니다. Accounting도 Payroll도 POS도 그대로 둡니다. 저희는 그 사이만 맡습니다.</span></p>
+      <p class="pull"><span class="l-en">One thread tears. Woven, it holds.</span><span class="l-ko">실 한 가닥은 끊어집니다. 엮이면 안 끊어집니다.</span></p>
+    </div>
+  </div>
+</section>
+<section id="fit" class="">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow"><span class="ln"></span><span class="lab"><span class="l-en">Who it fits</span><span class="l-ko">이런 회사</span></span></div>
+      <h2><span class="l-en">The software is fine. Someone is still retyping it.</span><span class="l-ko">Software는 잘 쓰고 계신데, 사람이 계속 옮겨 적고 있습니다.</span></h2>
+      <p><span class="l-en">Trade matters less than these three. If one sounds like your week, it is worth a call.</span><span class="l-ko">업종보다 이 세 가지가 더 정확한 기준입니다. 하나라도 해당되면 한번 얘기해 볼 만합니다.</span></p>
+    </div>
+    <div class="sigs"><div class="sig reveal"><span class="n">01</span><h3 class="l-en">Hiring someone just for this doesn't add up</h3><h3 class="l-ko">이것만 할 사람 뽑기는 애매하다</h3><p class="l-en">You know it needs doing. You also know it is not a full-time job, and it sits across three people's desks.</p><p class="l-ko">해야 하는 건 압니다. 그런데 이것만 맡길 사람을 Full-time으로 뽑기에는 일이 애매하게 걸쳐 있습니다.</p></div><div class="sig reveal"><span class="n">02</span><h3 class="l-en">You type the same thing two and three times</h3><h3 class="l-ko">같은 내용을 두 번 세 번 입력한다</h3><p class="l-en">The software is already there. What is not there is anything joining one program to the next, so a person does it.</p><p class="l-ko">Program은 이미 여러 개 쓰고 계십니다. 문제는 그 사이를 사람이 손으로 이어 주고 있다는 겁니다.</p></div><div class="sig reveal"><span class="n">03</span><h3 class="l-en">You'd like someone to say if there is a better way</h3><h3 class="l-ko">더 나은 방법이 있는지 봐 줬으면 한다</h3><p class="l-en">There are plenty of tools. What is missing is someone to pick the right ones, wire them up, and keep them running.</p><p class="l-ko">찾아보면 Tool은 많습니다. 우리 회사에 뭐가 맞는지 골라 주고, 붙여 주고, 계속 돌봐 줄 사람이 없을 뿐입니다.</p></div></div>
+  </div>
+</section>
+<section id="industries" class="">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow"><span class="ln"></span><span class="lab"><span class="l-en">Industries</span><span class="l-ko">업종</span></span></div>
+      <h2><span class="l-en">What gets taken over depends on the trade.</span><span class="l-ko">업종에 따라 대신하는 일이 다릅니다.</span></h2>
+      <p><span class="l-en">Every business does a different set of things by hand each month. These are the four we take on.</span><span class="l-ko">회사마다 매달 손으로 하는 일이 다릅니다. 네 가지 형태로 나눠 맡고 있습니다.</span></p>
+    </div>
+    <div class="mkts"><div class="mkc reveal"><span class="n">01</span><h3 class="l-en">Retail &amp; Wholesale</h3><h3 class="l-ko">소매 · 도매</h3><p class="l-en who">Selling in more than one place</p><p class="l-ko who">파는 곳이 여러 군데인 회사</p><ul><li class="l-en">Channel sales into the books</li><li class="l-ko">Channel 매출을 장부로</li><li class="l-en">A warning before stock runs out</li><li class="l-ko">Inventory 떨어지기 전에 알려주기</li><li class="l-en">Money owed and money ordered in one view</li><li class="l-ko">AR이랑 PO를 한자리에서</li></ul></div><div class="mkc reveal"><span class="n">02</span><h3 class="l-en">Restaurants</h3><h3 class="l-ko">식당</h3><p class="l-en who">POS and delivery settlements, daily</p><p class="l-ko who">POS랑 배달앱 Settlement이 매일 쌓이는 회사</p><ul><li class="l-en">Daily sales matched to the bank</li><li class="l-ko">매출이랑 은행 Deposit을 매일 맞추기</li><li class="l-en">Tips and clock-ins carried to payroll</li><li class="l-ko">Tip이랑 Clock-in 기록을 Payroll로 넘기기</li><li class="l-en">Labour percentage in the morning</li><li class="l-ko">Labor cost 비율을 아침마다 보기</li></ul></div><div class="mkc reveal"><span class="n">03</span><h3 class="l-en">Custom Fabrication</h3><h3 class="l-ko">주문 제작 · 가공</h3><p class="l-en who">Work orders as the unit</p><p class="l-ko who">Work order 단위로 일하는 회사</p><ul><li class="l-en">Cost gathered per work order</li><li class="l-ko">Work order마다 원가를 따로 모으기</li><li class="l-en">Material POs tied to the order</li><li class="l-ko">자재 PO를 Work order에 걸어 추적</li><li class="l-en">Hours split where they belong</li><li class="l-ko">작업 시간을 Work order별로 나눠 넣기</li></ul></div><div class="mkc reveal"><span class="n">04</span><h3 class="l-en">Construction</h3><h3 class="l-ko">건설 · 하청</h3><p class="l-en who">Money running per jobsite</p><p class="l-ko who">Job site마다 돈이 따로 도는 회사</p><ul><li class="l-en">Spent and remaining, per jobsite</li><li class="l-ko">Job site별로 쓴 돈과 남은 돈</li><li class="l-en">Hours landing in jobsite cost</li><li class="l-ko">일한 시간을 Job cost로</li><li class="l-en">A warning before a commitment is exceeded</li><li class="l-ko">Commitment 금액 넘기 전에 알려주기</li></ul></div></div>
+  </div>
+</section>
+<section id="how" class="">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow"><span class="ln"></span><span class="lab"><span class="l-en">How it works</span><span class="l-ko">일하는 순서</span></span></div>
+      <h2><span class="l-en">Four steps, and no way around them.</span><span class="l-ko">네 단계, 건너뛰는 길은 없습니다.</span></h2>
+      <p><span class="l-en">The order is the rule. Nothing reaches your books without the second step.</span><span class="l-ko">순서가 곧 원칙입니다. 두 번째 단계 안 거치고 장부에 올라가는 건 없습니다.</span></p>
+    </div>
+    <svg class="gfig" viewBox="0 0 1280 150" role="img" aria-label="Entries stop at a human approval gate before posting">
+      <line class="gt" x1="0" y1="58" x2="1280" y2="58"/>
+      <line class="gp" x1="620" y1="12" x2="620" y2="104"/>
+      <circle class="gr" cx="620" cy="58" r="21"/>
+      <path class="gc" d="M612 58 l6 6.5 l12 -13"/>
+      <text class="gl" x="620" y="130">A PERSON APPROVES</text>
+      <g class="gchip"><rect x="-32" y="-11" width="64" height="22" rx="2"/></g>
+      <g class="gchip" style="animation-delay:1s"><rect x="-32" y="-11" width="64" height="22" rx="2"/></g>
+      <g class="gchip" style="animation-delay:2s"><rect x="-32" y="-11" width="64" height="22" rx="2"/></g>
+    </svg>
+    <div class="stps"><div class="stp reveal"><span class="n">STEP 01</span><h3 class="l-en">PROPOSE</h3><h3 class="l-ko">제안</h3><p class="l-en">Weave reads the feeds, classifies what is unclassified, and drafts the entry with the paperwork that goes with it.</p><p class="l-ko">분류 안 된 Bank feed, 일한 시간, Commitment 초과, 마감 항목을 읽어 처리안을 만듭니다. 필요한 서류도 같이 만듭니다.</p></div><div class="stp reveal"><span class="n">STEP 02</span><h3 class="l-en">APPROVE</h3><h3 class="l-ko">확인</h3><p class="l-en">It stops. A person opens the queue, looks, and approves or corrects. Nothing moves on its own.</p><p class="l-ko">거기서 멈춥니다. 담당자가 작업함(Queue)을 열어 보고 Approve 하거나 고칩니다. 혼자 넘어가는 건 없습니다.</p></div><div class="stp reveal"><span class="n">STEP 03</span><h3 class="l-en">EXECUTE</h3><h3 class="l-ko">실행</h3><p class="l-en">Only what was approved is written to the accounting, payroll and field systems.</p><p class="l-ko">Approve된 것만 Accounting·Payroll·현장 시스템에 들어갑니다.</p></div><div class="stp reveal"><span class="n">STEP 04</span><h3 class="l-en">LOG</h3><h3 class="l-ko">기록</h3><p class="l-en">Who approved what, and when. Kept in a form you can go back to.</p><p class="l-ko">누가 뭘 언제 Approve 했는지 남습니다. 나중에 되짚어 볼 수 있게 보관합니다.</p></div></div>
+  </div>
+</section>
+<section id="worth" class="">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow"><span class="ln"></span><span class="lab"><span class="l-en">What it's worth</span><span class="l-ko">돌아오는 것</span></span></div>
+      <h2><span class="l-en">What you record every month comes back as money.</span><span class="l-ko">매달 쌓은 기록이 돈으로 돌아옵니다.</span></h2>
+      <p><span class="l-en">Credits and insurance audits fail for one reason: nobody kept the record at the time. Weave keeps it as it happens.</span><span class="l-ko">Tax credit이나 보험 Audit이 깨지는 이유는 하나입니다. 그때그때 기록이 없어서입니다. Weave는 그 기록을 매주 쌓습니다.</span></p>
+    </div>
+    <div class="wrs"><div class="wr reveal"><div class="l-en wk">Missing receipts</div><div class="l-ko wk">빠진 Receipt</div><div class="l-en wv">Every card line checked for a receipt attached. Without one it is hard to take the deduction at all.</div><div class="l-ko wv">Card 내역마다 Receipt이 붙어 있는지 봅니다. 없으면 근거가 없어 비용으로 넣기 어렵습니다.</div></div><div class="wr reveal"><div class="l-en wk">Expense classification</div><div class="l-ko wk">잘못 분류된 비용</div><div class="l-en wv">Meals, entertainment, travel and vehicle sorted by what is actually allowed, including what never reached the books.</div><div class="l-ko wv">Meal, Entertainment, Travel, Vehicle 비용을 인정 범위대로 나눕니다. 장부에 아예 안 들어간 것도 잡습니다.</div></div><div class="wr reveal"><div class="l-en wk">R&amp;D credit</div><div class="l-ko wk">R&amp;D Tax Credit</div><div class="l-en wv">Who spent which hours on which project, recorded every week. This is the substantiation these claims usually fail on.</div><div class="l-ko wv">누가 어느 Project에 몇 시간 썼는지 매주 기록됩니다. 이 Credit이 Audit에서 깨지는 이유가 대개 이 기록이 없어서입니다.</div></div><div class="wr reveal"><div class="l-en wk">Insurance year-end audits</div><div class="l-ko wk">Workers' Comp · GL 보험 Audit</div><div class="l-en wv">Payroll by class code and subcontractor certificates, gathered as you go. A miss here lands on your premium.</div><div class="l-ko wv">Class code별 Payroll과 하도급 COI를 모아 둡니다. 빠지면 그 금액이 전부 원청 보험료로 붙습니다.</div></div><div class="wr reveal"><div class="l-en wk">Multi-state payroll</div><div class="l-ko wk">여러 State에 걸친 Payroll</div><div class="l-en wv">Who worked which site and for how many days. Withholding and filing obligations come from this.</div><div class="l-ko wv">누가 어느 Job site에서 며칠 일했는지 남습니다. Withholding과 신고 의무가 여기서 나옵니다.</div></div><div class="wr reveal"><div class="l-en wk">Georgia retraining credit</div><div class="l-ko wk">Georgia Retraining Tax Credit</div><div class="l-en wv">Up to $1,250 per employee a year, half of direct training cost. Training on a newly introduced system qualifies; prior approval from the state technical college system is required.</div><div class="l-ko wv">직원 1인당 연 최대 $1,250, 직접 교육비의 50%. 새로 들인 시스템 Training이 대상이고 TCSG 사전 승인이 필요합니다.</div></div><div class="wr reveal"><div class="l-en wk">Cost segregation</div><div class="l-ko wk">Cost Segregation</div><div class="l-en wv">If you built the building yourself, the actual cost by component is already here. These studies usually reconstruct it from drawings.</div><div class="l-ko wv">건물을 직접 지으셨다면 항목별 실제 공사 원가가 그대로 있습니다. 보통 이 Study는 도면에서 역산합니다.</div></div></div>
+    <h3 class="sub-h reveal"><span class="l-en">What we work on with your accountant</span><span class="l-ko">회계사와 같이 손보는 것</span></h3>
+    <div class="css"><div class="cs reveal"><span class="l-en ck">Entity structure</span><span class="l-ko ck">법인 구조</span><span class="l-en cv">Entity type, the split between salary and distribution, allocation across entities</span><span class="l-ko cv">Entity 형태, Salary와 Distribution 비율, 여러 법인 사이 배분</span></div><div class="cs reveal"><span class="l-en ck">Retirement plans</span><span class="l-ko ck">은퇴연금</span><span class="l-en cv">The largest lever a profitable owner has for deferring tax</span><span class="l-ko cv">이익 나는 회사가 Tax를 미루는 가장 큰 수단 — 401k 같은 Plan</span></div><div class="cs reveal"><span class="l-en ck">Recognition timing</span><span class="l-ko ck">인식 시점</span><span class="l-en cv">Cash or accrual, and how construction recognises progress</span><span class="l-ko cv">Cash냐 Accrual이냐, 건설은 공사 진행을 어떻게 잡느냐</span></div><div class="cs reveal"><span class="l-en ck">When to buy assets</span><span class="l-ko ck">자산 매입 시기</span><span class="l-en cv">When you buy and how you depreciate. A month changes the year</span><span class="l-ko cv">언제 사고 어떻게 Depreciation 잡을지. 한 달 차이로 한 해가 갈립니다</span></div></div>
+    <div class="role reveal"><p><span class="l-en"><b>The monthly bookkeeping you hand to an accountant today — reconciliations, payroll journals, the close, 1099s, WIP — comes to us.</b> Your accountant spends their time on judgement and filing, and the bill reflects it. Audit opinions and tax filings stay with them, because those take a licence.</span><span class="l-ko"><b>지금 회계사한테 매달 맡기시는 장부 일 — Reconciliation, Payroll journal, 월 Closing, 1099, WIP — 은 저희가 가져갑니다.</b> 회계사는 판단과 Filing에 집중하게 되고 그만큼 Fee도 줄어듭니다. Audit 의견과 Tax filing은 License가 필요해 회계사 몫으로 남습니다.</span></p></div>
+  </div>
+</section>
+<section id="pricing">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow"><span class="ln"></span><span class="lab"><span class="l-en">Pricing</span><span class="l-ko">요금</span></span></div>
+      <h2><span class="l-en">Built once, then run monthly.</span><span class="l-ko">한 번 만들고, 매달 돌립니다.</span></h2>
+      <p><span class="l-en">No two companies connect the same systems or code costs the same way, so there is no list price. We scope it after one conversation.</span><span class="l-ko">회사마다 붙이는 시스템도 다르고 비용 코딩하는 방식도 달라서 정해진 가격표가 없습니다. 한 번 얘기해 보고 정합니다.</span></p>
+    </div>
+    <div class="sigs">
+      <div class="sig reveal"><span class="n">01</span>
+        <h3><span class="l-en">Build</span><span class="l-ko">구축</span></h3>
+        <p><span class="l-en">One time. Connecting your systems, setting up the queue and the approval flow, your own cost and approval rules, and company email if it needs sorting out.</span><span class="l-ko">한 번. 시스템 연결, 작업함과 Approve 흐름 설정, 회사별 원가·승인 Rule 반영, 필요하면 회사 이메일 정리까지.</span></p></div>
+      <div class="sig reveal"><span class="n">02</span>
+        <h3><span class="l-en">Monthly</span><span class="l-ko">월 관리</span></h3>
+        <p><span class="l-en">Keeping the connections alive and reacting when a system changes, the nightly check, the monthly close package, and support on the queue.</span><span class="l-ko">연결 유지와 시스템 바뀔 때 대응, 밤마다 자동 점검, 월 Closing 패키지 실행, 작업함 운영 지원.</span></p></div>
+      <div class="sig reveal"><span class="n">03</span>
+        <h3><span class="l-en">Quoted per company</span><span class="l-ko">회사마다 견적</span></h3>
+        <p><span class="l-en">We look at what you run, how many people touch it, and how you code costs. Then we price it. A standard setup starts low; anything built to your own structure is billed for the time it takes.</span><span class="l-ko">뭘 쓰시는지, 몇 분이 만지시는지, 비용을 어떻게 코딩하시는지 보고 정합니다. 표준 구성은 낮게 잡고, 회사에 맞춰 따로 짜는 부분은 들어간 시간만큼 받습니다.</span></p></div>
+    </div>
+  </div>
+</section>
+<section id="faq" class="">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow"><span class="ln"></span><span class="lab"><span class="l-en">Questions</span><span class="l-ko">자주 받는 질문</span></span></div>
+      <h2><span class="l-en">Straight answers.</span><span class="l-ko">짧게 답하면 이렇습니다.</span></h2>
+      <p><span class="l-en">The four we get asked every time.</span><span class="l-ko">매번 받는 질문 넷입니다.</span></p>
+    </div>
+    <div class="faqs"><div class="qa reveal"><h3 class="l-en">Do we have to change our ERP?</h3><h3 class="l-ko">ERP를 바꿔야 하나요?</h3><p class="l-en">No. Weave does not replace your ledger. Acumatica or QuickBooks Online stays exactly where it is; only the repetitive work between systems comes to us.</p><p class="l-ko">아니요. 쓰시던 Acumatica나 QuickBooks Online 그대로 두고, 그 사이에서 반복되는 일만 맡습니다.</p></div><div class="qa reveal"><h3 class="l-en">Does the AI touch our books on its own?</h3><h3 class="l-ko">AI가 장부를 마음대로 건드리나요?</h3><p class="l-en">No. Everything that reaches the books goes propose, person approves, execute, log. Matches the accounting system made automatically are checked again, and wrong ones are blocked.</p><p class="l-ko">아니요. 장부에 올라가는 건 전부 제안 → 사람이 Approve → 실행 → 기록을 거칩니다. Accounting 시스템이 자동으로 맞춰 놓은 짝도 다시 보고 틀린 건 막습니다.</p></div><div class="qa reveal"><h3 class="l-en">Is this like Zapier?</h3><h3 class="l-ko">Zapier 같은 건가요?</h3><p class="l-en">No. Zapier moves things when a condition is met. The hard part here is not moving but deciding where it goes. Which jobsite and which line a receipt belongs to does not follow from a rule, and what is decided should not reach the books unchecked.</p><p class="l-ko">다릅니다. Zapier는 조건 맞으면 옮기는 Tool입니다. 어려운 건 옮기는 게 아니라 어디로 옮길지 정하는 겁니다. 이 Receipt이 어느 Job site 어느 항목인지는 Rule만으로 안 나옵니다.</p></div><div class="qa reveal"><h3 class="l-en">How do you split work with our accountant?</h3><h3 class="l-ko">회계사와는 어떻게 나눠 일하나요?</h3><p class="l-en">We are not an accounting firm. The monthly bookkeeping comes to us; judgement and filing stay with your accountant. Audit opinions and tax filings take a licence.</p><p class="l-ko">저희는 회계법인(CPA firm)이 아닙니다. 매달 하는 장부 일은 저희가 가져가고, 판단과 Filing은 회계사 몫입니다. Audit 의견과 Tax filing은 License가 있어야 합니다.</p></div></div>
+  </div>
+</section>
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow"><span class="ln"></span><span class="lab"><span class="l-en">Contact</span><span class="l-ko">문의</span></span></div>
+      <h2><span class="l-en">Tell us what you run today.</span><span class="l-ko">지금 뭘 쓰고 계신지 알려 주십시오.</span></h2>
+      <p style="margin:0;font-size:16px;line-height:1.82;color:var(--ink-2);max-width:46ch"><span class="l-en">Name the accounting system and the payroll system and the first conversation goes faster. There is no form — email or call.</span><span class="l-ko">Accounting이랑 Payroll 뭐 쓰시는지만 알려 주시면 상담이 빨라집니다. 신청 Form은 없습니다. 이메일이나 전화로 바로 연락 주십시오.</span></p>
+    </div>
+    <div class="reveal">
+      <div class="crow"><span class="k"><span class="l-en">Email</span><span class="l-ko">이메일</span></span><span class="v"><a href="mailto:info@slaysolution.com">info@slaysolution.com</a></span></div>
+      <div class="crow"><span class="k"><span class="l-en">Phone</span><span class="l-ko">전화</span></span><span class="v"><a href="tel:+15714192673">571-419-2673</a></span></div>
+      <div class="crow"><span class="k"><span class="l-en">Contact</span><span class="l-ko">담당</span></span><span class="v">JB Yoon</span></div>
+      <div class="crow"><span class="k"><span class="l-en">Company</span><span class="l-ko">회사</span></span><span class="v">Slay Solution — USA</span></div>
+    </div>
+  </div>
+</section>
+<div class="foot">
+  <span>Slay Solution · Weave</span>
+  <span><span class="l-en">A ledger was once pages bound with thread.</span><span class="l-ko">장부는 원래 실로 꿰어 묶은 물건이었습니다.</span></span>
+</div>
+</main><script>
+(function () {
+  const cv = document.getElementById('cloth');
+  const ctx = cv.getContext('2d', { alpha: true });
+  let W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, window.matchMedia('(max-width:700px)').matches ? 1.5 : 2);
+  const MOB = window.matchMedia('(max-width:700px)').matches;
+  const ROWS = MOB ? 30 : 52, COLS = MOB ? 60 : 108;
+  const mouse = { x: -9999, y: -9999, tx: -9999, ty: -9999, on: false };
+  const travellers = [];
 
+  function size() {
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  window.addEventListener('resize', size);
+
+  addEventListener('pointermove', (e) => {
+    const r = cv.getBoundingClientRect();
+    mouse.tx = e.clientX - r.left; mouse.ty = e.clientY - r.top; mouse.on = true;
+  });
+  addEventListener('pointerleave', () => { mouse.on = false; });
+
+  for (let i = 0; i < 11; i++) {
+    travellers.push({ row: (i * 4 + 2) % ROWS, p: Math.random(), sp: 0.0016 + Math.random() * 0.0016 });
+  }
+
+  // x가 오른쪽으로 갈수록 천이 곧게 펴진다 — 흐트러진 것이 정돈되는 그림
+  function order(x) {
+    const a = 0.52, b = 0.94, t = Math.min(1, Math.max(0, (x / W - a) / (b - a)));
+    return t * t * (3 - 2 * t);
+  }
+
+  function yAt(row, x, t) {
+    const base = (row + 0.5) * (H / ROWS);
+    const ord = order(x);
+    const amp = (1 - ord) * (13 + (row % 5) * 3.1);
+    let y = base + Math.sin(x * 0.0058 + t * 0.00042 + row * 0.62) * amp
+                 + Math.sin(x * 0.0021 - t * 0.00027 + row * 0.31) * amp * 0.55;
+    if (mouse.on) {
+      const dx = x - mouse.x, dy = y - mouse.y;
+      const d2 = dx * dx + dy * dy, R = 290;
+      if (d2 < R * R) {
+        const d = Math.sqrt(d2) || 0.001;
+        const f = (1 - d / R); const pull = f * f * 104 * (1 - ord * 0.7);
+        y += (dy / d) * pull;
+      }
+    }
+    return y;
+  }
+
+  function frame(t) {
+    ctx.clearRect(0, 0, W, H);
+    const step = W / (COLS - 1);
+
+    // 씨실
+    for (let r = 0; r < ROWS; r++) {
+      ctx.beginPath();
+      for (let c = 0; c < COLS; c++) {
+        const x = c * step, y = yAt(r, x, t);
+        c ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+      }
+      const ordEnd = order(W * 0.85);
+      const bright = r % 6 === 0;
+      ctx.strokeStyle = bright
+        ? 'rgba(15,92,74,' + (0.40 + ordEnd * 0.22) + ')'
+        : 'rgba(18,32,26,' + (0.17 + ordEnd * 0.10 + (r % 3) * 0.018) + ')';
+      ctx.lineWidth = bright ? 1.15 : 0.65;
+      ctx.stroke();
+    }
+
+    // 날실 — 왼쪽에서만 성글게
+    ctx.strokeStyle = 'rgba(18,32,26,0.085)';
+    ctx.lineWidth = 1;
+    for (let c = 0; c < COLS; c += 4) {
+      const x = c * step;
+      if (x > W * 0.6) continue;
+      ctx.beginPath();
+      for (let r = 0; r < ROWS; r++) {
+        const y = yAt(r, x, t);
+        r ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+      }
+      ctx.stroke();
+    }
+
+    // 오른쪽 정돈 구역의 눈금
+    ctx.strokeStyle = 'rgba(15,92,74,0.55)';
+    ctx.lineWidth = 1.4;
+    for (let r = 0; r < ROWS; r += 3) {
+      const x = W * 0.965, y = yAt(r, x, t);
+      ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 16, y); ctx.stroke();
+    }
+
+    // 실을 타고 흐르는 빛
+    for (const tv of travellers) {
+      tv.p += tv.sp; if (tv.p > 1.12) { tv.p = -0.12; tv.row = (tv.row + 5) % ROWS; }
+      const x = tv.p * W; if (x < 0 || x > W) continue;
+      const y = yAt(tv.row, x, t);
+      const ord = order(x);
+      const g = ctx.createRadialGradient(x, y, 0, x, y, 26);
+      g.addColorStop(0, 'rgba(15,92,74,' + (0.30 - ord * 0.08) + ')');
+      g.addColorStop(0.35, 'rgba(15,92,74,0.07)');
+      g.addColorStop(1, 'rgba(15,92,74,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 26, 0, 6.2832); ctx.fill();
+      ctx.fillStyle = 'rgba(15,92,74,0.92)';
+      ctx.beginPath(); ctx.arc(x, y, 1.9, 0, 6.2832); ctx.fill();
+    }
+
+    // 커서 주변만 밝아진다
+    if (mouse.on) {
+      const g = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 250);
+      g.addColorStop(0, 'rgba(15,92,74,0.075)');
+      g.addColorStop(1, 'rgba(15,92,74,0)');
+      ctx.fillStyle = g; ctx.fillRect(mouse.x - 250, mouse.y - 250, 500, 500);
+    }
+
+    mouse.x += (mouse.tx - mouse.x) * 0.12;
+    mouse.y += (mouse.ty - mouse.y) * 0.12;
+    requestAnimationFrame(frame);
+  }
+
+  size();
+  requestAnimationFrame(frame);
+})();
+
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el);
+});
+(function () {
+  const m = document.querySelector('.mnav');
+  if (m) document.querySelectorAll('.rnav a').forEach(a => m.appendChild(a.cloneNode(true)));
+})();
+document.querySelectorAll('.lang button').forEach(b => {
+  b.addEventListener('click', () => {
+    const l = b.dataset.l;
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.setAttribute('lang', l === 'ko' ? 'ko' : 'en');
+    document.querySelectorAll('.lang button').forEach(x => x.classList.toggle('on', x === b));
+    try { localStorage.setItem('weave-lang', l); } catch (e) {}
+  });
+});
+try {
+  const saved = localStorage.getItem('weave-lang');
+  if (saved === 'ko') document.querySelector('.lang button[data-l="ko"]').click();
+} catch (e) {}
+</script>
 </body>
 </html>
