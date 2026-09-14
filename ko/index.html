@@ -236,6 +236,112 @@ html[data-lang="ko"] .qa h3{font-size:16px}
     .gfig{min-width:0}
   }
   @media(hover:none){ .hint{display:none} }
+
+  /* 연결 */
+  .hubwrap{margin:0 0 46px;overflow-x:auto}
+  .hub{width:100%;min-width:900px;height:auto;display:block;overflow:visible}
+  .hub .hs text{font-family:var(--os);font-weight:600;font-size:10px;letter-spacing:.18em;fill:var(--ink-3)}
+  .hub .hl{fill:none;stroke:var(--rule-2);stroke-width:1}
+  .hub .hl path{fill:none}
+  .hub .hl2{stroke:var(--acc);stroke-width:1.4;fill:none}
+  .hub .hbox{fill:none;stroke:var(--ink);stroke-width:1.4}
+  .hub .hdark{fill:var(--rail);stroke:var(--rail)}
+  .hub .hbt{font-family:var(--bb);font-size:26px;letter-spacing:.03em;fill:var(--ink);text-anchor:middle}
+  .hub .hbw{fill:var(--paper)}
+  .hub .hgp{stroke:var(--ink);stroke-width:1;opacity:.3}
+  .hub .hgr{fill:var(--paper);stroke:var(--acc);stroke-width:1.8}
+  .hub .hgc{fill:none;stroke:var(--acc);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:24;stroke-dashoffset:24;animation:tick 3.4s ease-in-out infinite}
+  .hub .hgl{font-family:var(--os);font-weight:600;font-size:8.5px;letter-spacing:.18em;fill:var(--acc);text-anchor:middle}
+  .hub .hchip rect{fill:var(--paper);stroke:var(--acc);stroke-width:1.2}
+  .hub .hchip{animation:hflow 3.4s cubic-bezier(.3,0,.2,1) infinite}
+  @keyframes hflow{0%{transform:translate(600px,130px);opacity:0}10%{opacity:1}
+    30%,44%{transform:translate(716px,130px);opacity:1}70%{transform:translate(860px,130px)}
+    92%{transform:translate(1050px,130px);opacity:1}100%{transform:translate(1090px,130px);opacity:0}}
+  .cngrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);
+    border:1px solid var(--rule)}
+  .cn-c{background:#fbfaf6;padding:28px 24px 30px;display:flex;flex-direction:column}
+  .cn-c h3{font-size:calc(21px * var(--dscale));margin-bottom:9px;line-height:1.14}
+  .cn-w{margin:0 0 16px;font-size:13px;line-height:1.7;color:var(--ink-2);flex:1}
+  .chips{display:flex;flex-wrap:wrap;gap:5px}
+  .ch{font-family:var(--os);font-size:10.5px;letter-spacing:.02em;color:var(--ink-2);
+    border:1px solid var(--rule-2);border-radius:2px;padding:4px 7px;white-space:nowrap;background:var(--paper)}
+  .cnnote{margin-top:30px;padding:24px 28px;background:var(--acc-soft);border-left:2px solid var(--acc)}
+  .cnnote p{margin:0;font-size:14px;line-height:1.8;color:var(--ink-2)}
+  .cnnote b{color:var(--ink);font-weight:600}
+  @media(max-width:1080px){ .cngrid{grid-template-columns:repeat(2,1fr)} }
+  @media(max-width:620px){ .cngrid{grid-template-columns:1fr} }
+
+  /* 중복 */
+  .legend{display:flex;gap:26px;margin-bottom:30px;font-size:12.5px;color:var(--ink-3)}
+  .legend span{display:flex;align-items:center;gap:8px}
+  .dt{width:9px;height:9px;border-radius:50%;flex:none;display:inline-block}
+  .dt.person{background:var(--ink)}
+  .dt.auto{background:transparent;border:1.5px solid var(--acc)}
+  .flows{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  .fl{background:#fbfaf6;display:grid;grid-template-columns:300px minmax(0,1fr);gap:34px;padding:30px 30px 34px}
+  .fl-ic{display:flex;gap:9px;margin:2px 0 14px}
+  .ic{width:22px;height:22px;color:var(--acc)}
+  .fl h3{font-size:calc(21px * var(--dscale));margin-bottom:9px;line-height:1.18}
+  .fl-w{margin:0;font-size:13px;line-height:1.72;color:var(--ink-2)}
+  .fl-b{display:flex;flex-direction:column;gap:16px;justify-content:center}
+  .tr{display:grid;grid-template-columns:62px 118px minmax(0,1fr) 86px;gap:18px;align-items:center}
+  .tl{font-family:var(--os);font-weight:600;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+  .tr.weave .tl{color:var(--acc)}
+  .dots{display:flex;gap:7px;align-items:center}
+  .tr ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 7px;font-size:12.5px;color:var(--ink-2)}
+  .tr ol li{position:relative;padding-right:9px}
+  .tr ol li:not(:last-child)::after{content:"·";position:absolute;right:0;color:var(--ink-3)}
+  .tr.weave ol{color:var(--acc);font-weight:400}
+  .hrs{font-family:var(--disp);font-size:calc(19px * var(--dscale));text-align:right;letter-spacing:var(--dtrack)}
+  html[data-lang="ko"] .hrs{font-size:14px;font-weight:700}
+  .tr.weave .hrs{color:var(--acc)}
+  .tally{display:flex;align-items:stretch;gap:0;margin-top:34px;border:1px solid var(--rule)}
+  .ty{flex:1;padding:24px 26px;border-right:1px solid var(--rule);background:#fbfaf6}
+  .ty.big{background:var(--rail);color:var(--paper);border-right:0}
+  .tya{display:grid;place-items:center;width:52px;font-family:var(--bb);font-size:22px;color:var(--ink-3);
+    background:#fbfaf6;border-right:1px solid var(--rule)}
+  .tyk{display:block;font-family:var(--os);font-weight:600;font-size:9.5px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--ink-3);margin-bottom:9px}
+  .ty.big .tyk{color:rgba(242,239,231,.6)}
+  .tyv{font-family:var(--bb);font-size:44px;line-height:1;letter-spacing:.01em;display:flex;align-items:baseline;gap:9px}
+  .tyv em{font-family:var(--os);font-style:normal;font-weight:400;font-size:11.5px;letter-spacing:.04em;color:var(--ink-3)}
+  .ty.big .tyv em{color:rgba(242,239,231,.6)}
+  .tallynote{margin:20px 0 0;font-size:14px;line-height:1.82;color:var(--ink-2);max-width:78ch}
+  .tallynote b{color:var(--ink);font-weight:600}
+  .ty.big .tallynote b{color:inherit}
+  @media(max-width:1080px){
+    .fl{grid-template-columns:1fr;gap:20px;padding:26px 22px 30px}
+    .tr{grid-template-columns:58px 1fr;gap:10px 14px}
+    .tr ol{grid-column:1/-1} .hrs{grid-column:2;text-align:left}
+    .tally{flex-wrap:wrap} .ty{flex:1 1 40%;border-bottom:1px solid var(--rule)}
+    .tya{width:100%;height:34px;border-right:0;border-bottom:1px solid var(--rule)}
+    .tyv{font-size:34px}
+  }
+
+  .fl.more{display:none}
+  .flows.open .fl.more{display:grid;animation:flIn .5s cubic-bezier(.16,.84,.3,1) both}
+  @keyframes flIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .morebtn{margin-top:18px;font-family:var(--os);font-weight:600;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;padding:15px 26px;border:1px solid var(--ink);background:transparent;
+    color:var(--ink);cursor:pointer;transition:.22s;display:inline-flex;align-items:center;gap:10px}
+  .morebtn:hover{background:var(--ink);color:var(--paper)}
+  .mb-x{display:inline-block;font-size:14px;transition:transform .3s}
+  .morebtn.open .mb-x{transform:rotate(45deg)}
+
+  /* 매출 쪽 */
+  .leaks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);
+    border:1px solid var(--rule)}
+  .lk{background:#fbfaf6;padding:30px 28px 34px;display:flex;flex-direction:column}
+  .lk h3{font-size:calc(22px * var(--dscale));line-height:1.2;margin-bottom:11px}
+  html[data-lang="ko"] .lk h3{font-size:18px}
+  .lk-p{margin:0 0 20px;font-size:13.5px;line-height:1.76;color:var(--ink-2);flex:1}
+  .lk-s{margin:0;padding-top:16px;border-top:1px solid var(--rule);font-size:13.5px;line-height:1.72;
+    color:var(--acc)}
+  .lk-t{display:block;font-family:var(--os);font-weight:600;font-size:9.5px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+  @media(max-width:1080px){ .leaks{grid-template-columns:repeat(2,1fr)} }
+  @media(max-width:620px){ .leaks{grid-template-columns:1fr} }
 </style>
 <script>
 try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElement.setAttribute('data-intro','skip');
@@ -263,6 +369,9 @@ try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElemen
     <a href="#fit"><span>이런 회사</span></a>
     <a href="#industries"><span>업종</span></a>
     <a href="#how"><span>일하는 순서</span></a>
+    <a href="#connections"><span>연결</span></a>
+    <a href="#double"><span>중복</span></a>
+    <a href="#revenue"><span>매출 쪽</span></a>
     <a href="#worth"><span>돌아오는 것</span></a>
     <a href="#pricing"><span>요금</span></a>
     <a href="#faq"><span>자주 받는 질문</span></a>
@@ -342,6 +451,260 @@ try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElemen
       <g class="gchip" style="animation-delay:2s"><rect x="-32" y="-11" width="64" height="22" rx="2"/></g>
     </svg>
     <div class="stps"><div class="stp reveal"><span class="n">STEP 01</span><h3>제안</h3><p>분류 안 된 Bank feed, 일한 시간, Commitment 초과, 마감 항목을 읽어 처리안을 만듭니다. 필요한 서류도 같이 만듭니다.</p></div><div class="stp reveal"><span class="n">STEP 02</span><h3>확인</h3><p>거기서 멈춥니다. 담당자가 작업함(Queue)을 열어 보고 Approve 하거나 고칩니다. 혼자 넘어가는 건 없습니다.</p></div><div class="stp reveal"><span class="n">STEP 03</span><h3>실행</h3><p>Approve된 것만 Accounting·Payroll·현장 시스템에 들어갑니다.</p></div><div class="stp reveal"><span class="n">STEP 04</span><h3>기록</h3><p>누가 뭘 언제 Approve 했는지 남습니다. 나중에 되짚어 볼 수 있게 보관합니다.</p></div></div>
+  </div>
+</section>
+<section id="connections">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow"><span class="ln"></span><span class="lab"><span>연결</span></span></div>
+      <h2><span>뭘 붙이면 뭐가 되는지.</span></h2>
+      <p><span>여덟 갈래가 들어와서 장부 하나로 끝납니다. 쓰시던 건 하나도 안 버립니다.</span></p>
+    </div>
+    <div class="hubwrap reveal"><svg class="hub" viewBox="0 0 1240 260" role="img" aria-label="Eight kinds of system feed into Weave, pass a human approval gate, and land in one ledger">
+      <g class="hs">
+        <text x="0" y="34">PAYROLL</text><text x="0" y="72">POS</text><text x="0" y="110">BANK</text>
+        <text x="0" y="148">TIME</text><text x="0" y="186">FIELD</text><text x="0" y="224">MAIL</text>
+      </g>
+      <g class="hl">
+        <path d="M108 28 C 230 28, 250 130, 372 130"/><path d="M108 66 C 230 66, 250 130, 372 130"/>
+        <path d="M108 104 C 230 104, 250 130, 372 130"/><path d="M108 142 C 230 142, 250 130, 372 130"/>
+        <path d="M108 180 C 230 180, 250 130, 372 130"/><path d="M108 218 C 230 218, 250 130, 372 130"/>
+      </g>
+      <rect class="hbox" x="372" y="96" width="196" height="68" rx="2"/>
+      <text class="hbt" x="470" y="138">WEAVE</text>
+      <path class="hl2" d="M568 130 H 754"/>
+      <line class="hgp" x1="754" y1="88" x2="754" y2="172"/>
+      <circle class="hgr" cx="754" cy="130" r="19"/>
+      <path class="hgc" d="M746 130 l6 6.5 l12 -13"/>
+      <text class="hgl" x="754" y="196">A PERSON APPROVES</text>
+      <path class="hl2" d="M773 130 H 960"/>
+      <rect class="hbox hdark" x="960" y="96" width="196" height="68" rx="2"/>
+      <text class="hbt hbw" x="1058" y="138">YOUR LEDGER</text>
+      <g class="hchip"><rect x="-26" y="-9" width="52" height="18" rx="2"/></g>
+      <g class="hchip" style="animation-delay:1.1s"><rect x="-26" y="-9" width="52" height="18" rx="2"/></g>
+    </svg></div>
+    <div class="cngrid"><div class="cn-c reveal"><span class="n">01</span><h3><span>장부</span></h3><p class="cn-w"><span>모든 게 여기로 모입니다. 장부는 하나, 두 번 입력은 없습니다.</span></p><div class="chips"><span class="ch">QuickBooks Online</span><span class="ch">Acumatica</span><span class="ch">Xero</span><span class="ch">Sage Intacct</span></div></div><div class="cn-c reveal"><span class="n">02</span><h3><span>급여 · 인사</span></h3><p class="cn-w"><span>일한 시간이 Job cost로 들어갑니다. Tip, 휴가, 신입 입력이 사라집니다.</span></p><div class="chips"><span class="ch">Gusto</span><span class="ch">ADP</span><span class="ch">Paychex</span><span class="ch">Rippling</span><span class="ch">QuickBooks Payroll</span><span class="ch">Paylocity</span><span class="ch">Justworks</span></div></div><div class="cn-c reveal"><span class="n">03</span><h3><span>매출 · POS</span></h3><p class="cn-w"><span>채널별 매출이 통장 Deposit과 매일 맞춰집니다. 물어보기 전에 끝나 있습니다.</span></p><div class="chips"><span class="ch">Square</span><span class="ch">Toast</span><span class="ch">Clover</span><span class="ch">Lightspeed</span><span class="ch">Shopify</span><span class="ch">Amazon Seller</span><span class="ch">eBay</span><span class="ch">Walmart</span><span class="ch">DoorDash</span><span class="ch">Uber Eats</span><span class="ch">Grubhub</span></div></div><div class="cn-c reveal"><span class="n">04</span><h3><span>은행 · 카드</span></h3><p class="cn-w"><span>내역이 분류되고 Receipt이 붙고, 중복은 올라가기 전에 잡힙니다.</span></p><div class="chips"><span class="ch">Chase</span><span class="ch">Bank of America</span><span class="ch">Wells Fargo</span><span class="ch">Amex</span><span class="ch">Capital One</span><span class="ch">Ramp</span><span class="ch">Brex</span><span class="ch">Plaid</span></div></div><div class="cn-c reveal"><span class="n">05</span><h3><span>출퇴근</span></h3><p class="cn-w"><span>Clock-in이 Payroll로, Payroll이 Job cost로 이어집니다.</span></p><div class="chips"><span class="ch">QuickBooks Time</span><span class="ch">Homebase</span><span class="ch">7shifts</span><span class="ch">When I Work</span><span class="ch">Deputy</span></div></div><div class="cn-c reveal"><span class="n">06</span><h3><span>현장</span></h3><p class="cn-w"><span>사진, 일일보고, 장비, 차량이 Job에 묶입니다.</span></p><div class="chips"><span class="ch">Procore</span><span class="ch">Buildertrend</span><span class="ch">CompanyCam</span><span class="ch">ServiceTitan</span><span class="ch">Jobber</span><span class="ch">Fleetio</span><span class="ch">Motive</span><span class="ch">Samsara</span></div></div><div class="cn-c reveal"><span class="n">07</span><h3><span>문서 · 메일</span></h3><p class="cn-w"><span>메일로 온 청구서가 파일까지 붙은 처리안이 됩니다.</span></p><div class="chips"><span class="ch">Google Workspace</span><span class="ch">Microsoft 365</span><span class="ch">Gmail</span><span class="ch">Outlook</span><span class="ch">Google Drive</span><span class="ch">OneDrive</span><span class="ch">SharePoint</span><span class="ch">Dropbox</span><span class="ch">Box</span><span class="ch">DocuSign</span></div></div><div class="cn-c reveal"><span class="n">08</span><h3><span>알림</span></h3><p class="cn-w"><span>작업함이 이미 쓰시는 곳으로 옵니다. 폰에서 바로 Approve 하십시오.</span></p><div class="chips"><span class="ch">Slack</span><span class="ch">Microsoft Teams</span><span class="ch">KakaoTalk</span><span class="ch">SMS</span><span class="ch">Email</span></div></div></div>
+    <div class="cnnote reveal">
+      <p><span><b>여기 있는 건 전부 공개 API가 있어서 붙는 방법이 정해져 있습니다.</b> 뭘 먼저 붙일지는 실제로 뭘 쓰시는지 보고 첫 통화에서 정합니다. 목록에 없으면 말씀만 하십시오. QuickBooks Desktop 하나만 방식이 다릅니다.</span></p>
+    </div>
+  </div>
+</section>
+<section id="double">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow"><span class="ln"></span><span class="lab"><span>중복</span></span></div>
+      <h2><span>두 번째, 세 번째 입력이 사라지는 자리.</span></h2>
+      <p><span>까만 점이 사람이 해야 하는 자리입니다. 대표로 둘만 폈습니다. 아래에 여섯 개가 더 있습니다.</span></p>
+    </div>
+    <div class="legend reveal">
+      <span><i class="dt person"></i><span>사람이 합니다</span></span>
+      <span><i class="dt auto"></i><span>Weave가 합니다</span></span>
+    </div>
+    <div class="flows" id="flows"><div class="fl reveal">
+      <div class="fl-h">
+        <span class="n">01</span>
+        <div class="fl-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="1.5"/><path d="M6 8V5h12v3M7 12h4M7 16h10"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12h11L21 7H6"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 4l9 5.5M5 10v8M10 10v8M14 10v8M19 10v8M3 20h18"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h11a3 3 0 0 1 3 3V20H7a3 3 0 0 1-3-3z"/><path d="M8 9h7M8 13h7"/></g></svg></div>
+        <h3><span>매출 → 장부</span></h3>
+        <p class="fl-w"><span>같은 숫자를 두 번 칩니다. POS에서 한 번, 장부에 또 한 번.</span></p>
+      </div>
+      <div class="fl-b">
+        <div class="tr"><span class="tl"><span>지금</span></span>
+          <div class="dots"><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span></div>
+          
+          <ol><li>채널마다 내려받기</li><li>엑셀에 정리</li><li>입금과 대조</li><li>분개 입력</li><li>맞는지 확인</li></ol>
+          <span class="hrs"><span>주 3–5시간</span></span></div>
+        <div class="tr weave"><span class="tl">Weave</span>
+          <div class="dots"><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt person"></span></div>
+          <ol><li>확인만</li></ol>
+          <span class="hrs"><span>주 20분</span></span></div>
+      </div>
+    </div><div class="fl reveal">
+      <div class="fl-h">
+        <span class="n">02</span>
+        <div class="fl-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.4 2.7-5.6 6-5.6s6 2.2 6 5.6"/><path d="M16 5.6A3.2 3.2 0 0 1 16 11M17 14.8c2.4.5 4 2.5 4 5.2"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h11a3 3 0 0 1 3 3V20H7a3 3 0 0 1-3-3z"/><path d="M8 9h7M8 13h7"/></g></svg></div>
+        <h3><span>시간 → 급여 → 원가</span></h3>
+        <p class="fl-w"><span>같은 시간이 Job에 닿기까지 세 번 입력됩니다.</span></p>
+      </div>
+      <div class="fl-b">
+        <div class="tr"><span class="tl"><span>지금</span></span>
+          <div class="dots"><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span></div>
+          
+          <ol><li>타임카드 승인</li><li>내보내기</li><li>Payroll에 입력</li><li>Job cost로 다시 입력</li><li>맞는지 확인</li></ol>
+          <span class="hrs"><span>주 2–4시간</span></span></div>
+        <div class="tr weave"><span class="tl">Weave</span>
+          <div class="dots"><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt person"></span></div>
+          <ol><li>확인만</li></ol>
+          <span class="hrs"><span>주 15분</span></span></div>
+      </div>
+    </div><div class="fl more">
+      <div class="fl-h">
+        <span class="n">03</span>
+        <div class="fl-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 6.2L21 7"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h4.2l2 2.6h8.8A1.5 1.5 0 0 1 21 9.1v8.4A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h11a3 3 0 0 1 3 3V20H7a3 3 0 0 1-3-3z"/><path d="M8 9h7M8 13h7"/></g></svg></div>
+        <h3><span>카드 → 영수증 → 장부</span></h3>
+        <p class="fl-w"><span>영수증은 이미 세 군데 있습니다. 어디서도 못 찾을 뿐입니다.</span></p>
+      </div>
+      <div class="fl-b">
+        <div class="tr"><span class="tl"><span>지금</span></span>
+          <div class="dots"><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span></div>
+          
+          <ol><li>내역 확인</li><li>영수증 독촉</li><li>내려받고 이름 바꾸기</li><li>해당 내역에 붙이기</li><li>코딩</li></ol>
+          <span class="hrs"><span>주 3–6시간</span></span></div>
+        <div class="tr weave"><span class="tl">Weave</span>
+          <div class="dots"><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt person"></span></div>
+          <ol><li>확인만</li></ol>
+          <span class="hrs"><span>주 30분</span></span></div>
+      </div>
+    </div><div class="fl more">
+      <div class="fl-h">
+        <span class="n">04</span>
+        <div class="fl-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 6.2L21 7"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.6 2.6L16 9.4"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h11a3 3 0 0 1 3 3V20H7a3 3 0 0 1-3-3z"/><path d="M8 9h7M8 13h7"/></g></svg></div>
+        <h3><span>청구서 → 승인 → 장부</span></h3>
+        <p class="fl-w"><span>청구서가 숫자가 되기까지 네 군데를 손으로 거칩니다.</span></p>
+      </div>
+      <div class="fl-b">
+        <div class="tr"><span class="tl"><span>지금</span></span>
+          <div class="dots"><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span></div>
+          
+          <ol><li>메일에서 찾기</li><li>전달</li><li>승인 받으러 쫓아다니기</li><li>입력</li><li>사본 보관</li></ol>
+          <span class="hrs"><span>주 2–3시간</span></span></div>
+        <div class="tr weave"><span class="tl">Weave</span>
+          <div class="dots"><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt person"></span></div>
+          <ol><li>확인만</li></ol>
+          <span class="hrs"><span>주 15분</span></span></div>
+      </div>
+    </div><div class="fl more">
+      <div class="fl-h">
+        <span class="n">05</span>
+        <div class="fl-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5l9-4 9 4v9l-9 4-9-4z"/><path d="M3 7.5l9 4 9-4M12 11.5V20"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12h11L21 7H6"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h11a3 3 0 0 1 3 3V20H7a3 3 0 0 1-3-3z"/><path d="M8 9h7M8 13h7"/></g></svg></div>
+        <h3><span>재고 → 재주문</span></h3>
+        <p class="fl-w"><span>재고가 POS에도 있고 엑셀에도 있는데, 둘이 안 맞은 지 오래됐습니다.</span></p>
+      </div>
+      <div class="fl-b">
+        <div class="tr"><span class="tl"><span>지금</span></span>
+          <div class="dots"><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span></div>
+          
+          <ol><li>채널마다 확인</li><li>남은 재고 세기</li><li>재주문 시점 감으로</li><li>PO 올리기</li><li>엑셀 고치기</li></ol>
+          <span class="hrs"><span>주 2–3시간</span></span></div>
+        <div class="tr weave"><span class="tl">Weave</span>
+          <div class="dots"><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt person"></span></div>
+          <ol><li>확인만</li></ol>
+          <span class="hrs"><span>주 10분</span></span></div>
+      </div>
+    </div><div class="fl more">
+      <div class="fl-h">
+        <span class="n">06</span>
+        <div class="fl-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="4.2"/><path d="M5 20.5c0-3.2 3.1-5.3 7-5.3s7 2.1 7 5.3"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.4 2.7-5.6 6-5.6s6 2.2 6 5.6"/><path d="M16 5.6A3.2 3.2 0 0 1 16 11M17 14.8c2.4.5 4 2.5 4 5.2"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 6.2L21 7"/></g></svg></div>
+        <h3><span>신입 첫날</span></h3>
+        <p class="fl-w"><span>한 사람 정보를 다섯 군데 칩니다. 그리고 꼭 한 군데를 빠뜨립니다.</span></p>
+      </div>
+      <div class="fl-b">
+        <div class="tr"><span class="tl"><span>지금</span></span>
+          <div class="dots"><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span></div>
+          
+          <ol><li>Payroll에 입력</li><li>이메일 계정 만들기</li><li>단톡방에 추가</li><li>폰·차량 넘기기</li><li>서류 받아내기</li></ol>
+          <span class="hrs"><span>1인당 2–4시간</span></span></div>
+        <div class="tr weave"><span class="tl">Weave</span>
+          <div class="dots"><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt person"></span></div>
+          <ol><li>확인만</li></ol>
+          <span class="hrs"><span>1인당 20분</span></span></div>
+      </div>
+    </div><div class="fl more">
+      <div class="fl-h">
+        <span class="n">07</span>
+        <div class="fl-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3M8 17.5h7"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 4l9 5.5M5 10v8M10 10v8M14 10v8M19 10v8M3 20h18"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h11a3 3 0 0 1 3 3V20H7a3 3 0 0 1-3-3z"/><path d="M8 9h7M8 13h7"/></g></svg></div>
+        <h3><span>월 마감</span></h3>
+        <p class="fl-w"><span>매달 같은 한 주가 사라지고, 답은 손쓰기엔 늦은 때 나옵니다.</span></p>
+      </div>
+      <div class="fl-b">
+        <div class="tr"><span class="tl"><span>지금</span></span>
+          <div class="dots"><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span></div>
+          
+          <ol><li>명세서 전부 뽑기</li><li>계좌마다 대조</li><li>Payroll과 장부 맞추기</li><li>안 맞는 것 쫓아다니기</li><li>마감 자료 만들기</li></ol>
+          <span class="hrs"><span>월 2–4일</span></span></div>
+        <div class="tr weave"><span class="tl">Weave</span>
+          <div class="dots"><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt person"></span></div>
+          <ol><li>확인만</li></ol>
+          <span class="hrs"><span>월 2시간</span></span></div>
+      </div>
+    </div><div class="fl more">
+      <div class="fl-h">
+        <span class="n">08</span>
+        <div class="fl-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v6c0 4.4-3.1 7.6-7.5 9-4.4-1.4-7.5-4.6-7.5-9V6z"/><path d="M9 12.2l2.2 2.2L15.2 10"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h4.2l2 2.6h8.8A1.5 1.5 0 0 1 21 9.1v8.4A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/></g></svg><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 6.2L21 7"/></g></svg></div>
+        <h3><span>보험 · 서류</span></h3>
+        <p class="fl-w"><span>만료된 증서는 Audit 전엔 안 보입니다. 그때는 보험료로 돌아옵니다.</span></p>
+      </div>
+      <div class="fl-b">
+        <div class="tr"><span class="tl"><span>지금</span></span>
+          <div class="dots"><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span><span class="dt person"></span></div>
+          
+          <ol><li>만료된 곳 찾기</li><li>업체에 메일</li><li>기다리기</li><li>새 증서 보관</li><li>추적표 고치기</li></ol>
+          <span class="hrs"><span>주 1–2시간</span></span></div>
+        <div class="tr weave"><span class="tl">Weave</span>
+          <div class="dots"><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt auto"></span><span class="dt person"></span></div>
+          <ol><li>확인만</li></ol>
+          <span class="hrs"><span>주 5분</span></span></div>
+      </div>
+    </div></div>
+    <button class="morebtn" id="morebtn" aria-expanded="false" aria-controls="flows">
+      <span>여섯 개 더 보기 <span class="mb-x">+</span></span>
+    </button>
+    <div class="tally reveal">
+      <div class="ty"><span class="tyk"><span>지금</span></span>
+        <span class="tyv">15–25<em><span>시간 / 주</span></em></span></div>
+      <div class="tya">→</div>
+      <div class="ty"><span class="tyk">Weave</span>
+        <span class="tyv">2<em><span>시간 / 주</span></em></span></div>
+      <div class="tya">=</div>
+      <div class="ty big"><span class="tyk"><span>돌려받는 시간</span></span>
+        <span class="tyv">55–95<em><span>시간 / 월</span></em></span></div>
+    </div>
+    <p class="tallynote reveal"><span>직원 열 명에서 예순 명 사이 회사에서 이 여덟 가지에 들어가는 시간입니다. 시급 $25로 잡으면 <b>월 $1,400에서 $2,400</b>어치 누군가의 한 주입니다. 이건 바닥이고 이야기의 절반입니다. <a href="#revenue">나머지 절반은 매출 쪽</a>입니다.</span></p>
+  </div>
+</section>
+<section id="revenue">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="eyebrow"><span class="ln"></span><span class="lab"><span>매출 쪽</span></span></div>
+      <h2><span>시간을 아끼는 데는 천장이 있습니다. 매출에는 없습니다.</span></h2>
+      <p><span>뒷일을 아무리 줄여도 사람 하나 연봉이 한계입니다. 아래는 같은 데이터가 매출에 닿는 자리입니다. 새 시스템이 필요한 게 아니라 보는 사람이 없었을 뿐입니다.</span></p>
+    </div>
+    <div class="leaks"><div class="lk reveal">
+      <span class="n">01</span>
+      <h3><span>해 놓고 청구 안 한 일</span></h3>
+      <p class="lk-p"><span>일한 시간과 자재는 Job에 들어갔는데 청구서가 안 나갔습니다. Job이 끝나서야 알게 되고, 그땐 손님이 이미 떠났습니다.</span></p>
+      <p class="lk-s"><span class="lk-t"><span>Weave가 보는 것</span></span>
+        <span>청구 없이 원가만 쌓인 Job을 그 주에 올려 드립니다.</span></p>
+    </div><div class="lk reveal">
+      <span class="n">02</span>
+      <h3><span>늦게 나간 청구서</span></h3>
+      <p class="lk-p"><span>화요일에 끝난 일을 3주 뒤에 청구합니다. 3주 동안 내 돈이 남의 통장에 있습니다.</span></p>
+      <p class="lk-s"><span class="lk-t"><span>Weave가 보는 것</span></span>
+        <span>일이 끝나면 청구서 초안이 뜹니다. 누가 기억해 내야 하는 게 아니라.</span></p>
+    </div><div class="lk reveal">
+      <span class="n">03</span>
+      <h3><span>안 받았어야 할 일</span></h3>
+      <p class="lk-p"><span>매출은 다들 압니다. 손님별 마진을 아는 분은 거의 없습니다. 그래서 남는 게 없는 일이 계속 들어오고, 계속 받게 됩니다.</span></p>
+      <p class="lk-s"><span class="lk-t"><span>Weave가 보는 것</span></span>
+        <span>손님별·일 종류별 마진을 상시로. 연말에 한 번이 아니라.</span></p>
+    </div><div class="lk reveal">
+      <span class="n">04</span>
+      <h3><span>늦게 나간 견적</span></h3>
+      <p class="lk-p"><span>믿을 만한 견적을 먼저 내는 쪽이 많이 가져갑니다. 2주 걸린 견적은 대개 진 견적입니다.</span></p>
+      <p class="lk-s"><span class="lk-t"><span>Weave가 보는 것</span></span>
+        <span>빈 종이 대신 작년에 같은 일을 했던 실제 원가로 시작합니다.</span></p>
+    </div><div class="lk reveal">
+      <span class="n">05</span>
+      <h3><span>없는 걸 파는 일</span></h3>
+      <p class="lk-p"><span>잘 나가는 물건이 떨어지면 이미 딴 매출을 놓치는 겁니다. 감으로 재주문하는 건 시스템이 아닙니다.</span></p>
+      <p class="lk-s"><span class="lk-t"><span>Weave가 보는 것</span></span>
+        <span>채널별 회전율을 보고 비기 전에 알려 드립니다.</span></p>
+    </div><div class="lk reveal">
+      <span class="n">06</span>
+      <h3><span>돌려받는 한 주</span></h3>
+      <p class="lk-p"><span>사장님이 직접 뛰는 회사에서 돌려받은 시간은 비용이 아닙니다. 영업하고 견적 내고 사람 뽑을 시간입니다.</span></p>
+      <p class="lk-s"><span class="lk-t"><span>Weave가 보는 것</span></span>
+        <span>월 네 건 견적이 열두 건이 됩니다. 그게 전부입니다.</span></p>
+    </div></div>
   </div>
 </section>
 <section id="worth" class="">
@@ -537,6 +900,19 @@ const io = new IntersectionObserver((es) => {
 document.querySelectorAll('.reveal').forEach((el, i) => {
   el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el);
 });
+(function () {
+  const btn = document.getElementById('morebtn'), box = document.getElementById('flows');
+  if (btn && box) btn.addEventListener('click', () => {
+    const open = box.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.querySelectorAll('.l-en, .l-ko').forEach(el => {
+      const ko = el.classList.contains('l-ko');
+      el.firstChild.nodeValue = open ? (ko ? '접기 ' : 'Show less ') : (ko ? '여섯 개 더 보기 ' : 'Six more ');
+    });
+    if (!open) box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
 (function () {
   const m = document.querySelector('.mnav');
   if (m) document.querySelectorAll('.rnav a').forEach(a => m.appendChild(a.cloneNode(true)));
