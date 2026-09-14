@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Weave by Slay Solution — 쓰던 시스템은 그대로, 사이의 손일은 AI가</title>
+<title>Weave by Slay Solution — 쓰던 시스템은 그대로, 반복 작업은 AI가</title>
 <meta name="description" content="회계 프로그램도 급여 시스템도 바꾸지 않습니다. 그 사이에서 사람이 옮겨 적고 찾아 붙이던 일을 Weave가 대신합니다. 건설·주문제작·식당·소매 업종을 맡습니다.">
 <link rel="canonical" href="https://www.slaysolution.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -11,8 +11,8 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Slay Solution">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="Weave — 쓰던 시스템은 그대로, 사이의 손일만 자동으로">
-<meta property="og:description" content="쓰던 회계·급여 시스템은 그대로 두고, 그 사이의 손일만 자동으로. 장부에 들어가는 것은 사람이 확인한 뒤에만 들어갑니다.">
+<meta property="og:title" content="Weave — 쓰던 시스템은 그대로, 반복 작업만 자동으로">
+<meta property="og:description" content="쓰던 회계·급여 시스템은 그대로 두고, 그 사이의 반복 작업만 자동으로. 장부에 올라가는 것은 사람이 확인한 뒤에만 올라갑니다.">
 <meta property="og:url" content="https://www.slaysolution.com/">
 <meta property="og:image" content="https://www.slaysolution.com/og.png">
 <meta property="og:image:width" content="1200">
@@ -516,6 +516,14 @@
   /* 로고 마크 */
   .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: inherit; }
   .brand .mark { width: 19px; height: 19px; flex: none; color: var(--accent); }
+
+  /* 이런 회사 */
+  .sig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .sig { background: var(--card); padding: 28px 24px 30px; }
+  .sig .idx { display: block; font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: .08em; margin-bottom: 14px; }
+  .sig h3 { font-family: var(--display); font-size: 18px; font-weight: 600; margin: 0 0 10px; line-height: 1.45; letter-spacing: -.01em; }
+  .sig p { margin: 0; font-size: 14.5px; line-height: 1.75; color: var(--ink-2); }
+  @media (max-width: 860px) { .sig-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body id="top">
@@ -523,6 +531,7 @@
   <div class="wrap topbar-in">
     <a class="brand" href="#top" aria-label="Weave by Slay Solution"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 19 L20 48 L32 27 L44 48 L56 19" fill="none" stroke="currentColor" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Weave</b><span>by Slay Solution</span></a>
     <nav class="navlinks">
+      <a href="#who">이런 회사</a>
       <a href="#markets">업종</a>
       <a href="#fit">쓰는 장부</a>
       <a href="#how">일하는 방식</a>
@@ -538,8 +547,8 @@
     <div class="wrap hero-in">
       <div class="hero-copy">
         <p class="eyebrow">한국계 미국 회사를 위한 업무 자동화</p>
-        <h1>쓰던 시스템은 그대로.<br><span>사이의 손일은 AI가 합니다.</span></h1>
-        <p class="lede">회계 프로그램도, 급여 시스템도 바꾸지 않습니다. 그 사이에서 사람이 옮겨 적고, 찾아 붙이고, 맞춰 보던 일을 Weave가 대신합니다. 장부에 들어가는 것은 사람이 한 번 보고 눌러야 들어갑니다.</p>
+        <h1>쓰던 시스템은 그대로.<br><span>그 사이의 반복 작업은 AI가 합니다.</span></h1>
+        <p class="lede">회계 프로그램도, 급여 시스템도 바꾸지 않습니다. 두 시스템 사이에서 사람이 옮겨 적고, 찾아 붙이고, 맞춰 보던 일을 Weave가 대신합니다. 장부에 올라가는 것은 사람이 한 번 보고 눌러야 합니다.</p>
         <div class="cta-row">
           <a class="btn btn-solid" href="#contact">상담 문의</a>
           <a class="btn btn-line" href="#close">마감 패키지 보기</a>
@@ -550,10 +559,38 @@
         <div class="panel-head"><span>작업함 / Work Queue</span><span class="tag">예시 화면</span></div>
         <div class="qrow"><div><em>은행</em>분류 안 된 내역 12건 — 분류안을 만들었습니다</div><span class="pill p-hold">확인 대기</span></div>
         <div class="qrow"><div><em>영수증</em>카드 내역에 붙일 영수증을 찾았습니다</div><span class="pill p-hold">확인 대기</span></div>
-        <div class="qrow"><div><em>거래처</em>같은 청구서가 두 번 들어왔습니다</div><span class="pill p-stop">전기 차단</span></div>
+        <div class="qrow"><div><em>거래처</em>같은 청구서가 두 번 들어왔습니다</div><span class="pill p-stop">반영 차단</span></div>
         <div class="qrow"><div><em>일한 시간</em>이번 주 시간을 일감별로 나눴습니다</div><span class="pill p-hold">확인 대기</span></div>
         <div class="qrow"><div><em>월 마감</em>이번 달 마감 자료 초안을 만들었습니다</div><span class="pill p-done">실행·기록</span></div>
-        <div class="panel-foot">사람이 눌러야 장부에 들어갑니다. 확인 없이 들어가는 항목은 없습니다.</div>
+        <div class="panel-foot">사람이 눌러야 장부에 올라갑니다. 확인 없이 올라가는 항목은 없습니다.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="band" id="who">
+    <div class="wrap band-in">
+      <div class="band-head">
+        <p class="eyebrow">이런 회사</p>
+        <h2>소프트웨어는 잘 쓰고 있는데, 사람이 계속 옮겨 적고 있는 회사</h2>
+        <p class="lede">업종보다 이 세 가지가 더 정확한 기준입니다. 하나라도 해당되면 한번 이야기해 볼 만합니다.</p>
+      </div>
+      <div class="sig-grid">
+        <div class="sig">
+          <span class="idx num">01</span>
+          <h3>이 일만 할 사람을 뽑기는 애매하다</h3>
+          <p>자동화가 필요한 건 압니다. 그런데 그것만 맡길 사람을 정규직으로 앉히기에는 일이 애매하게 걸쳐 있습니다.</p>
+        </div>
+        <div class="sig">
+          <span class="idx num">02</span>
+          <h3>같은 내용을 두 번 세 번 입력한다</h3>
+          <p>프로그램은 이미 여러 개 쓰고 있습니다. 문제는 그 사이를 사람이 손으로 이어 주고 있다는 것입니다.</p>
+        </div>
+        <div class="sig">
+          <span class="idx num">03</span>
+          <h3>더 나은 방법이 있는지 봐 줬으면 한다</h3>
+          <p>찾아보면 도구는 많습니다. 우리 회사에 뭐가 맞는지 골라 주고, 붙여 주고, 계속 돌봐 줄 사람이 없을 뿐입니다.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -569,26 +606,16 @@
       <div class="mkt-grid">
         <div class="mkt">
           <span class="idx num">01</span>
-          <h3>건설 · 하청</h3>
-          <p class="who">현장마다 돈이 따로 도는 회사</p>
+          <h3>소매 · 도매</h3>
+          <p class="who">파는 곳이 여러 군데인 회사</p>
           <ul>
-            <li>현장별로 얼마 쓰고 얼마 남았는지 언제든 확인</li>
-            <li>일한 시간을 현장 원가로 나눠 넣기</li>
-            <li>하도급·발주 금액을 넘기 전에 알려주기</li>
+            <li>Shopify·Amazon 같은 채널 매출을 장부로</li>
+            <li>재고가 떨어질 때를 미리 알려주기</li>
+            <li>받을 돈과 발주를 한자리에서 보기</li>
           </ul>
         </div>
         <div class="mkt">
           <span class="idx num">02</span>
-          <h3>주문 제작 · 가공</h3>
-          <p class="who">작업지시 단위로 일하는 회사 — 펩숍·간판·금속</p>
-          <ul>
-            <li>작업지시마다 원가를 따로 모으기</li>
-            <li>자재 발주를 작업지시에 걸어 남은 금액 추적</li>
-            <li>작업 시간을 작업지시별로 나눠 넣기</li>
-          </ul>
-        </div>
-        <div class="mkt">
-          <span class="idx num">03</span>
           <h3>식당</h3>
           <p class="who">POS와 배달앱 정산이 매일 쌓이는 회사</p>
           <ul>
@@ -598,13 +625,23 @@
           </ul>
         </div>
         <div class="mkt">
-          <span class="idx num">04</span>
-          <h3>소매 · 도매</h3>
-          <p class="who">파는 곳이 여러 군데인 회사</p>
+          <span class="idx num">03</span>
+          <h3>주문 제작 · 가공</h3>
+          <p class="who">작업지시 단위로 일하는 회사 — 펩숍·간판·금속</p>
           <ul>
-            <li>Shopify·Amazon 같은 채널 매출을 장부로</li>
-            <li>재고가 떨어질 때를 미리 알려주기</li>
-            <li>받을 돈과 발주를 한자리에서 보기</li>
+            <li>작업지시마다 원가를 따로 모으기</li>
+            <li>자재 발주를 작업지시에 걸어 남은 금액 추적</li>
+            <li>작업 시간을 작업지시별로 나눠 넣기</li>
+          </ul>
+        </div>
+        <div class="mkt">
+          <span class="idx num">04</span>
+          <h3>건설 · 하청</h3>
+          <p class="who">현장마다 돈이 따로 도는 회사</p>
+          <ul>
+            <li>현장별로 얼마 쓰고 얼마 남았는지 언제든 확인</li>
+            <li>일한 시간을 현장 원가로 나눠 넣기</li>
+            <li>하도급·발주 금액을 넘기 전에 알려주기</li>
           </ul>
         </div>
       </div>
@@ -624,9 +661,9 @@
         <dt>아닌 것</dt>
         <dd><s>ERP 대체</s> · <s>IT 지원(MSP)</s> · <s>회계법인</s> — CPA와 <b>짝을 이루는</b> 서비스입니다.</dd>
         <dt>핵심 원칙</dt>
-        <dd><b>모든 쓰기는 제안 → 사람이 확인 → 실행 → 기록.</b> AI가 회계 시스템에 마음대로 쓰지 않습니다.</dd>
+        <dd><b>장부에 올라가는 모든 것은 제안 → 사람이 확인 → 실행 → 기록.</b> AI가 회계 시스템에 혼자 손대지 않습니다.</dd>
         <dt>화면</dt>
-        <dd>한글·영어 이중언어 UI. 사장님용 아침 브리핑, 현장별 보기 등 한국식 보고 습관을 그대로 반영합니다.</dd>
+        <dd>한글·영어 두 언어로 보는 화면. 사장님용 아침 브리핑, 현장별 보기 등 한국식 보고 습관을 그대로 반영합니다.</dd>
       </dl>
     </div>
   </section>
@@ -637,7 +674,7 @@
       <div class="band-head">
         <p class="eyebrow">무엇이 달라지나</p>
         <h2>사람이 손대는 자리가 하나로 줄어듭니다</h2>
-        <p class="lede">일이 사라지는 것이 아니라, 사람이 해야만 하는 자리만 남습니다. 판단이 필요한 그 한 자리입니다.</p>
+        <p class="lede">일이 없어지는 것이 아닙니다. 사람이 꼭 해야 하는 것만 남습니다. 판단이 필요한 그 한 자리입니다.</p>
       </div>
       <div class="fig-scroll">
         <figure class="fig"><svg viewBox="0 0 848 236" role="img" aria-label="지금은 사람이 다섯 단계를 모두 손으로 하고, Weave에서는 사람이 확인 한 단계만 합니다">
@@ -647,16 +684,16 @@
   <rect x="0" y="166" width="352" height="58" rx="3" class="bx wv"/><text x="176.0" y="186" class="tg wvt">Weave</text><text x="176.0" y="208" class="lb">정리하고 처리안을 만듦</text><rect x="364" y="166" width="180" height="58" rx="3" class="bx hm"/><text x="454.0" y="186" class="tg hmt">사람</text><text x="454.0" y="208" class="lb">보고 확인</text><rect x="556" y="166" width="292" height="58" rx="3" class="bx wv"/><text x="702.0" y="186" class="tg wvt">Weave</text><text x="702.0" y="208" class="lb">장부 기록까지 자동</text>
 </svg></figure>
       </div>
-      <p class="fig-note">확인 단계는 없애지 않습니다. 장부에 들어가는 일이라 사람이 봐야 합니다. 나머지를 없앱니다.</p>
+      <p class="fig-note">확인하는 단계는 없애지 않습니다. 장부에 올라가는 일이라 사람이 봐야 합니다. 나머지를 없앱니다.</p>
     </div>
   </section>
 
   <section class="band" id="fit">
     <div class="wrap band-in">
       <div class="band-head">
-        <p class="eyebrow">accounting system / 회계 시스템 축</p>
+        <p class="eyebrow">지금 쓰는 장부에 따라</p>
         <h2>이런 회사에 맞습니다</h2>
-        <p class="lede">지금 쓰는 장부가 무엇인지에 따라 붙는 방식만 달라집니다. 장부를 옮기는 일은 전제가 아닙니다.</p>
+        <p class="lede">지금 쓰는 장부가 무엇이냐에 따라 붙는 방식만 달라집니다. 장부를 옮기실 필요는 없습니다.</p>
       </div>
       <div class="fit-grid">
         <div class="fit">
@@ -682,51 +719,37 @@
     <div class="wrap band-in">
       <div class="band-head">
         <p class="eyebrow">업종별 · 자세히</p>
-        <h2>매달 손으로 하던 일이 어떻게 바뀌는가</h2>
+        <h2>매달 손으로 하던 일이 이렇게 바뀝니다</h2>
         <p class="lede">위의 네 가지를 실제 업무 단위로 풀면 이렇습니다.</p>
       </div>
 
       <div class="trade">
         <div class="trade-head">
           <span class="idx num">01</span>
-          <h3>건설 · 하청</h3>
-          <p>프로젝트가 원가 단위인 회사</p>
+          <h3>소매 · 도매</h3>
+          <p>채널이 여러 개인 회사</p>
         </div>
         <div class="tbl-scroll">
           <table>
             <thead><tr><th class="col-now">지금 손으로</th><th>Weave에서는</th></tr></thead>
             <tbody>
-              <tr><td class="col-now">월말에 엑셀로 프로젝트별 손익을 예산과 맞춰 본다</td><td class="col-weave">예산 대비 프로젝트별 손익을 상시 집계하고, 현장별 보기로 확인</td></tr>
-              <tr><td class="col-now">하도급·발주 약정 금액을 계약서와 장부에서 따로 확인한다</td><td class="col-weave">약정을 프로젝트에 걸어두고 소진·초과를 추적, 초과 시 작업함에 올림</td></tr>
-              <tr><td class="col-now">급여 시간을 프로젝트 원가로 옮겨 적는다</td><td class="col-weave">급여 시간 → 프로젝트 원가 배분을 제안, 확인 후 전기</td></tr>
+              <tr><td class="col-now">Shopify·Square·Amazon 판매 내역을 장부로 옮겨 적는다</td><td class="col-weave">채널 판매 → 장부 분개를 제안, 확인 후 반영</td></tr>
+              <tr><td class="col-now">재고와 다시 주문할 시점을 감으로 짐작한다</td><td class="col-weave">재고·재주문 알림</td></tr>
+              <tr><td class="col-now">미수금과 발주를 각각 따로 확인한다</td><td class="col-weave">미수금·발주 대조</td></tr>
             </tbody>
           </table>
         </div>
-        <div class="chips"><span class="lab">함께 들어가는 것</span><span class="chip">현장 일일보고</span><span class="chip">사진</span><span class="chip">장비</span><span class="chip">차량</span><span class="chip">거래처 포털 — W-9·ACH 종이 없이</span></div>
+        <div class="chips"><span class="lab">함께 들어가는 것</span><span class="chip">거래처 포털</span><span class="chip">월 마감 패키지</span></div>
       </div>
+
+    </div>
+  </section>
+
+  
 
       <div class="trade">
         <div class="trade-head">
           <span class="idx num">02</span>
-          <h3>주문 제작 · 가공</h3>
-          <p>펩숍 · 간판 · 금속</p>
-        </div>
-        <div class="tbl-scroll">
-          <table>
-            <thead><tr><th class="col-now">지금 손으로</th><th>Weave에서는</th></tr></thead>
-            <tbody>
-              <tr><td class="col-now">작업지시를 종이·엑셀로 따로 관리한다</td><td class="col-weave">작업지시 = 프로젝트. 건설과 같은 모델로 원가를 집계</td></tr>
-              <tr><td class="col-now">자재 발주와 작업지시가 서로 연결되어 있지 않다</td><td class="col-weave">발주 약정을 작업지시에 걸어 소진 현황을 추적</td></tr>
-              <tr><td class="col-now">작업 시간을 작업지시별로 다시 옮겨 적는다</td><td class="col-weave">급여 시간 → 작업지시 원가 배분을 제안, 확인 후 전기</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="chips"><span class="lab">함께 들어가는 것</span><span class="chip">승인 흐름</span><span class="chip">거래처 포털</span><span class="chip">월 마감</span></div>
-      </div>
-
-      <div class="trade">
-        <div class="trade-head">
-          <span class="idx num">03</span>
           <h3>식당</h3>
           <p>POS와 배달앱 정산이 매일 쌓이는 회사</p>
         </div>
@@ -745,38 +768,52 @@
 
       <div class="trade">
         <div class="trade-head">
-          <span class="idx num">04</span>
-          <h3>소매 · 도매</h3>
-          <p>채널이 여러 개인 회사</p>
+          <span class="idx num">03</span>
+          <h3>주문 제작 · 가공</h3>
+          <p>펩숍 · 간판 · 금속</p>
         </div>
         <div class="tbl-scroll">
           <table>
             <thead><tr><th class="col-now">지금 손으로</th><th>Weave에서는</th></tr></thead>
             <tbody>
-              <tr><td class="col-now">Shopify·Square·Amazon 판매 내역을 장부로 옮겨 적는다</td><td class="col-weave">채널 판매 → 장부 분개를 제안, 확인 후 전기</td></tr>
-              <tr><td class="col-now">재고와 재주문 시점을 감으로 챈다</td><td class="col-weave">재고·재주문 알림</td></tr>
-              <tr><td class="col-now">미수금과 발주를 각각 따로 확인한다</td><td class="col-weave">미수금·발주 대조</td></tr>
+              <tr><td class="col-now">작업지시를 종이·엑셀로 따로 관리한다</td><td class="col-weave">작업지시 = 프로젝트. 건설과 같은 모델로 원가를 집계</td></tr>
+              <tr><td class="col-now">자재 발주와 작업지시가 서로 연결되어 있지 않다</td><td class="col-weave">자재 발주를 작업지시에 걸어 얼마 남았는지 추적</td></tr>
+              <tr><td class="col-now">작업 시간을 작업지시별로 다시 옮겨 적는다</td><td class="col-weave">급여 시간 → 작업지시 원가 배분을 제안, 확인 후 반영</td></tr>
             </tbody>
           </table>
         </div>
-        <div class="chips"><span class="lab">함께 들어가는 것</span><span class="chip">거래처 포털</span><span class="chip">월 마감 패키지</span></div>
+        <div class="chips"><span class="lab">함께 들어가는 것</span><span class="chip">승인 흐름</span><span class="chip">거래처 포털</span><span class="chip">월 마감</span></div>
       </div>
 
-    </div>
-  </section>
-
-  <section class="band" id="how">
+      <div class="trade">
+        <div class="trade-head">
+          <span class="idx num">04</span>
+          <h3>건설 · 하청</h3>
+          <p>프로젝트가 원가 단위인 회사</p>
+        </div>
+        <div class="tbl-scroll">
+          <table>
+            <thead><tr><th class="col-now">지금 손으로</th><th>Weave에서는</th></tr></thead>
+            <tbody>
+              <tr><td class="col-now">월말에 엑셀로 프로젝트별 손익을 예산과 맞춰 본다</td><td class="col-weave">예산 대비 프로젝트별 손익을 상시 집계하고, 현장별 보기로 확인</td></tr>
+              <tr><td class="col-now">하도급·발주 약정 금액을 계약서와 장부에서 따로 확인한다</td><td class="col-weave">약정을 프로젝트에 걸어두고 얼마 남았는지 추적, 넘으면 작업함에 올림</td></tr>
+              <tr><td class="col-now">급여 시간을 프로젝트 원가로 옮겨 적는다</td><td class="col-weave">급여 시간 → 프로젝트 원가 배분을 제안, 확인 후 반영</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="chips"><span class="lab">함께 들어가는 것</span><span class="chip">현장 일일보고</span><span class="chip">사진</span><span class="chip">장비</span><span class="chip">차량</span><span class="chip">거래처 포털 — W-9·ACH 종이 없이</span></div>
+      </div><section class="band" id="how">
     <div class="wrap band-in">
       <div class="band-head">
         <p class="eyebrow">propose → approve → execute → log</p>
-        <h2>어떻게 일하나</h2>
-        <p class="lede">순서가 원칙입니다. 네 단계를 건너뛰는 경로는 없습니다.</p>
+        <h2>일하는 순서</h2>
+        <p class="lede">순서가 곧 원칙입니다. 네 단계를 건너뛰는 길은 없습니다.</p>
       </div>
       <div class="flow">
         <div class="step">
           <span class="num">STEP 01</span>
           <h3>제안</h3>
-          <p>뱅크피드 미처리 라인, 급여 시간 배분, 약정 초과, 마감 항목을 AI가 분류하고 처리안을 만듭니다. 필요한 문서도 같이 생성합니다.</p>
+          <p>분류되지 않은 은행 내역, 일한 시간 배분, 약정 초과, 마감 항목을 AI가 분류하고 처리안을 만듭니다. 필요한 서류도 같이 만듭니다.</p>
         </div>
         <div class="step">
           <span class="num">STEP 02</span>
@@ -786,26 +823,26 @@
         <div class="step">
           <span class="num">STEP 03</span>
           <h3>실행</h3>
-          <p>승인된 내용만 회계·급여·현장 시스템에 전기됩니다. AI가 스스로 쓰는 경로는 없습니다.</p>
+          <p>승인된 내용만 회계·급여·현장 시스템에 들어갑니다. AI가 혼자 장부에 손대는 길은 없습니다.</p>
         </div>
         <div class="step">
           <span class="num">STEP 04</span>
           <h3>기록</h3>
-          <p>누가 무엇을 언제 확인하고 실행했는지 로그로 남습니다. 나중에 되짚을 수 있는 형태로 보관됩니다.</p>
+          <p>누가 무엇을 언제 확인하고 실행했는지 기록으로 남습니다. 나중에 되짚어 볼 수 있게 보관합니다.</p>
         </div>
       </div>
 
       <div class="guards">
         <div class="guard">
-          <b>Auto-Match 채점</b>
-          <p>Acumatica Auto-Match 결과를 AI가 채점합니다. 틀린 짝이 있으면 전기를 차단하고 작업함으로 올립니다.</p>
+          <b>자동 짝맞춤 재확인</b>
+          <p>Acumatica가 자동으로 맞춰 놓은 짝을 AI가 다시 확인합니다. 잘못 맞춰진 것이 있으면 장부에 올리지 않고 작업함으로 보냅니다.</p>
         </div>
         <div class="guard">
           <b>야간 자동 점검</b>
-          <p>골든셋 기준으로 밤마다 스스로 점검해, 틀어진 항목을 아침에 올려 둡니다.</p>
+          <p>정해 둔 기준으로 밤마다 스스로 점검해, 어긋난 항목을 아침에 올려 둡니다.</p>
         </div>
         <div class="guard">
-          <b>전체 실행 로그</b>
+          <b>전체 기록</b>
           <p>제안·확인·실행이 모두 기록으로 남아, 월 마감과 연말 준비에서 근거가 됩니다.</p>
         </div>
       </div>
@@ -815,21 +852,21 @@
   <section class="band">
     <div class="wrap band-in">
       <div class="band-head">
-        <p class="eyebrow">what's inside / 그 밖에 들어 있는 것</p>
-        <h2>기능과 커넥터</h2>
+        <p class="eyebrow">기능과 연결</p>
+        <h2>그 밖에 들어 있는 것</h2>
       </div>
       <div class="feat">
-        <div><span class="k">은행 라인</span><span class="v">뱅크피드 미처리 라인 분류·제안 및 문서 생성</span></div>
-        <div><span class="k">작업함</span><span class="v">제안 → 확인 → 실행 → 로그가 한 화면에</span></div>
+        <div><span class="k">은행 내역</span><span class="v">분류 안 된 내역을 분류하고 필요한 서류까지</span></div>
+        <div><span class="k">작업함</span><span class="v">제안 → 확인 → 실행 → 기록이 한 화면에</span></div>
         <div><span class="k">AI 질문</span><span class="v">채팅·메일로 질문 — "이 현장 이번 달 얼마 썼어?"</span></div>
         <div><span class="k">브리핑</span><span class="v">사장님용 아침 브리핑, 현장별 보기</span></div>
         <div><span class="k">일정</span><span class="v">팀 캘린더·스케줄</span></div>
         <div><span class="k">관리 항목</span><span class="v">휴가·출장·차량·장비</span></div>
         <div><span class="k">거래처</span><span class="v">거래처 포털 — W-9·ACH를 종이 없이</span></div>
-        <div><span class="k">점검</span><span class="v">야간 자동 점검(골든셋)</span></div>
+        <div><span class="k">점검</span><span class="v">밤마다 자동으로 점검</span></div>
       </div>
       <div class="chips" style="margin-top: 26px;">
-        <span class="lab">커넥터</span>
+        <span class="lab">연결되는 시스템</span>
         <span class="chip">Acumatica</span><span class="chip">QuickBooks Online</span><span class="chip">QuickBooks Time</span><span class="chip">Gusto</span><span class="chip">Rippling</span><span class="chip">Navan</span><span class="chip">Fleetio</span><span class="chip">Google Workspace</span><span class="chip">Microsoft 365</span><span class="chip">Teams</span><span class="chip">은행 피드</span>
       </div>
     </div>
@@ -840,15 +877,15 @@
       <div class="band-head">
         <p class="eyebrow">monthly close package</p>
         <h2>월 마감 패키지</h2>
-        <p class="lede">매월 같은 항목을 같은 방식으로 돌립니다. 그 결과가 쌓여 연말 보고와 감사 준비(audit-ready) 상태가 됩니다.</p>
+        <p class="lede">매월 같은 항목을 같은 방식으로 돌립니다. 그 결과가 쌓여 연말 보고와 감사 준비가 된 상태가 됩니다.</p>
       </div>
       <div class="tbl-scroll">
         <table>
           <thead><tr><th style="width: 34%;">항목</th><th>매월 하는 일</th></tr></thead>
           <tbody>
             <tr><td>은행 · 카드 대조</td><td class="col-weave">계좌와 카드 내역을 장부와 맞추고, 남는 항목을 예외로 올림</td></tr>
-            <tr><td>급여 tie-out</td><td class="col-weave">급여 시스템 금액과 장부 급여 저널을 맞춤</td></tr>
-            <tr><td>AP · AR aging · 예외</td><td class="col-weave">미지급·미수금 연령 분석과 예외 항목 정리</td></tr>
+            <tr><td>급여 대조</td><td class="col-weave">급여 시스템 금액과 장부 급여 저널을 맞춤</td></tr>
+            <tr><td>미지급금 · 미수금 연령</td><td class="col-weave">미지급금·미수금을 기간별로 나누고, 예외 항목을 정리</td></tr>
             <tr><td>보험 · 401(k) 부채 대조</td><td class="col-weave">보험료와 401(k) 관련 부채 잔액을 대조</td></tr>
             <tr><td>법인 간 잔액</td><td class="col-weave">법인 간 거래와 잔액을 맞춤</td></tr>
             <tr><td>고정자산 · 감가</td><td class="col-weave">고정자산 대장과 감가 — §179 · 보너스 감가 · MACRS</td></tr>
@@ -893,24 +930,24 @@
               <td>
                 <ul>
                   <li>회계 시스템 연결 — Acumatica 또는 QuickBooks Online</li>
-                  <li>급여·현장 커넥터 연결</li>
+                  <li>급여·현장 시스템 연결</li>
                   <li>작업함과 승인 흐름 설정</li>
                   <li>회사 메일(Google Workspace / M365) 정리</li>
-                  <li>한글·영어 이중언어 UI</li>
+                  <li>한글·영어 두 언어 화면</li>
                 </ul>
               </td>
               <td>
                 <ul>
                   <li>회사별 원가·승인 규칙 반영</li>
                   <li>업종에 맞춘 보고 화면 — 현장별 보기, 아침 브리핑</li>
-                  <li>추가 커넥터·데이터 이관</li>
+                  <li>추가 시스템 연결 · 기존 자료 옮기기</li>
                   <li>법인 간 배분 등 개별 구조</li>
                 </ul>
               </td>
               <td>
                 <ul>
-                  <li>커넥터 운영과 변경 대응</li>
-                  <li>야간 자동 점검(골든셋) 운영</li>
+                  <li>연결 유지와 변경 대응</li>
+                  <li>밤마다 자동 점검 운영</li>
                   <li>월 마감 패키지 실행</li>
                   <li>작업함 운영 지원</li>
                 </ul>
@@ -918,7 +955,7 @@
             </tr>
             <tr>
               <td class="rowlab">비용 기준</td>
-              <td class="ask">낮게 책정 — 문의</td>
+              <td class="ask">낮게 잡습니다 — 문의</td>
               <td class="ask">들어간 시간만큼 — 문의</td>
               <td class="ask">월 정액 — 문의</td>
             </tr>
@@ -937,11 +974,11 @@
       <div class="faq">
         <div class="qa">
           <b>ERP를 바꿔야 하나요?</b>
-          <p>아니요. Weave는 ERP를 대체하지 않습니다. 쓰고 있는 Acumatica 또는 QuickBooks Online을 장부로 그대로 두고, 그 사이의 손일만 Weave가 맡습니다.</p>
+          <p>아니요. Weave는 ERP를 대체하지 않습니다. 쓰고 있는 Acumatica 또는 QuickBooks Online을 장부로 그대로 두고, 그 사이에서 반복되는 일만 Weave가 맡습니다.</p>
         </div>
         <div class="qa">
-          <b>AI가 장부를 마음대로 쓰나요?</b>
-          <p>아니요. 모든 쓰기는 제안 → 사람이 확인 → 실행 → 기록 순서를 거칩니다. 확인 없이 전기되는 항목은 없고, Acumatica Auto-Match 결과도 AI가 채점해 틀린 짝이 있으면 전기를 차단합니다.</p>
+          <b>AI가 장부를 마음대로 건드리나요?</b>
+          <p>아니요. 장부에 올라가는 모든 것은 제안 → 사람이 확인 → 실행 → 기록 순서를 거칩니다. 확인 없이 장부에 올라가는 항목은 없습니다. Acumatica가 자동으로 맞춰 놓은 짝도 AI가 다시 보고, 잘못 맞춰진 것이 있으면 막습니다.</p>
         </div>
         <div class="qa">
           <b>Zapier 같은 건가요?</b>
