@@ -15,7 +15,7 @@
 1. 이 폴더를 GitHub 비공개 리포로 올립니다.
 2. Vercel에서 그 리포를 Import 합니다. 프레임워크는 **Other**, 빌드 명령 없음, 출력 폴더는 루트입니다.
 3. Vercel 프로젝트 설정 → Domains 에 `slaysolution.com` 과 `www.slaysolution.com` 을 넣습니다.
-4. 도메인 등록처(또는 Cloudflare) DNS에 Vercel이 알려주는 A/CNAME 레코드를 넣습니다.
+4. 완료 — Zoho DNS에 A(apex)와 CNAME(www)이 들어가 있습니다. MX·SPF는 Microsoft 365용이니 건드리지 마십시오.
 
 고치는 방법은 `index.html`을 수정하고 GitHub에 push 하는 것뿐입니다. Vercel이 알아서 다시 올립니다.
 
@@ -26,4 +26,5 @@
 ## 아직 안 정한 것
 
 - 요금 숫자 — 지금은 세 칸 모두 "문의"입니다.
+- DKIM — Microsoft 365 관리자에서 켜야 합니다 (SPF·DMARC는 완료).
 - 영문판 — 푸터 한 줄만 영어입니다.
