@@ -18,8 +18,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f3f5f0" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e1210" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3f5f0">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Slay Solution","url":"https://slaysolution.com/","description":"Weave — an operations layer that connects the accounting, payroll and field systems a company already uses.","areaServed":"US","makesOffer":{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Weave","applicationCategory":"BusinessApplication","operatingSystem":"Web"}}}
 </script>
@@ -28,6 +27,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
   :root {
+    color-scheme: light;
     --paper: #f3f5f0;
     --card: #ffffff;
     --sunk: #eaeee6;
@@ -48,41 +48,6 @@
     --mono: "IBM Plex Mono", "IBM Plex Sans KR", "Apple SD Gothic Neo", ui-monospace, monospace;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --paper: #0e1210;
-      --card: #161c18;
-      --sunk: #1b221d;
-      --ink: #e7ede6;
-      --ink-2: #a3b0a6;
-      --ink-3: #7c8a80;
-      --rule: #2a332c;
-      --rule-strong: #3c4740;
-      --accent: #5fc4a1;
-      --accent-soft: #17302a;
-      --flag: #e6866b;
-      --flag-soft: #33201b;
-      --hold: #d9b768;
-      --hold-soft: #2e2718;
-    }
-  }
-
-  :root[data-theme="dark"] {
-    --paper: #0e1210;
-    --card: #161c18;
-    --sunk: #1b221d;
-    --ink: #e7ede6;
-    --ink-2: #a3b0a6;
-    --ink-3: #7c8a80;
-    --rule: #2a332c;
-    --rule-strong: #3c4740;
-    --accent: #5fc4a1;
-    --accent-soft: #17302a;
-    --flag: #e6866b;
-    --flag-soft: #33201b;
-    --hold: #d9b768;
-    --hold-soft: #2e2718;
-  }
 
   * { box-sizing: border-box; }
 
@@ -520,15 +485,46 @@
     word-break: keep-all;
     overflow-wrap: anywhere;
   }
+
+  /* 업종 카드 */
+  .mkt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .mkt { background: var(--card); padding: 26px 22px 28px; }
+  .mkt .idx { display: block; font-family: var(--mono); font-size: 12px; color: var(--ink-3); letter-spacing: .08em; margin-bottom: 14px; }
+  .mkt h3 { font-family: var(--display); font-size: 20px; font-weight: 600; margin: 0 0 6px; letter-spacing: -.01em; }
+  .mkt .who { font-size: 13.5px; color: var(--ink-3); margin: 0 0 16px; line-height: 1.5; }
+  .mkt ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .mkt li { position: relative; padding-left: 15px; font-size: 14.5px; line-height: 1.6; color: var(--ink-2); }
+  .mkt li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 1px; background: var(--accent); }
+  @media (max-width: 1000px) { .mkt-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .mkt-grid { grid-template-columns: 1fr; } }
+
+  /* 그림 */
+  .fig-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .fig { margin: 0; min-width: 700px; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .fig .bx { stroke-width: 1; }
+  .fig .bx.hm { fill: var(--card); stroke: var(--ink); stroke-width: 1.4; }
+  .fig .bx.wv { fill: var(--accent-soft); stroke: var(--accent); }
+  .fig text { font-family: var(--sans); }
+  .fig .rw { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; fill: var(--ink-3); }
+  .fig .tg { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-anchor: middle; }
+  .fig .tg.hmt { fill: var(--ink-3); }
+  .fig .tg.wvt { fill: var(--accent); }
+  .fig .lb { font-size: 14.5px; text-anchor: middle; fill: var(--ink); }
+  .fig-note { margin: 18px 0 0; font-size: 14.5px; line-height: 1.7; color: var(--ink-2); max-width: 62ch; }
+
+  /* 로고 마크 */
+  .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: inherit; }
+  .brand .mark { width: 20px; height: 20px; flex: none; color: var(--accent); }
 </style>
 </head>
-<body>
+<body id="top">
 <header class="topbar">
   <div class="wrap topbar-in">
-    <div class="brand"><b>Weave</b><span>by Slay Solution</span></div>
+    <a class="brand" href="#top" aria-label="Weave by Slay Solution"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"><path d="M24 6 V58"/><path d="M6 24 H58"/><path d="M40 6 V20 M40 28 V58"/><path d="M6 40 H20 M28 40 H58"/></g></svg><b>Weave</b><span>by Slay Solution</span></a>
     <nav class="navlinks">
-      <a href="#fit">맞는 회사</a>
-      <a href="#trades">업종별</a>
+      <a href="#markets">업종</a>
+      <a href="#fit">쓰는 장부</a>
       <a href="#how">일하는 방식</a>
       <a href="#close">월 마감 패키지</a>
       <a href="#pricing">구축·요금</a>
@@ -541,9 +537,9 @@
   <section class="hero">
     <div class="wrap hero-in">
       <div class="hero-copy">
-        <p class="eyebrow">AI 운영 레이어 · 한국계 미국 회사 대상</p>
-        <h1>회계·급여·현장 시스템은 그대로.<br><span>그 사이의 일을 AI가 합니다.</span></h1>
-        <p class="lede">Weave는 이미 쓰고 있는 회계·급여·현장 시스템을 바꾸지 않습니다. 그 사이에서 사람이 손으로 옮겨 적던 일을 AI가 대신하는 운영 레이어입니다. 단, 회계 시스템에 들어가는 모든 쓰기는 사람이 확인한 뒤에만 실행됩니다.</p>
+        <p class="eyebrow">한국계 미국 회사를 위한 업무 자동화</p>
+        <h1>쓰던 시스템은 그대로.<br><span>사이의 손일은 AI가 합니다.</span></h1>
+        <p class="lede">회계 프로그램도, 급여 시스템도 바꾸지 않습니다. 그 사이에서 사람이 옮겨 적고, 찾아 붙이고, 맞춰 보던 일을 Weave가 대신합니다. 장부에 들어가는 것은 사람이 한 번 보고 눌러야 들어갑니다.</p>
         <div class="cta-row">
           <a class="btn btn-solid" href="#contact">상담 문의</a>
           <a class="btn btn-line" href="#close">마감 패키지 보기</a>
@@ -552,13 +548,70 @@
 
       <div class="panel" aria-label="작업함 예시 화면">
         <div class="panel-head"><span>작업함 / Work Queue</span><span class="tag">예시 화면</span></div>
-        <div class="qrow"><div><em>bank feed</em>뱅크피드 미분류 라인 분류 제안</div><span class="pill p-hold">확인 대기</span></div>
-        <div class="qrow"><div><em>auto-match</em>Auto-Match 짝 채점 — 불일치 발견, 전기 보류</div><span class="pill p-stop">전기 차단</span></div>
-        <div class="qrow"><div><em>payroll → job cost</em>급여 시간을 프로젝트 원가로 배분</div><span class="pill p-hold">확인 대기</span></div>
-        <div class="qrow"><div><em>commitment</em>하도급 약정 대비 발주 초과</div><span class="pill p-hold">확인 대기</span></div>
-        <div class="qrow"><div><em>field</em>일일보고·사진 누락 현장</div><span class="pill p-hold">확인 대기</span></div>
-        <div class="qrow"><div><em>monthly close</em>월 마감 패키지 초안 생성</div><span class="pill p-done">실행·기록</span></div>
-        <div class="panel-foot">제안 → 사람이 확인 → 실행 → 기록. 확인 없이 전기되는 항목은 없습니다.</div>
+        <div class="qrow"><div><em>은행</em>분류 안 된 내역 12건 — 분류안을 만들었습니다</div><span class="pill p-hold">확인 대기</span></div>
+        <div class="qrow"><div><em>영수증</em>카드 내역에 붙일 영수증을 찾았습니다</div><span class="pill p-hold">확인 대기</span></div>
+        <div class="qrow"><div><em>거래처</em>같은 청구서가 두 번 들어왔습니다</div><span class="pill p-stop">전기 차단</span></div>
+        <div class="qrow"><div><em>일한 시간</em>이번 주 시간을 일감별로 나눴습니다</div><span class="pill p-hold">확인 대기</span></div>
+        <div class="qrow"><div><em>월 마감</em>이번 달 마감 자료 초안을 만들었습니다</div><span class="pill p-done">실행·기록</span></div>
+        <div class="panel-foot">사람이 눌러야 장부에 들어갑니다. 확인 없이 들어가는 항목은 없습니다.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="markets">
+    <div class="wrap band-in">
+      <div class="band-head">
+        <p class="eyebrow">어떤 회사를 맡습니까</p>
+        <h2>업종에 따라 대신하는 일이 다릅니다</h2>
+        <p class="lede">회사마다 매달 손으로 하는 일이 다릅니다. 네 가지 형태로 나눠 맡고 있습니다.</p>
+      </div>
+
+      <div class="mkt-grid">
+        <div class="mkt">
+          <span class="idx num">01</span>
+          <h3>건설 · 하청</h3>
+          <p class="who">현장마다 돈이 따로 도는 회사</p>
+          <ul>
+            <li>현장별로 얼마 쓰고 얼마 남았는지 언제든 확인</li>
+            <li>일한 시간을 현장 원가로 나눠 넣기</li>
+            <li>하도급·발주 금액을 넘기 전에 알려주기</li>
+          </ul>
+        </div>
+        <div class="mkt">
+          <span class="idx num">02</span>
+          <h3>주문 제작 · 가공</h3>
+          <p class="who">작업지시 단위로 일하는 회사 — 펩숍·간판·금속</p>
+          <ul>
+            <li>작업지시마다 원가를 따로 모으기</li>
+            <li>자재 발주를 작업지시에 걸어 남은 금액 추적</li>
+            <li>작업 시간을 작업지시별로 나눠 넣기</li>
+          </ul>
+        </div>
+        <div class="mkt">
+          <span class="idx num">03</span>
+          <h3>식당</h3>
+          <p class="who">POS와 배달앱 정산이 매일 쌓이는 회사</p>
+          <ul>
+            <li>POS·배달앱 매출과 통장 입금을 매일 맞추기</li>
+            <li>팁과 출퇴근 기록을 급여로 넘기기</li>
+            <li>인건비 비율을 월말 말고 아침마다 보기</li>
+          </ul>
+        </div>
+        <div class="mkt">
+          <span class="idx num">04</span>
+          <h3>소매 · 도매</h3>
+          <p class="who">파는 곳이 여러 군데인 회사</p>
+          <ul>
+            <li>Shopify·Amazon 같은 채널 매출을 장부로</li>
+            <li>재고가 떨어질 때를 미리 알려주기</li>
+            <li>받을 돈과 발주를 한자리에서 보기</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exclude">
+        <span class="lab">대상 아님</span>
+        <p><b>재고를 쌓아놓고 대량으로 찍어내는 제조는 맞지 않습니다.</b> 그 영역은 ERP가 필요합니다. 맞지 않는 일을 맞다고 하지 않는 편이 서로 낫습니다.</p>
       </div>
     </div>
   </section>
@@ -575,6 +628,26 @@
         <dt>화면</dt>
         <dd>한글·영어 이중언어 UI. 사장님용 아침 브리핑, 현장별 보기 등 한국식 보고 습관을 그대로 반영합니다.</dd>
       </dl>
+    </div>
+  </section>
+
+
+  <section class="band" id="change">
+    <div class="wrap band-in">
+      <div class="band-head">
+        <p class="eyebrow">무엇이 달라지나</p>
+        <h2>사람이 손대는 자리가 하나로 줄어듭니다</h2>
+        <p class="lede">일이 사라지는 것이 아니라, 사람이 해야만 하는 자리만 남습니다. 판단이 필요한 그 한 자리입니다.</p>
+      </div>
+      <div class="fig-scroll">
+        <figure class="fig"><svg viewBox="0 0 848 236" role="img" aria-label="지금은 사람이 다섯 단계를 모두 손으로 하고, Weave에서는 사람이 확인 한 단계만 합니다">
+  <text x="0" y="24" class="rw">지금</text>
+  <rect x="0" y="44" width="160" height="58" rx="3" class="bx hm"/><text x="80.0" y="64" class="tg hmt">사람</text><text x="80.0" y="86" class="lb">내역 내려받기</text><rect x="172" y="44" width="160" height="58" rx="3" class="bx hm"/><text x="252.0" y="64" class="tg hmt">사람</text><text x="252.0" y="86" class="lb">엑셀로 분류</text><rect x="344" y="44" width="160" height="58" rx="3" class="bx hm"/><text x="424.0" y="64" class="tg hmt">사람</text><text x="424.0" y="86" class="lb">장부에 입력</text><rect x="516" y="44" width="160" height="58" rx="3" class="bx hm"/><text x="596.0" y="64" class="tg hmt">사람</text><text x="596.0" y="86" class="lb">영수증 찾기</text><rect x="688" y="44" width="160" height="58" rx="3" class="bx hm"/><text x="768.0" y="64" class="tg hmt">사람</text><text x="768.0" y="86" class="lb">맞는지 대조</text>
+  <text x="0" y="146" class="rw">Weave가 하면</text>
+  <rect x="0" y="166" width="352" height="58" rx="3" class="bx wv"/><text x="176.0" y="186" class="tg wvt">Weave</text><text x="176.0" y="208" class="lb">정리하고 처리안을 만듦</text><rect x="364" y="166" width="180" height="58" rx="3" class="bx hm"/><text x="454.0" y="186" class="tg hmt">사람</text><text x="454.0" y="208" class="lb">보고 확인</text><rect x="556" y="166" width="292" height="58" rx="3" class="bx wv"/><text x="702.0" y="186" class="tg wvt">Weave</text><text x="702.0" y="208" class="lb">장부 기록까지 자동</text>
+</svg></figure>
+      </div>
+      <p class="fig-note">확인 단계는 없애지 않습니다. 장부에 들어가는 일이라 사람이 봐야 합니다. 나머지를 없앱니다.</p>
     </div>
   </section>
 
@@ -608,8 +681,9 @@
   <section class="band" id="trades">
     <div class="wrap band-in">
       <div class="band-head">
-        <p class="eyebrow">by trade / 업종 축 · 우선순위 순</p>
+        <p class="eyebrow">업종별 · 자세히</p>
         <h2>매달 손으로 하던 일이 어떻게 바뀌는가</h2>
+        <p class="lede">위의 네 가지를 실제 업무 단위로 풀면 이렇습니다.</p>
       </div>
 
       <div class="trade">
@@ -688,10 +762,6 @@
         <div class="chips"><span class="lab">함께 들어가는 것</span><span class="chip">거래처 포털</span><span class="chip">월 마감 패키지</span></div>
       </div>
 
-      <div class="exclude">
-        <span class="lab">대상 아님</span>
-        <p><b>재고 기반 양산 제조는 Weave의 대상이 아닙니다.</b> 이 영역은 ERP가 필요합니다. 맞지 않는 일을 맞다고 하지 않는 편이 서로 낫습니다.</p>
-      </div>
     </div>
   </section>
 
@@ -872,6 +942,10 @@
         <div class="qa">
           <b>AI가 장부를 마음대로 쓰나요?</b>
           <p>아니요. 모든 쓰기는 제안 → 사람이 확인 → 실행 → 기록 순서를 거칩니다. 확인 없이 전기되는 항목은 없고, Acumatica Auto-Match 결과도 AI가 채점해 틀린 짝이 있으면 전기를 차단합니다.</p>
+        </div>
+        <div class="qa">
+          <b>Zapier 같은 건가요?</b>
+          <p>다릅니다. Zapier는 조건이 맞으면 옮기는 도구입니다. 여기서 어려운 건 옮기는 일이 아니라 <b>어디로 옮길지 정하는 일</b>입니다. 이 영수증이 어느 현장 어느 항목인지는 규칙만으로 정해지지 않습니다. 그리고 그렇게 정한 것을 확인 없이 장부에 넣으면 안 됩니다. Weave는 회사의 처리 방식을 배워 판단하고, 사람이 눌러야 들어가게 만들어 둔 다음, 매달 계속 돌아가도록 관리해 드리는 서비스입니다.</p>
         </div>
         <div class="qa">
           <b>QuickBooks Desktop은 되나요?</b>
