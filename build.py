@@ -122,7 +122,7 @@ try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElemen
   el.addEventListener('animationend', (e) => {
     if (e.target === el && e.animationName === 'introOut') kill();
   });
-  setTimeout(kill, 3400);
+  setTimeout(kill, 3850);
 })();
 </script>
 </body>''', 1)
