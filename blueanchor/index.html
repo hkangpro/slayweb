@@ -191,6 +191,8 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
   background:linear-gradient(90deg,rgba(12,33,56,.94) 0%,rgba(12,33,56,.86) 46%,rgba(12,33,56,.55) 100%)}
 .band .grid-bg{z-index:2;opacity:.5}
 .band .in{position:relative;z-index:3}
+.dcs.svc{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:700px){ .dcs.svc{grid-template-columns:1fr} }
 .dsub{margin:38px 0 14px;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;
   border-top:1px solid var(--rule);padding-top:18px}
 .dsub .lab{color:var(--ink-2)}
@@ -307,7 +309,7 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
       <img src="photo-overhead.webp" srcset="photo-overhead-800.webp 800w, photo-overhead.webp 1600w" sizes="(max-width:980px) 100vw, 1160px" alt="Cable tray and conduit runs under the deck in a plant hall before the ceiling closes" loading="lazy" decoding="async">
       <figcaption><span class="l-en">The ceiling closes once. Everything above it is inspected before it does.</span><span class="l-ko">천장은 한 번 닫힙니다. 그 위의 모든 것은 닫히기 전에 봅니다.</span></figcaption>
     </figure>
-    <div class="dcs"><div class="dc reveal"><span class="dn">01</span>
+    <div class="dcs svc"><div class="dc reveal"><span class="dn">01</span>
       <h3><span class="l-en">CONSTRUCTION CONSULTING</span><span class="l-ko">건설 컨설팅</span></h3>
       <p><span class="l-en">Constructability, specification and submittal review, and a schedule and cost reality check before the work is bought.</span><span class="l-ko">Constructability 검토, 스펙과 Submittal 리뷰, 발주 전 Schedule과 Cost 점검.</span></p></div><div class="dc reveal"><span class="dn">02</span>
       <h3><span class="l-en">CONSTRUCTION MANAGEMENT</span><span class="l-ko">시공 관리 (CM)</span></h3>
