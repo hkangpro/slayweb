@@ -390,6 +390,16 @@ html[data-lang="ko"] .qa h3{font-size:16px}
   .badge svg{display:block;width:150px;height:auto;color:var(--paper)}
   @media(max-width:1080px){ .badge{margin-left:0} .badge svg{width:112px} }
   @media(max-width:520px){ .badge svg{width:96px} }
+  /* 움직임을 줄여 달라고 설정한 사람에게는 멈춘다 */
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+      transition-duration:.001ms!important;scroll-behavior:auto!important}
+    #intro{display:none!important}
+  }
+  /* 키보드로 이동할 때 어디 있는지 보이게 */
+  :focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:2px}
+  .rail :focus-visible{outline-color:#6fd9b4}
+
 </style>
 <script>
 try { if (sessionStorage.getItem('relai-intro') === '1') document.documentElement.setAttribute('data-intro','skip');
