@@ -251,6 +251,9 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
 .band{position:relative}
 .bph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%;
   z-index:0;filter:saturate(.22) contrast(1.06)}
+.bvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;
+  z-index:0;filter:saturate(.18) contrast(1.08);opacity:0;transition:opacity 1.2s var(--e-out)}
+.bvid.on{opacity:1}
 .band::after{content:"";position:absolute;inset:0;z-index:1;
   background:linear-gradient(90deg,rgba(12,33,56,.94) 0%,rgba(12,33,56,.86) 46%,rgba(12,33,56,.55) 100%)}
 .band .grid-bg{z-index:2;opacity:.5}
@@ -456,6 +459,7 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
   </div>
 </section>
 <div class="band">
+  <video class="bvid" muted loop playsinline preload="none" aria-hidden="true"></video>
   <img class="bph" src="photo-structure.webp" srcset="photo-structure-800.webp 800w, photo-structure.webp 1600w" sizes="100vw" alt="Conduit banks, basket tray and fiber raceway above a plant floor" loading="lazy" decoding="async">
   <div class="grid-bg"></div>
   <div class="in">
@@ -711,6 +715,19 @@ try { if (sessionStorage.getItem('ba-intro') === '1') document.documentElement.s
     };
     addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(draw); } }, { passive: true });
     draw();
+  }
+
+  /* ── 스테이트먼트 밴드 영상: 화면에 들어올 때만 받고 재생 ── */
+  const bv = document.querySelector('.bvid');
+  if (bv && !RM) {
+    new IntersectionObserver((es) => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          if (!bv.src) { bv.src = 'band-rebar.mp4'; bv.addEventListener('loadeddata', () => bv.classList.add('on'), { once: true }); }
+          bv.play().catch(() => {});
+        } else { bv.pause(); }
+      });
+    }, { threshold: .2 }).observe(bv.parentElement);
   }
 
   /* ── 캐러셀: Swiper 실측값 — speed 1300ms, autoplay 3000ms ── */
