@@ -191,6 +191,18 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
   background:linear-gradient(90deg,rgba(12,33,56,.94) 0%,rgba(12,33,56,.86) 46%,rgba(12,33,56,.55) 100%)}
 .band .grid-bg{z-index:2;opacity:.5}
 .band .in{position:relative;z-index:3}
+.dsub{margin:38px 0 14px;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;
+  border-top:1px solid var(--rule);padding-top:18px}
+.dsub .lab{color:var(--ink-2)}
+.dsub p{margin:0;font-size:13px;line-height:1.6;color:var(--ink-2);flex:1;min-width:220px}
+.disc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);
+  border:1px solid var(--rule)}
+.di{background:#fff;padding:16px 18px 18px}
+.di b{display:block;font-family:var(--ar);font-size:12px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;margin:0 0 5px}
+.di span{display:block;font-size:12.5px;line-height:1.65;color:var(--ink-2)}
+@media(max-width:860px){ .disc{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media(max-width:520px){ .disc{grid-template-columns:1fr} }
 .lead{margin:0 0 34px;position:relative}
 .lead img{display:block;width:100%;height:clamp(240px,34vw,420px);object-fit:cover;object-position:center 46%;
   border:1px solid rgba(11,22,32,.16);filter:saturate(.62)}
@@ -235,7 +247,7 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
   <div class="brand"><span class="wmk"><b>PROCON</b><i>BLUEANCHOR</i></span></div>
   <div class="nav">
     <a href="#why"><span class="l-en">Why</span><span class="l-ko">왜</span></a>
-    <a href="#scope"><span class="l-en">Scope</span><span class="l-ko">분야</span></a>
+    <a href="#scope"><span class="l-en">Services</span><span class="l-ko">서비스</span></a>
     <a href="#how"><span class="l-en">How</span><span class="l-ko">진행</span></a>
     <a href="#creds"><span class="l-en">Credentials</span><span class="l-ko">자격</span></a>
     <a href="#mobilize"><span class="l-en">Mobilizing</span><span class="l-ko">투입</span></a>
@@ -259,11 +271,11 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
         <rect width="1200" height="210" fill="#0c2138" mask="url(#komask)"/>
       </svg>
     </div>
-    <div class="eb"><span class="ln"></span><span class="lab">QA / QC Inspection Personnel</span></div>
-    <h1><span class="l-en">Inspectors who read the Korean drawing<br>and write the <em>English report.</em></span><span class="l-ko">한국어 도면을 읽고<br><em>영문 보고서</em>를 쓰는 검사원.</span></h1>
-    <p class="hsub"><span class="l-en">On a Korean-owned plant in Georgia the specification arrives in Korean, the project manager speaks Korean, and the authority having jurisdiction reads English. Most inspection firms can do one side of that. We staff people who do both, and we put them on your site.</span><span class="l-ko">조지아의 한국계 공장 현장은 스펙이 한국어로 오고, PM이 한국어로 말하고, 검사기관은 영문을 읽습니다. 대부분의 검사 회사는 한쪽만 됩니다. 저희는 양쪽이 되는 사람을 현장에 넣습니다.</span></p>
+    <div class="eb"><span class="ln"></span><span class="lab">Construction Consulting · CM · PM · QA/QC</span></div>
+    <h1><span class="l-en">We read the Korean drawing<br>and write the <em>English report.</em></span><span class="l-ko">한국어 도면을 읽고<br><em>영문 보고서</em>를 씁니다.</span></h1>
+    <p class="hsub"><span class="l-en">On a Korean-owned plant in Georgia the specification arrives in Korean, the project manager speaks Korean, and the authority having jurisdiction reads English. Most inspection firms can do one side of that. We staff people who do both, and we put them on your site.</span><span class="l-ko">조지아의 한국계 공장 현장은 스펙이 한국어로 오고, PM이 한국어로 말하고, AHJ는 영문을 읽습니다. 대부분의 검사 업체는 한쪽만 됩니다. 저희는 양쪽이 되는 사람을 현장에 넣습니다.</span></p>
     <div class="facts">
-      <div class="fa"><b>KO / EN</b><span><span class="l-en">Every inspector</span><span class="l-ko">검사원 전원</span></span></div>
+      <div class="fa"><b>KO / EN</b><span><span class="l-en">Every person we place</span><span class="l-ko">투입 인력 전원</span></span></div>
       <div class="fa"><b>GA</b><span><span class="l-en">Registered and insured</span><span class="l-ko">주 등록 · 보험</span></span></div>
       <div class="fa"><b>PROCON</b><span><span class="l-en">Group company</span><span class="l-ko">그룹사</span></span></div>
     </div>
@@ -287,27 +299,35 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
   <div class="grid-bg"></div>
   <div class="in">
     <div class="reveal">
-      <div class="eb"><span class="num">01</span><span class="ln"></span><span class="lab"><span class="l-en">Scope</span><span class="l-ko">분야</span></span></div>
-      <h2><span class="l-en">What we put on site.</span><span class="l-ko">어떤 사람을 넣습니까.</span></h2>
-      <p class="lede"><span class="l-en">Inspection and quality personnel by discipline, embedded in your team and reporting on your format.</span><span class="l-ko">분야별 검사·품질 인력을 팀에 넣고, 쓰시는 양식으로 보고합니다.</span></p>
+      <div class="eb"><span class="num">01</span><span class="ln"></span><span class="lab"><span class="l-en">Services</span><span class="l-ko">서비스</span></span></div>
+      <h2><span class="l-en">Four ways we come onto a job.</span><span class="l-ko">현장에 들어가는 네 가지 방식.</span></h2>
+      <p class="lede"><span class="l-en">Bilingual construction professionals &mdash; consulting, construction management, project management and QA/QC &mdash; embedded in your team and reporting on your format.</span><span class="l-ko">이중언어 건설 인력 &mdash; Consulting, CM, PM, QA/QC &mdash; 를 팀에 넣고, 쓰시는 양식으로 보고합니다.</span></p>
     </div>
     <figure class="lead reveal">
       <img src="photo-overhead.webp" srcset="photo-overhead-800.webp 800w, photo-overhead.webp 1600w" sizes="(max-width:980px) 100vw, 1160px" alt="Cable tray and conduit runs under the deck in a plant hall before the ceiling closes" loading="lazy" decoding="async">
       <figcaption><span class="l-en">The ceiling closes once. Everything above it is inspected before it does.</span><span class="l-ko">천장은 한 번 닫힙니다. 그 위의 모든 것은 닫히기 전에 봅니다.</span></figcaption>
     </figure>
     <div class="dcs"><div class="dc reveal"><span class="dn">01</span>
-      <h3><span class="l-en">WELDING</span><span class="l-ko">용접</span></h3>
-      <p><span class="l-en">AWS D1.1 · D1.6 structural and stainless, visual and dimensional</span><span class="l-ko">AWS D1.1·D1.6 구조·스테인리스, 외관·치수</span></p></div><div class="dc reveal"><span class="dn">02</span>
-      <h3><span class="l-en">CONCRETE</span><span class="l-ko">콘크리트</span></h3>
-      <p><span class="l-en">Placement, sampling, cylinders, and field cure records</span><span class="l-ko">타설 입회, 시료 채취, 공시체, 현장 양생 기록</span></p></div><div class="dc reveal"><span class="dn">03</span>
-      <h3><span class="l-en">COATINGS</span><span class="l-ko">도장</span></h3>
-      <p><span class="l-en">Surface prep, DFT, holiday and adhesion testing</span><span class="l-ko">소지 처리, 건조도막두께, 핀홀·부착력 시험</span></p></div><div class="dc reveal"><span class="dn">04</span>
-      <h3><span class="l-en">MECHANICAL</span><span class="l-ko">기계 · 배관</span></h3>
-      <p><span class="l-en">Piping, supports, pressure test witness and punch</span><span class="l-ko">배관, 지지대, 압력시험 입회, 펀치</span></p></div><div class="dc reveal"><span class="dn">05</span>
-      <h3><span class="l-en">ELECTRICAL</span><span class="l-ko">전기</span></h3>
-      <p><span class="l-en">Raceway, terminations, megger and continuity witness</span><span class="l-ko">레이스웨이, 결선, 절연저항·도통 입회</span></p></div><div class="dc reveal"><span class="dn">06</span>
-      <h3><span class="l-en">CLEANROOM</span><span class="l-ko">클린룸</span></h3>
-      <p><span class="l-en">Panel and ceiling grid, penetrations, pre-certification walk</span><span class="l-ko">패널·천장 그리드, 관통부, 인증 전 점검</span></p></div></div>
+      <h3><span class="l-en">CONSTRUCTION CONSULTING</span><span class="l-ko">건설 컨설팅</span></h3>
+      <p><span class="l-en">Constructability, specification and submittal review, and a schedule and cost reality check before the work is bought.</span><span class="l-ko">Constructability 검토, 스펙과 Submittal 리뷰, 발주 전 Schedule과 Cost 점검.</span></p></div><div class="dc reveal"><span class="dn">02</span>
+      <h3><span class="l-en">CONSTRUCTION MANAGEMENT</span><span class="l-ko">시공 관리 (CM)</span></h3>
+      <p><span class="l-en">Owner-side field supervision. Subcontractor coordination, daily reports, RFI and change tracking through turnover.</span><span class="l-ko">발주처 측 현장 관리. 협력사 Coordination, Daily Report, RFI와 Change Order 추적, Turnover까지.</span></p></div><div class="dc reveal"><span class="dn">03</span>
+      <h3><span class="l-en">PROJECT MANAGEMENT</span><span class="l-ko">프로젝트 관리 (PM)</span></h3>
+      <p><span class="l-en">Scope, schedule, budget and the paper that proves them &mdash; one person accountable from kickoff to closeout.</span><span class="l-ko">Scope, Schedule, Budget과 그것을 증명하는 서류. Kickoff부터 Closeout까지 한 사람이 책임집니다.</span></p></div><div class="dc reveal"><span class="dn">04</span>
+      <h3><span class="l-en">QA / QC SUPPORT</span><span class="l-ko">QA / QC 지원</span></h3>
+      <p><span class="l-en">Certified inspectors embedded in your team, reporting on your format. Disciplines below.</span><span class="l-ko">자격증을 갖춘 Inspector를 팀에 넣고, 쓰시는 양식으로 보고합니다. 분야는 아래.</span></p></div></div>
+    <div class="dsub reveal">
+      <span class="lab"><span class="l-en">QA / QC disciplines</span><span class="l-ko">QA / QC 분야</span></span>
+      <p><span class="l-en">Inspectors are certified to the code the inspection is written against, and the certificate goes in with the submittal.</span><span class="l-ko">Inspector는 검사의 근거가 되는 Code 기준으로 자격을 갖추고, 그 Certification은 Submittal에 함께 들어갑니다.</span></p>
+    </div>
+    <div class="disc reveal">
+      <div class="di"><b>Welding</b><span><span class="l-en">AWS D1.1 &middot; D1.6 structural and stainless, visual and dimensional</span><span class="l-ko">AWS D1.1 · D1.6 구조 · 스테인리스, 외관 · 치수</span></span></div>
+      <div class="di"><b>Concrete</b><span><span class="l-en">Placement, sampling, cylinders, and field cure records</span><span class="l-ko">Placement 입회, Sampling, Cylinder, Field Cure 기록</span></span></div>
+      <div class="di"><b>Coatings</b><span><span class="l-en">Surface prep, DFT, holiday and adhesion testing</span><span class="l-ko">Surface Prep, DFT, Holiday와 Adhesion 시험</span></span></div>
+      <div class="di"><b>Mechanical</b><span><span class="l-en">Piping, supports, pressure test witness and punch</span><span class="l-ko">배관, 지지대, Pressure Test 입회, Punch</span></span></div>
+      <div class="di"><b>Electrical</b><span><span class="l-en">Raceway, terminations, megger and continuity witness</span><span class="l-ko">Raceway, Termination, Megger와 Continuity 입회</span></span></div>
+      <div class="di"><b>Cleanroom</b><span><span class="l-en">Panel and ceiling grid, penetrations, pre-certification walk</span><span class="l-ko">패널과 천장 Grid, Penetration, Pre-Certification Walk</span></span></div>
+    </div></div>
   </div>
 </section>
 
@@ -317,7 +337,7 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
     <div class="reveal">
       <div class="eb"><span class="num">02</span><span class="ln"></span><span class="lab"><span class="l-en">Why it matters</span><span class="l-ko">왜 이중언어인가</span></span></div>
       <h2><span class="l-en">The specification is in Korean. The record is not.</span><span class="l-ko">스펙은 한국어로 오고, 기록은 영문으로 남습니다.</span></h2>
-      <p class="lede"><span class="l-en">On a Korean-owned plant the drawings, the specification and the project manager are Korean. The general contractor, the authority having jurisdiction and the permanent record are English. Most firms staff one side of that line. What sits on the other side is an interpreter between an inspector and a foreman — and a week of rework when a note is read the wrong way.</span><span class="l-ko">한국계 공장은 도면도 스펙도 PM도 한국어입니다. GC와 검사기관과 남는 기록은 영문입니다. 대부분의 회사는 이 선의 한쪽만 댑니다. 반대쪽에 앉는 건 검사원과 반장 사이의 통역이고, 메모 한 줄을 잘못 읽으면 일주일이 다시 갑니다.</span></p>
+      <p class="lede"><span class="l-en">On a Korean-owned plant the drawings, the specification and the project manager are Korean. The general contractor, the authority having jurisdiction and the permanent record are English. Most firms staff one side of that line. What sits on the other side is an interpreter between an inspector and a foreman — and a week of rework when a note is read the wrong way.</span><span class="l-ko">한국계 공장은 도면도 스펙도 PM도 한국어입니다. GC와 AHJ, 그리고 남는 기록은 영문입니다. 대부분의 회사는 이 선의 한쪽만 댑니다. 반대쪽에 앉는 건 Inspector와 Foreman 사이의 통역이고, 메모 한 줄을 잘못 읽으면 일주일이 다시 갑니다.</span></p>
     </div>
     <div class="dcs">
       <div class="dc reveal"><span class="dn">01</span>
@@ -325,10 +345,10 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
         <p><span class="l-en">Korean drawings and specifications without an interpreter in the middle. Nothing is lost on the way in.</span><span class="l-ko">통역을 거치지 않고 한국어 도면과 스펙을 봅니다. 들어오는 길에 잃는 게 없습니다.</span></p></div>
       <div class="dc reveal"><span class="dn">02</span>
         <h3><span class="l-en">Talks on site</span><span class="l-ko">현장에서 바로 말합니다</span></h3>
-        <p><span class="l-en">To the Korean project manager and to the American foreman, in the same walk, without waiting for anyone.</span><span class="l-ko">한국인 PM에게도 미국인 반장에게도, 한 번 도는 동안 누구도 기다리지 않고.</span></p></div>
+        <p><span class="l-en">To the Korean project manager and to the American foreman, in the same walk, without waiting for anyone.</span><span class="l-ko">한국인 PM에게도 미국인 Foreman에게도, 한 번 도는 동안 누구도 기다리지 않고.</span></p></div>
       <div class="dc reveal"><span class="dn">03</span>
         <h3><span class="l-en">Writes in English</span><span class="l-ko">기록은 영문으로</span></h3>
-        <p><span class="l-en">Reports the general contractor and the authority can file as they are. No second pass, no translation note.</span><span class="l-ko">GC와 검사기관이 그대로 철할 수 있는 보고서. 다시 쓰는 일도, 번역 주석도 없습니다.</span></p></div>
+        <p><span class="l-en">Reports the general contractor and the authority can file as they are. No second pass, no translation note.</span><span class="l-ko">GC와 AHJ가 그대로 철할 수 있는 보고서. 다시 쓰는 일도, 번역 주석도 없습니다.</span></p></div>
     </div>
   </div>
 </section>
@@ -336,7 +356,7 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
   <img class="bph" src="photo-structure.webp" srcset="photo-structure-800.webp 800w, photo-structure.webp 1600w" sizes="100vw" alt="Conduit banks, basket tray and fiber raceway above a plant floor" loading="lazy" decoding="async">
   <div class="grid-bg"></div>
   <div class="in">
-    <p class="bq"><span class="l-en">An inspector who needs an interpreter is two people on the wall, and only one of them read the drawing.</span><span class="l-ko">통역이 필요한 검사원은 벽 앞에 선 두 사람이고, 도면을 읽은 건 그중 한 명뿐입니다.</span></p>
+    <p class="bq"><span class="l-en">An inspector who needs an interpreter is two people on the wall, and only one of them read the drawing.</span><span class="l-ko">통역이 필요한 Inspector는 벽 앞에 선 두 사람이고, 도면을 읽은 건 그중 한 명뿐입니다.</span></p>
   </div>
 </div>
 <section id="how">
@@ -350,12 +370,12 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
     <div class="mob">
       <div class="mb reveal"><span class="lab">01</span><b><span class="l-en">Call</span><span class="l-ko">연락</span></b>
         <p><span class="l-en">Site, discipline, start date, and how many. Thirty minutes is enough.</span><span class="l-ko">현장, 분야, 시작일, 인원. 30분이면 충분합니다.</span></p></div>
-      <div class="mb reveal"><span class="lab">02</span><b><span class="l-en">Submittal</span><span class="l-ko">서류 제출</span></b>
-        <p><span class="l-en">Named inspectors with current certificates and expiry dates, plus the insurance certificate — in the format your approval process already uses.</span><span class="l-ko">이름이 적힌 검사원과 유효한 증명서, 만료일, 보험증서. GC 승인 절차에 쓰는 양식 그대로.</span></p></div>
+      <div class="mb reveal"><span class="lab">02</span><b><span class="l-en">Submittal</span><span class="l-ko">Submittal</span></b>
+        <p><span class="l-en">Named inspectors with current certificates and expiry dates, plus the insurance certificate — in the format your approval process already uses.</span><span class="l-ko">이름이 적힌 Inspector, 유효한 Certification과 만료일, COI. GC 승인 절차에 쓰는 양식 그대로.</span></p></div>
       <div class="mb reveal"><span class="lab">03</span><b><span class="l-en">Mobilize</span><span class="l-ko">투입</span></b>
-        <p><span class="l-en">Site orientation and safety training completed before day one, not during it.</span><span class="l-ko">현장 오리엔테이션과 안전 교육을 첫날 전에 끝냅니다. 첫날에 하는 게 아니라.</span></p></div>
+        <p><span class="l-en">Site orientation and safety training completed before day one, not during it.</span><span class="l-ko">Site Orientation과 Safety Training을 첫날 전에 끝냅니다. 첫날에 하는 게 아니라.</span></p></div>
       <div class="mb reveal"><span class="lab">04</span><b><span class="l-en">Report</span><span class="l-ko">보고</span></b>
-        <p><span class="l-en">Daily, on your format. Weekly summary and an open punch list that does not go stale.</span><span class="l-ko">쓰시는 양식으로 매일. 주간 요약과, 묵히지 않는 미결 펀치 목록.</span></p></div>
+        <p><span class="l-en">Daily, on your format. Weekly summary and an open punch list that does not go stale.</span><span class="l-ko">쓰시는 양식으로 매일. Weekly Summary와, 묵히지 않는 미결 Punch List.</span></p></div>
     </div>
   </div>
 </section>
@@ -364,24 +384,24 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
   <div class="in">
     <div class="reveal">
       <div class="eb"><span class="num">04</span><span class="ln"></span><span class="lab"><span class="l-en">What you get</span><span class="l-ko">받으시는 것</span></span></div>
-      <h2><span class="l-en">A report your authority can file as it is.</span><span class="l-ko">검사기관이 그대로 철할 수 있는 보고서.</span></h2>
+      <h2><span class="l-en">A report your authority can file as it is.</span><span class="l-ko">AHJ가 그대로 철할 수 있는 보고서.</span></h2>
       <p class="lede"><span class="l-en">Written on site, in your format, the same day. A held item names the clause it failed and what has to happen before it clears — not "see attached".</span><span class="l-ko">현장에서, 쓰시는 양식으로, 그날 안에 씁니다. 보류 항목에는 어느 조항에 걸렸고 무엇이 되어야 풀리는지 적습니다. "첨부 참조"가 아니라.</span></p>
     </div>
     <div class="doc reveal">
       <div class="dhead">
         <div><span class="dl"><span class="l-en">Project</span><span class="l-ko">현장</span></span><span class="dv">[ PROJECT ]</span></div>
         <div><span class="dl"><span class="l-en">Discipline</span><span class="l-ko">분야</span></span><span class="dv">Structural welding · AWS D1.1</span></div>
-        <div><span class="dl"><span class="l-en">Inspector</span><span class="l-ko">검사원</span></span><span class="dv">[ NAME ] · CWI [ NO. ]</span></div>
+        <div><span class="dl"><span class="l-en">Inspector</span><span class="l-ko">Inspector</span></span><span class="dv">[ NAME ] · CWI [ NO. ]</span></div>
         <div><span class="dl"><span class="l-en">Date</span><span class="l-ko">일자</span></span><span class="dv">[ DATE ]</span></div>
       </div>
       <div class="dbody">
-        <div class="rr hd"><span class="k"><span class="l-en">Grid / Mark</span><span class="l-ko">그리드 / 부재</span></span><span class="t"><span class="l-en">Observation</span><span class="l-ko">관찰</span></span><span class="v"><span class="l-en">Result</span><span class="l-ko">판정</span></span></div>
+        <div class="rr hd"><span class="k"><span class="l-en">Grid / Mark</span><span class="l-ko">Grid / Member</span></span><span class="t"><span class="l-en">Observation</span><span class="l-ko">Observation</span></span><span class="v"><span class="l-en">Result</span><span class="l-ko">Disposition</span></span></div>
         <div class="rr p"><span class="k">A-3 / 12</span><span class="t">Fillet weld · column base</span><span class="v">PASS</span></div><div class="rr p"><span class="k">A-3 / 14</span><span class="t">Fillet weld · column base</span><span class="v">PASS</span></div><div class="rr h"><span class="k">B-1 / 07</span><span class="t">Undercut 0.9 mm &gt; spec</span><span class="v">HOLD</span></div><div class="rr p"><span class="k">B-1 / 09</span><span class="t">Fillet weld · brace</span><span class="v">PASS</span></div><div class="rr p"><span class="k">B-2 / 02</span><span class="t">Arc strike, ground and retested</span><span class="v">PASS</span></div>
       </div>
       <div class="dfoot">
         <p><span class="l-en"><b>B-1 / 07 held.</b> Undercut exceeds AWS D1.1 Table 6.1. Grind and re-test before the next lift. Re-inspection requested for [ DATE ].</span><span class="l-ko"><b>B-1 / 07 보류.</b> 언더컷이 AWS D1.1 표 6.1 허용치를 넘습니다. 다음 양중 전에 그라인딩 후 재시험. [ 일자 ] 재검사 요청.</span></p>
         <div class="dsign">
-          <span class="dl"><span class="l-en">Signed</span><span class="l-ko">서명</span></span>
+          <span class="dl"><span class="l-en">Signed</span><span class="l-ko">Signature</span></span>
           <span class="dstamp">PROCON BLUEANCHOR &nbsp;·&nbsp; QA / QC</span>
         </div>
       </div>
@@ -394,12 +414,12 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
   <div class="in">
     <div class="reveal">
       <div class="eb"><span class="num">05</span><span class="ln"></span><span class="lab"><span class="l-en">Credentials</span><span class="l-ko">자격</span></span></div>
-      <h2><span class="l-en">Certifications on the bench.</span><span class="l-ko">보유 자격증.</span></h2>
-      <p class="lede"><span class="l-en">Current certificates and expiry dates are provided with every submittal, before mobilization.</span><span class="l-ko">투입 전 제출 서류에 유효한 증명서와 만료일을 함께 냅니다.</span></p>
+      <h2><span class="l-en">Certifications on the bench.</span><span class="l-ko">보유 Certification.</span></h2>
+      <p class="lede"><span class="l-en">Current certificates and expiry dates are provided with every submittal, before mobilization.</span><span class="l-ko">투입 전 Submittal에 유효한 Certification과 만료일을 함께 냅니다.</span></p>
     </div>
     <div class="crs reveal"><div class="cr"><span class="cn">AWS CWI</span><span class="cq">[ 보유 인원 확인 필요 ]</span></div><div class="cr"><span class="cn">ACI Field Technician</span><span class="cq">[ 보유 인원 확인 필요 ]</span></div><div class="cr"><span class="cn">AMPP (NACE) Coating Inspector</span><span class="cq">[ 보유 인원 확인 필요 ]</span></div><div class="cr"><span class="cn">ASNT NDT Level II</span><span class="cq">[ 보유 인원 확인 필요 ]</span></div><div class="cr"><span class="cn">ICC Special Inspector</span><span class="cq">[ 보유 인원 확인 필요 ]</span></div><div class="cr"><span class="cn">OSHA 30</span><span class="cq">[ 보유 인원 확인 필요 ]</span></div></div>
     <div class="note reveal"><b><span class="l-en">Before this page goes public:</span><span class="l-ko">공개 전에:</span></b>
-      <span class="l-en"> replace every bracket with the number actually held. A certification listed and not held is found on the first call, and it is the one thing a general contractor will not forgive.</span><span class="l-ko"> 대괄호를 실제 보유 인원으로 바꿔야 합니다. 없는 자격증을 적으면 첫 통화에서 들통나고, GC가 유일하게 용서하지 않는 것이 그것입니다.</span></div>
+      <span class="l-en"> replace every bracket with the number actually held. A certification listed and not held is found on the first call, and it is the one thing a general contractor will not forgive.</span><span class="l-ko"> 대괄호를 실제 보유 인원으로 바꿔야 합니다. 없는 Certification을 적으면 첫 통화에서 들통나고, GC가 유일하게 용서하지 않는 것이 그것입니다.</span></div>
   </div>
 </section>
 
@@ -409,15 +429,15 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
     <div class="reveal">
       <div class="eb"><span class="num">06</span><span class="ln"></span><span class="lab"><span class="l-en">Mobilizing</span><span class="l-ko">투입</span></span></div>
       <h2><span class="l-en">The question you are actually asking.</span><span class="l-ko">실제로 궁금한 것.</span></h2>
-      <p class="lede"><span class="l-en">Nobody shortlists an inspection firm on a brochure. They ask whether somebody can be on site Monday, and what arrives with them.</span><span class="l-ko">회사 소개서 보고 정하는 사람은 없습니다. 월요일에 사람이 올 수 있는지, 올 때 뭘 들고 오는지를 묻습니다.</span></p>
+      <p class="lede"><span class="l-en">Nobody shortlists an inspection firm on a brochure. They ask whether somebody can be on site Monday, and what arrives with them.</span><span class="l-ko">브로슈어 보고 정하는 사람은 없습니다. 월요일에 사람이 올 수 있는지, 올 때 뭘 들고 오는지를 묻습니다.</span></p>
     </div>
     <div class="mob">
       <div class="mb reveal"><span class="lab">01</span><b>[ 00 hrs ]</b>
-        <p><span class="l-en">From your call to a named inspector with certificates attached.</span><span class="l-ko">연락부터 증명서 붙은 검사원 배정까지.</span></p></div>
+        <p><span class="l-en">From your call to a named inspector with certificates attached.</span><span class="l-ko">연락부터 Certification 붙은 Inspector 배정까지.</span></p></div>
       <div class="mb reveal"><span class="lab">02</span><b>[ 00 days ]</b>
-        <p><span class="l-en">From accepted submittal to first day on site.</span><span class="l-ko">제출 서류 승인부터 현장 첫날까지.</span></p></div>
+        <p><span class="l-en">From accepted submittal to first day on site.</span><span class="l-ko">Submittal 승인부터 현장 첫날까지.</span></p></div>
       <div class="mb reveal"><span class="lab">03</span><b>[ 00 M ]</b>
-        <p><span class="l-en">General liability and workers compensation limits, certificate on request.</span><span class="l-ko">배상책임·산재 보험 한도. 요청 시 증명서 발급.</span></p></div>
+        <p><span class="l-en">General liability and workers compensation limits, certificate on request.</span><span class="l-ko">GL · Workers’ Comp 한도. 요청 시 COI 발급.</span></p></div>
     </div>
   </div>
 </section>
@@ -427,14 +447,14 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
   <div class="in">
     <div class="reveal">
       <div class="eb"><span class="num">07</span><span class="ln"></span><span class="lab"><span class="l-en">What arrives</span><span class="l-ko">함께 오는 것</span></span></div>
-      <h2><span class="l-en">Every inspector arrives with the paperwork already done.</span><span class="l-ko">검사원은 서류를 다 갖추고 옵니다.</span></h2>
+      <h2><span class="l-en">Every inspector arrives with the paperwork already done.</span><span class="l-ko">Inspector는 서류를 다 갖추고 옵니다.</span></h2>
       <p class="lede"><span class="l-en">The chasing that usually follows a staffing request happens before mobilization, not after.</span><span class="l-ko">보통 인력 요청 뒤에 따라오는 서류 독촉이, 투입 전에 끝나 있습니다.</span></p>
     </div>
     <div class="crs">
-      <div class="cr"><span class="cn"><span class="l-en">Current certificates with expiry dates</span><span class="l-ko">유효한 자격 증명서와 만료일</span></span></div>
-      <div class="cr"><span class="cn"><span class="l-en">Insurance certificate, additional insured on request</span><span class="l-ko">보험 증서, 요청 시 추가 피보험자 등재</span></span></div>
+      <div class="cr"><span class="cn"><span class="l-en">Current certificates with expiry dates</span><span class="l-ko">유효한 Certification과 만료일</span></span></div>
+      <div class="cr"><span class="cn"><span class="l-en">Insurance certificate, additional insured on request</span><span class="l-ko">COI, 요청 시 Additional Insured 등재</span></span></div>
       <div class="cr"><span class="cn"><span class="l-en">OSHA training record</span><span class="l-ko">OSHA 교육 이력</span></span></div>
-      <div class="cr"><span class="cn"><span class="l-en">Sample report in your format</span><span class="l-ko">쓰시는 양식으로 된 보고서 견본</span></span><span class="cq">[ 견본 첨부 필요 ]</span></div>
+      <div class="cr"><span class="cn"><span class="l-en">Sample report in your format</span><span class="l-ko">쓰시는 양식으로 된 보고서 Sample</span></span><span class="cq">[ 견본 첨부 필요 ]</span></div>
     </div>
   </div>
 </section>
@@ -444,7 +464,7 @@ html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-w
     <div class="reveal">
       <div class="eb"><span class="ln"></span><span class="lab"><span class="l-en">Contact</span><span class="l-ko">문의</span></span></div>
       <h2><span class="l-en">Tell us the project and the discipline.</span><span class="l-ko">현장과 분야만 알려 주십시오.</span></h2>
-      <p class="lede"><span class="l-en">Name the site, the discipline and the start date. We come back with names, certificates and a rate. There is no form.</span><span class="l-ko">현장, 분야, 시작일만 주시면 사람 이름과 증명서와 단가로 회신합니다. 신청 양식은 없습니다.</span></p>
+      <p class="lede"><span class="l-en">Name the site, the discipline and the start date. We come back with names, certificates and a rate. There is no form.</span><span class="l-ko">현장, 분야, 시작일만 주시면 사람 이름, Certification, Rate로 회신드립니다. 신청 양식은 없습니다.</span></p>
     </div>
     <div class="reveal">
       <a class="btn" href="mailto:info@proconus.com?subject=Blueanchor%20QA%2FQC%20inquiry"><span class="l-en">Email us</span><span class="l-ko">이메일 보내기</span></a>
