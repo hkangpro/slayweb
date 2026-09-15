@@ -75,6 +75,14 @@ html[data-intro="skip"] #intro{display:none}
   linear-gradient(90deg,rgba(244,246,247,.05) 1px,transparent 1px),
   linear-gradient(rgba(244,246,247,.09) 1px,transparent 1px),
   linear-gradient(90deg,rgba(244,246,247,.09) 1px,transparent 1px)}
+
+.knock{position:relative;width:100%;aspect-ratio:1200/210;margin:0 0 44px;overflow:hidden;background:#071827}
+.knock .kv,.knock .kc{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.knock .kv{opacity:0}
+.knock.has-video .kv{opacity:1}
+.knock.has-video .kc{display:none}
+.knock .ko{position:absolute;inset:0;width:100%;height:100%;display:block}
+@media(max-width:980px){ .knock{aspect-ratio:1200/260;margin-bottom:30px} }
 .hin{position:relative;z-index:2;max-width:1180px;margin:0 auto}
 .eb{display:flex;align-items:center;gap:12px;margin-bottom:26px;color:var(--hv)}
 .eb .ln{width:44px;height:1px;background:var(--hv)}
@@ -180,6 +188,18 @@ html[data-lang="ko"] h2{font-size:clamp(22px,3vw,34px);line-height:1.34}
 <div class="hero">
   <div class="grid-bg"></div>
   <div class="hin">
+  <div class="knock" id="knock">
+      <video class="kv" id="kv" autoplay muted loop playsinline preload="none"></video>
+      <canvas class="kc" id="kc"></canvas>
+      <svg class="ko" viewBox="0 0 1200 210" preserveAspectRatio="xMidYMid slice" aria-label="BLUEANCHOR">
+        <defs><mask id="komask">
+          <rect width="1200" height="210" fill="#fff"/>
+          <text x="600" y="152" text-anchor="middle" font-family="Archivo, system-ui, sans-serif"
+                font-weight="700" font-size="168" letter-spacing="-4" fill="#000">BLUEANCHOR</text>
+        </mask></defs>
+        <rect width="1200" height="210" fill="#0c2138" mask="url(#komask)"/>
+      </svg>
+    </div>
     <div class="eb"><span class="ln"></span><span class="lab">QA / QC Inspection Personnel</span></div>
     <h1><span class="l-en">Inspectors who read the Korean drawing<br>and write the <em>English report.</em></span><span class="l-ko">한국어 도면을 읽고<br><em>영문 보고서</em>를 쓰는 검사원.</span></h1>
     <p class="hsub"><span class="l-en">On a Korean-owned plant in Georgia the specification arrives in Korean, the project manager speaks Korean, and the authority having jurisdiction reads English. Most inspection firms can do one side of that. We staff people who do both, and we put them on your site.</span><span class="l-ko">조지아의 한국계 공장 현장은 스펙이 한국어로 오고, PM이 한국어로 말하고, 검사기관은 영문을 읽습니다. 대부분의 검사 회사는 한쪽만 됩니다. 저희는 양쪽이 되는 사람을 현장에 넣습니다.</span></p>
@@ -274,6 +294,54 @@ html[data-lang="ko"] h2{font-size:clamp(22px,3vw,34px);line-height:1.34}
 <script>
 try { if (sessionStorage.getItem('ba-intro') === '1') document.documentElement.setAttribute('data-intro','skip');
       else sessionStorage.setItem('ba-intro','1'); } catch (e) {}
+
+(function () {
+  const box = document.getElementById('knock');
+  const cv = document.getElementById('kc'), v = document.getElementById('kv');
+  if (!box || !cv) return;
+
+  // 영상 파일이 있으면 그걸 쓰고, 없으면 아래 청사진이 돈다.
+  // 넣는 법: /blueanchor/hero.mp4 로 올리기만 하면 된다.
+  fetch('hero.mp4', { method: 'HEAD' }).then(r => {
+    if (r.ok) { v.src = 'hero.mp4'; box.classList.add('has-video'); }
+  }).catch(() => {});
+
+  const ctx = cv.getContext('2d');
+  let W = 0, H = 0, t = 0, dpr = Math.min(devicePixelRatio || 1, 2);
+  function size() {
+    W = box.clientWidth; H = box.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  addEventListener('resize', size); size();
+
+  function frame() {
+    if (box.classList.contains('has-video')) return;
+    t += 0.55;
+    ctx.fillStyle = '#071827'; ctx.fillRect(0, 0, W, H);
+    const off = t % 34;
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(120,175,225,0.10)';
+    ctx.beginPath();
+    for (let x = -34 + off; x < W + 34; x += 34) { ctx.moveTo(x, 0); ctx.lineTo(x, H); }
+    for (let y = -34 + (t * 0.35) % 34; y < H + 34; y += 34) { ctx.moveTo(0, y); ctx.lineTo(W, y); }
+    ctx.stroke();
+    ctx.strokeStyle = 'rgba(120,175,225,0.2)';
+    ctx.beginPath();
+    for (let x = -204 + (t % 204); x < W + 204; x += 204) { ctx.moveTo(x, 0); ctx.lineTo(x, H); }
+    ctx.stroke();
+    const sx = ((t * 2.2) % (W + 700)) - 350;
+    const g = ctx.createLinearGradient(sx - 260, 0, sx + 260, H);
+    g.addColorStop(0, 'rgba(226,102,31,0)');
+    g.addColorStop(0.5, 'rgba(226,102,31,0.32)');
+    g.addColorStop(1, 'rgba(226,102,31,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    const g2 = ctx.createRadialGradient(W * 0.5, H * 0.5, 0, W * 0.5, H * 0.5, W * 0.62);
+    g2.addColorStop(0, 'rgba(150,200,245,0.12)'); g2.addColorStop(1, 'rgba(150,200,245,0)');
+    ctx.fillStyle = g2; ctx.fillRect(0, 0, W, H);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
 (function () {
   const el = document.getElementById('intro');
   if (el) {
