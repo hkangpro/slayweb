@@ -342,6 +342,25 @@ html[data-lang="ko"] .qa h3{font-size:16px}
     text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
   @media(max-width:1080px){ .leaks{grid-template-columns:repeat(2,1fr)} }
   @media(max-width:620px){ .leaks{grid-template-columns:1fr} }
+
+  /* CTA · 진단 */
+  .hcta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+  .btn{font-family:var(--os);font-weight:600;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    padding:16px 26px;border:1px solid var(--acc);transition:.22s;display:inline-block}
+  .btn.solid{background:var(--acc);color:var(--paper)}
+  .btn.solid:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.line{color:var(--acc);background:transparent}
+  .btn.line:hover{background:var(--acc-soft)}
+  .btn.wide{display:block;text-align:center;margin-bottom:10px}
+  html[data-lang="ko"] .btn{letter-spacing:.02em;text-transform:none;font-size:13.5px;font-weight:500}
+  .rv-lede{margin:0 0 26px;font-size:16px;line-height:1.82;color:var(--ink-2);max-width:52ch}
+  ol.rv{list-style:none;counter-reset:rv;margin:0 0 24px;padding:0;display:grid;gap:0;
+    border-top:1px solid var(--rule)}
+  ol.rv li{counter-increment:rv;position:relative;padding:15px 0 15px 42px;border-bottom:1px solid var(--rule);
+    font-size:14.5px;line-height:1.7;color:var(--ink)}
+  ol.rv li::before{content:counter(rv,decimal-leading-zero);position:absolute;left:0;top:17px;
+    font-family:var(--os);font-weight:600;font-size:10px;letter-spacing:.14em;color:var(--acc)}
+  .rv-note{margin:0;font-size:13.5px;line-height:1.75;color:var(--ink-3);max-width:50ch}
 </style>
 <script>
 try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElement.setAttribute('data-intro','skip');
@@ -393,6 +412,10 @@ try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElemen
       <span><span class="o">쓰던 시스템은 그대로.</span><span class="s">그 사이 일은 저희가 합니다.</span></span>
     </h1>
     <p class="hsub"><span>지금 쓰시는 Accounting, Payroll, 현장 시스템 그대로 둡니다. 그 사이에서 옮겨 적고 맞춰 보던 일만 저희가 가져갑니다. 장부에 올라가는 건 사람이 한 번 보고 눌러야 들어갑니다.</span></p>
+    <div class="hcta">
+      <a class="btn solid" href="#review"><span>30분 진단 받기</span></a>
+      <a class="btn line" href="#double"><span>얼마짜리인지 보기</span></a>
+    </div>
   </div>
   <div class="cards">
     <a class="cd" href="#industries"><span class="cn">01</span><h3><span>소매 · 도매</span></h3><p><span>Channel 매출을 장부로.</span></p></a>
@@ -682,22 +705,22 @@ try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElemen
         <span>일이 끝나면 청구서 초안이 뜹니다. 누가 기억해 내야 하는 게 아니라.</span></p>
     </div><div class="lk reveal">
       <span class="n">03</span>
-      <h3><span>안 받았어야 할 일</span></h3>
-      <p class="lk-p"><span>매출은 다들 압니다. 손님별 마진을 아는 분은 거의 없습니다. 그래서 남는 게 없는 일이 계속 들어오고, 계속 받게 됩니다.</span></p>
+      <h3><span>조용해진 단골</span></h3>
+      <p class="lk-p"><span>2년 동안 6주마다 사던 손님이 9주째 조용합니다. 아무도 못 챕니다. 주문 간격을 보는 사람이 없으니까요. 문자 한 통이면 주문이었습니다.</span></p>
       <p class="lk-s"><span class="lk-t"><span>Weave가 보는 것</span></span>
-        <span>손님별·일 종류별 마진을 상시로. 연말에 한 번이 아니라.</span></p>
+        <span>손님마다 자기 주기가 있습니다. 그 주기를 넘긴 사람을 짚어 드립니다. 보내는 데 드는 돈은 없습니다.</span></p>
     </div><div class="lk reveal">
       <span class="n">04</span>
       <h3><span>늦게 나간 견적</span></h3>
       <p class="lk-p"><span>믿을 만한 견적을 먼저 내는 쪽이 많이 가져갑니다. 2주 걸린 견적은 대개 진 견적입니다.</span></p>
       <p class="lk-s"><span class="lk-t"><span>Weave가 보는 것</span></span>
-        <span>빈 종이 대신 작년에 같은 일을 했던 실제 원가로 시작합니다.</span></p>
+        <span>빈 종이 대신 작년에 같은 일을 했던 실제 원가로 시작합니다. 그리고 보낸 견적이 일주일째 조용하면 알려 드립니다.</span></p>
     </div><div class="lk reveal">
       <span class="n">05</span>
-      <h3><span>없는 걸 파는 일</span></h3>
-      <p class="lk-p"><span>잘 나가는 물건이 떨어지면 이미 딴 매출을 놓치는 겁니다. 감으로 재주문하는 건 시스템이 아닙니다.</span></p>
+      <h3><span>손해 보고 파는 품목</span></h3>
+      <p class="lk-p"><span>배달앱 수수료가 플랜에 따라 15~30%입니다. 카드가 3% 안팎입니다. 운임과 반품까지 붙이면 홀에서 남던 메뉴가 배달에서는 손해입니다. 이 계산을 해 본 분이 거의 없습니다.</span></p>
       <p class="lk-s"><span class="lk-t"><span>Weave가 보는 것</span></span>
-        <span>채널별 회전율을 보고 비기 전에 알려 드립니다.</span></p>
+        <span>수수료까지 넣은 품목별·채널별 진짜 마진. 그리고 어느 값에 올릴 여지가 있는지.</span></p>
     </div><div class="lk reveal">
       <span class="n">06</span>
       <h3><span>돌려받는 한 주</span></h3>
@@ -751,15 +774,24 @@ try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElemen
   </div>
 </section>
 <section class="contact" id="contact">
-  <div class="wrap">
+  <div class="wrap" id="review">
     <div class="reveal">
-      <div class="eyebrow"><span class="ln"></span><span class="lab"><span>문의</span></span></div>
-      <h2><span>지금 뭘 쓰고 계신지 알려 주십시오.</span></h2>
-      <p style="margin:0;font-size:16px;line-height:1.82;color:var(--ink-2);max-width:46ch"><span>Accounting이랑 Payroll 뭐 쓰시는지만 알려 주시면 상담이 빨라집니다. 신청 Form은 없습니다. 이메일이나 전화로 바로 연락 주십시오.</span></p>
+      <div class="eyebrow"><span class="ln"></span><span class="lab"><span>30분 진단</span></span></div>
+      <h2><span>사시기 전에, 먼저 세어 드립니다.</span></h2>
+      <p class="rv-lede"><span>30분 통화, 지금 쓰시는 것에 읽기 권한만 주시면 됩니다. 아래 다섯 가지를 사장님 회사 숫자로 뽑아 드립니다. 비용도 없고 조건도 없습니다. 같이 일하지 않으셔도 결과는 가져가십니다.</span></p>
+      <ol class="rv">
+        <li><span>카드 내역 중 Receipt이 안 붙은 비율과 그 금액</span></li>
+        <li><span>청구 없이 원가만 쌓여 있는 Job</span></li>
+        <li><span>자기 주기를 넘겨 조용해진 단골</span></li>
+        <li><span>수수료 빼고 나면 손해인 품목</span></li>
+        <li><span>같은 숫자가 장부에 닿기까지 몇 번 입력되는지</span></li>
+      </ol>
+      <p class="rv-note"><span>연락 주실 때 Accounting과 Payroll 뭐 쓰시는지만 적어 주시면 통화가 빨라집니다. 신청 Form은 없습니다.</span></p>
     </div>
     <div class="reveal">
+      <a class="btn solid wide" href="mailto:info@slaysolution.com?subject=30-minute%20review"><span>이메일 보내기</span></a>
+      <a class="btn line wide" href="tel:+15714192673"><span>571-419-2673 전화</span></a>
       <div class="crow"><span class="k"><span>이메일</span></span><span class="v"><a href="mailto:info@slaysolution.com">info@slaysolution.com</a></span></div>
-      <div class="crow"><span class="k"><span>전화</span></span><span class="v"><a href="tel:+15714192673">571-419-2673</a></span></div>
       <div class="crow"><span class="k"><span>담당</span></span><span class="v">JB Yoon</span></div>
       <div class="crow"><span class="k"><span>회사</span></span><span class="v">Slay Solution — USA</span></div>
     </div>

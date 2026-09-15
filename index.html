@@ -342,6 +342,25 @@ html[data-lang="ko"] .qa h3{font-size:16px}
     text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
   @media(max-width:1080px){ .leaks{grid-template-columns:repeat(2,1fr)} }
   @media(max-width:620px){ .leaks{grid-template-columns:1fr} }
+
+  /* CTA · 진단 */
+  .hcta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+  .btn{font-family:var(--os);font-weight:600;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    padding:16px 26px;border:1px solid var(--acc);transition:.22s;display:inline-block}
+  .btn.solid{background:var(--acc);color:var(--paper)}
+  .btn.solid:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.line{color:var(--acc);background:transparent}
+  .btn.line:hover{background:var(--acc-soft)}
+  .btn.wide{display:block;text-align:center;margin-bottom:10px}
+  html[data-lang="ko"] .btn{letter-spacing:.02em;text-transform:none;font-size:13.5px;font-weight:500}
+  .rv-lede{margin:0 0 26px;font-size:16px;line-height:1.82;color:var(--ink-2);max-width:52ch}
+  ol.rv{list-style:none;counter-reset:rv;margin:0 0 24px;padding:0;display:grid;gap:0;
+    border-top:1px solid var(--rule)}
+  ol.rv li{counter-increment:rv;position:relative;padding:15px 0 15px 42px;border-bottom:1px solid var(--rule);
+    font-size:14.5px;line-height:1.7;color:var(--ink)}
+  ol.rv li::before{content:counter(rv,decimal-leading-zero);position:absolute;left:0;top:17px;
+    font-family:var(--os);font-weight:600;font-size:10px;letter-spacing:.14em;color:var(--acc)}
+  .rv-note{margin:0;font-size:13.5px;line-height:1.75;color:var(--ink-3);max-width:50ch}
 </style>
 <script>
 try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElement.setAttribute('data-intro','skip');
@@ -393,6 +412,10 @@ try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElemen
       
     </h1>
     <p class="hsub"><span>Weave connects the accounting, payroll and field systems you already run, then takes over the copying and matching between them. Nothing reaches your books until a person approves it.</span></p>
+    <div class="hcta">
+      <a class="btn solid" href="#review"><span>Book the 30-minute review</span></a>
+      <a class="btn line" href="#double"><span>See what it's worth</span></a>
+    </div>
   </div>
   <div class="cards">
     <a class="cd" href="#industries"><span class="cn">01</span><h3><span>Retail &amp; Wholesale</span></h3><p><span>Channel sales into the books.</span></p></a>
@@ -682,22 +705,22 @@ try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElemen
         <span>Completion triggers the draft invoice, not somebody's memory.</span></p>
     </div><div class="lk reveal">
       <span class="n">03</span>
-      <h3><span>Jobs you should not have taken</span></h3>
-      <p class="lk-p"><span>Most owners know revenue by customer. Almost none know margin by customer. So the low-margin work keeps coming back, and it keeps getting said yes to.</span></p>
+      <h3><span>Customers who went quiet</span></h3>
+      <p class="lk-p"><span>Someone bought every six weeks for two years. It has been nine. Nobody noticed, because nobody is watching the gap between orders — and a text would have been an order.</span></p>
       <p class="lk-s"><span class="lk-t"><span>What Weave sees</span></span>
-        <span>Margin by customer and by job type, standing, not once a year.</span></p>
+        <span>Each customer's own buying rhythm, and who is overdue against it. Costs nothing to send.</span></p>
     </div><div class="lk reveal">
       <span class="n">04</span>
       <h3><span>Quotes that took too long</span></h3>
       <p class="lk-p"><span>The fastest credible quote wins a large share of the work. A quote that takes two weeks is usually a quote that lost.</span></p>
       <p class="lk-s"><span class="lk-t"><span>What Weave sees</span></span>
-        <span>Last year's real cost for the same work, instead of a blank sheet.</span></p>
+        <span>Last year's real cost for the same work instead of a blank sheet — and a nudge when a quote has sat unanswered for a week.</span></p>
     </div><div class="lk reveal">
       <span class="n">05</span>
-      <h3><span>Selling what you do not have</span></h3>
-      <p class="lk-p"><span>A stockout on your best seller is a sale you already earned and did not collect. Gut feel is not a reorder system.</span></p>
+      <h3><span>Items you lose money on</span></h3>
+      <p class="lk-p"><span>Delivery apps take 15 to 30 percent depending on the plan. Cards take about three. Add freight and returns and a dish that makes money in the dining room loses it on delivery. Almost nobody has done that arithmetic.</span></p>
       <p class="lk-s"><span class="lk-t"><span>What Weave sees</span></span>
-        <span>Turn rate per channel, and a warning before the shelf is empty.</span></p>
+        <span>True margin per item per channel, fees included — and which prices have room to move up.</span></p>
     </div><div class="lk reveal">
       <span class="n">06</span>
       <h3><span>The week you get back</span></h3>
@@ -751,15 +774,24 @@ try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElemen
   </div>
 </section>
 <section class="contact" id="contact">
-  <div class="wrap">
+  <div class="wrap" id="review">
     <div class="reveal">
-      <div class="eyebrow"><span class="ln"></span><span class="lab"><span>Contact</span></span></div>
-      <h2><span>Tell us what you run today.</span></h2>
-      <p style="margin:0;font-size:16px;line-height:1.82;color:var(--ink-2);max-width:46ch"><span>Name the accounting system and the payroll system and the first conversation goes faster. There is no form — email or call.</span></p>
+      <div class="eyebrow"><span class="ln"></span><span class="lab"><span>The 30-minute review</span></span></div>
+      <h2><span>Before you buy anything, let us count it.</span></h2>
+      <p class="rv-lede"><span>Half an hour on a call, read-only access to what you already run, and you get the five numbers below with your own figures in them. No charge, no obligation, and you keep the findings whether or not you work with us.</span></p>
+      <ol class="rv">
+        <li><span>What share of your card spend has no receipt attached, and what that adds up to</span></li>
+        <li><span>Jobs carrying cost with no invoice behind them</span></li>
+        <li><span>Repeat customers who are overdue against their own buying rhythm</span></li>
+        <li><span>Which items lose money once the fees come out</span></li>
+        <li><span>How many times the same figure is typed before it reaches your books</span></li>
+      </ol>
+      <p class="rv-note"><span>Tell us the accounting system and the payroll system when you write and the call goes faster. There is no form.</span></p>
     </div>
     <div class="reveal">
+      <a class="btn solid wide" href="mailto:info@slaysolution.com?subject=30-minute%20review"><span>Email us</span></a>
+      <a class="btn line wide" href="tel:+15714192673"><span>Call 571-419-2673</span></a>
       <div class="crow"><span class="k"><span>Email</span></span><span class="v"><a href="mailto:info@slaysolution.com">info@slaysolution.com</a></span></div>
-      <div class="crow"><span class="k"><span>Phone</span></span><span class="v"><a href="tel:+15714192673">571-419-2673</a></span></div>
       <div class="crow"><span class="k"><span>Contact</span></span><span class="v">JB Yoon</span></div>
       <div class="crow"><span class="k"><span>Company</span></span><span class="v">Slay Solution — USA</span></div>
     </div>
