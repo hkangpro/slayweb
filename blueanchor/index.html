@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROCON Blueanchor — QA/QC inspectors who read the Korean drawings</title>
+<meta name="description" content="Bilingual QA/QC construction inspectors for Korean-owned plant projects in Georgia. Welding, concrete, coatings, mechanical, electrical and cleanroom. Korean drawings in, English reports out.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#f4f6f7; --paper-2:#e7ecef; --deep:#0c2138; --deep-2:#123253;
+  --ink:#0b1620; --ink-2:rgba(11,22,32,.66); --ink-3:rgba(11,22,32,.42);
+  --rule:rgba(11,22,32,.15); --rule-2:rgba(11,22,32,.3);
+  --hv:#e2661f; --hv-soft:rgba(226,102,31,.1);
+  --ar:"Archivo","Noto Sans KR",system-ui,sans-serif;
+  --mo:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--ar);font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all}
+a{text-decoration:none;color:inherit}
+html[data-lang="en"] .l-ko{display:none!important}
+html[data-lang="ko"] .l-en{display:none!important}
+.lab{font-family:var(--mo);font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+
+/* 인트로 — 다림추가 떨어져 멈춘다 */
+#intro{position:fixed;inset:0;z-index:70;background:var(--deep);display:grid;place-items:center;
+  pointer-events:none;animation:iout .7s 2.5s cubic-bezier(.7,0,.3,1) forwards}
+@keyframes iout{to{opacity:0;visibility:hidden}}
+#intro svg{width:min(120px,22vw);height:auto;overflow:visible}
+.pl-line{stroke:rgba(244,246,247,.55);stroke-width:2;stroke-dasharray:60;stroke-dashoffset:60;
+  animation:draw .55s .25s ease-out forwards}
+.pl-bar{stroke:#f4f6f7;stroke-width:3;stroke-dasharray:44;stroke-dashoffset:44;
+  animation:draw .4s .05s ease-out forwards}
+.pl-bob{fill:var(--hv);opacity:0;transform:translateY(-26px);
+  animation:drop .85s .6s cubic-bezier(.3,1.5,.5,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes drop{to{opacity:1;transform:translateY(0)}}
+.iw{text-align:center;margin-top:22px;color:#f4f6f7;opacity:0;animation:up .6s 1.5s ease-out forwards}
+.iw b{display:block;font-size:22px;font-weight:700;letter-spacing:.16em}
+.iw span{font-family:var(--mo);font-size:8.5px;letter-spacing:.3em;color:rgba(244,246,247,.55)}
+@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+html[data-intro="skip"] #intro{display:none}
+
+/* 청사진 격자 */
+.grid-bg{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(11,22,32,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(11,22,32,.055) 1px,transparent 1px),
+    linear-gradient(rgba(11,22,32,.1) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(11,22,32,.1) 1px,transparent 1px);
+  background-size:16px 16px,16px 16px,96px 96px,96px 96px}
+
+.bar{position:sticky;top:0;z-index:30;background:var(--deep);color:var(--paper);
+  display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:68px}
+.brand{display:flex;align-items:center;gap:12px}
+.mk{width:22px;height:22px;color:var(--hv)}
+.brand b{font-size:17px;font-weight:700;letter-spacing:.06em}
+.brand i{font-style:normal;font-family:var(--mo);font-size:8.5px;letter-spacing:.24em;
+  color:rgba(244,246,247,.5)}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a{font-family:var(--mo);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(244,246,247,.75)}
+.nav a:hover{color:var(--hv)}
+.lang{display:inline-flex;border:1px solid rgba(244,246,247,.28);margin-left:6px}
+.lang button{font-family:var(--mo);font-size:10px;letter-spacing:.14em;padding:9px 12px;border:0;
+  background:transparent;color:rgba(244,246,247,.6);cursor:pointer;transition:.2s}
+.lang button.on{background:var(--hv);color:var(--deep)}
+
+.hero{position:relative;background:var(--deep);color:var(--paper);padding:88px 40px 0;overflow:hidden}
+.hero .grid-bg{background-image:linear-gradient(rgba(244,246,247,.05) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(244,246,247,.05) 1px,transparent 1px),
+  linear-gradient(rgba(244,246,247,.09) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(244,246,247,.09) 1px,transparent 1px)}
+.hin{position:relative;z-index:2;max-width:1180px;margin:0 auto}
+.eb{display:flex;align-items:center;gap:12px;margin-bottom:26px;color:var(--hv)}
+.eb .ln{width:44px;height:1px;background:var(--hv)}
+h1{margin:0 0 26px;font-size:clamp(34px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.02}
+html[data-lang="ko"] h1{font-size:clamp(28px,4.4vw,54px);line-height:1.24}
+h1 em{font-style:normal;color:var(--hv)}
+.hsub{margin:0 0 40px;max-width:56ch;font-size:16.5px;line-height:1.82;color:rgba(244,246,247,.72)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(244,246,247,.2);
+  margin-bottom:0}
+.fa{padding:24px 26px 30px;border-right:1px solid rgba(244,246,247,.14)}
+.fa:first-child{padding-left:0} .fa:last-child{border-right:0}
+.fa b{display:block;font-size:30px;font-weight:700;letter-spacing:-.02em;margin-bottom:7px}
+.fa span{font-family:var(--mo);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(244,246,247,.55)}
+
+section{position:relative;padding:76px 40px;border-bottom:1px solid var(--rule)}
+.in{position:relative;z-index:2;max-width:1180px;margin:0 auto}
+h2{margin:0 0 14px;font-size:clamp(26px,3.6vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+html[data-lang="ko"] h2{font-size:clamp(22px,3vw,34px);line-height:1.34}
+.lede{margin:0 0 38px;font-size:16px;line-height:1.8;color:var(--ink-2);max-width:62ch}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.16,.84,.3,1),transform .8s cubic-bezier(.16,.84,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+.dcs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);
+  border:1px solid var(--rule)}
+.dc{background:#fff;padding:26px 24px 30px}
+.dn{font-family:var(--mo);font-size:10px;letter-spacing:.16em;color:var(--hv)}
+.dc h3{margin:10px 0 8px;font-size:18px;font-weight:700;letter-spacing:.01em}
+.dc p{margin:0;font-size:13.5px;line-height:1.7;color:var(--ink-2)}
+
+.crs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);
+  border:1px solid var(--rule)}
+.cr{background:#fff;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.cn{font-size:14.5px;font-weight:500}
+.cq{font-family:var(--mo);font-size:10px;letter-spacing:.08em;color:var(--hv);background:var(--hv-soft);
+  padding:5px 9px;white-space:nowrap}
+
+.mob{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);
+  border:1px solid var(--rule)}
+.mb{background:#fff;padding:28px 26px 32px}
+.mb b{display:block;font-size:28px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;color:var(--deep)}
+.mb .lab{color:var(--ink-3);display:block;margin-bottom:12px}
+.mb p{margin:0;font-size:13.5px;line-height:1.72;color:var(--ink-2)}
+
+.contact{background:var(--deep);color:var(--paper);border-bottom:0}
+.contact .grid-bg{background-image:linear-gradient(rgba(244,246,247,.05) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(244,246,247,.05) 1px,transparent 1px)}
+.cwrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:56px;align-items:start}
+.contact h2{color:var(--paper)}
+.contact .lede{color:rgba(244,246,247,.7)}
+.crow{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid rgba(244,246,247,.16)}
+.crow .k{font-family:var(--mo);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(244,246,247,.5)}
+.crow .v{font-size:14.5px}
+.btn{display:block;text-align:center;font-family:var(--mo);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;padding:16px;background:var(--hv);color:var(--deep);font-weight:500;
+  margin-bottom:10px;transition:.2s}
+.btn:hover{background:var(--paper);color:var(--deep)}
+.note{margin-top:30px;padding:20px 24px;background:var(--hv-soft);border-left:2px solid var(--hv);
+  font-size:13.5px;line-height:1.76;color:var(--ink-2)}
+.foot{padding:22px 40px;background:var(--ink);color:rgba(244,246,247,.5);display:flex;
+  justify-content:space-between;font-family:var(--mo);font-size:10px;letter-spacing:.1em}
+@media(max-width:980px){
+  .bar{padding:0 20px;height:auto;flex-wrap:wrap;gap:10px;padding-top:12px;padding-bottom:12px}
+  .nav a{display:none} .nav .lang{margin-left:0}
+  .hero,section{padding-left:20px;padding-right:20px}
+  .dcs,.crs,.mob{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr} .fa{padding-left:0;border-right:0;border-bottom:1px solid rgba(244,246,247,.14)}
+  .cwrap{grid-template-columns:1fr;gap:32px} .foot{padding:18px 20px;flex-direction:column;gap:6px}
+}
+</style>
+</head>
+<body>
+
+<div id="intro">
+  <div>
+    <svg viewBox="0 0 120 150" role="img" aria-label="A plumb bob drops and settles">
+      <path class="pl-bar" d="M38 16 H82" fill="none" stroke-linecap="round"/>
+      <path class="pl-line" d="M60 16 V72" fill="none" stroke-linecap="round"/>
+      <path class="pl-bob" d="M60 72 L78 100 L60 138 L42 100 Z"/>
+    </svg>
+    <div class="iw"><b>BLUEANCHOR</b><span>PROCON GROUP</span></div>
+  </div>
+</div>
+
+<div class="bar">
+  <div class="brand"><svg class="mk" viewBox="0 0 64 64" aria-hidden="true">
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 8 H50" stroke-width="3"/>
+    <path d="M32 8 V26" stroke-width="2.4"/>
+  </g>
+  <path d="M32 26 L42 40 L32 58 L22 40 Z" fill="currentColor"/>
+</svg><b>BLUEANCHOR</b><i>PROCON GROUP</i></div>
+  <div class="nav">
+    <a href="#scope"><span class="l-en">Scope</span><span class="l-ko">분야</span></a>
+    <a href="#creds"><span class="l-en">Credentials</span><span class="l-ko">자격</span></a>
+    <a href="#mobilize"><span class="l-en">Mobilizing</span><span class="l-ko">투입</span></a>
+    <a href="#contact"><span class="l-en">Contact</span><span class="l-ko">문의</span></a>
+    <div class="lang"><button data-l="en" class="on">EN</button><button data-l="ko">KO</button></div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="grid-bg"></div>
+  <div class="hin">
+    <div class="eb"><span class="ln"></span><span class="lab">QA / QC Inspection Personnel</span></div>
+    <h1><span class="l-en">Inspectors who read the Korean drawing<br>and write the <em>English report.</em></span><span class="l-ko">한국어 도면을 읽고<br><em>영문 보고서</em>를 쓰는 검사원.</span></h1>
+    <p class="hsub"><span class="l-en">On a Korean-owned plant in Georgia the specification arrives in Korean, the project manager speaks Korean, and the authority having jurisdiction reads English. Most inspection firms can do one side of that. We staff people who do both, and we put them on your site.</span><span class="l-ko">조지아의 한국계 공장 현장은 스펙이 한국어로 오고, PM이 한국어로 말하고, 검사기관은 영문을 읽습니다. 대부분의 검사 회사는 한쪽만 됩니다. 저희는 양쪽이 되는 사람을 현장에 넣습니다.</span></p>
+    <div class="facts">
+      <div class="fa"><b>KO / EN</b><span><span class="l-en">Every inspector</span><span class="l-ko">검사원 전원</span></span></div>
+      <div class="fa"><b>GA</b><span><span class="l-en">Registered and insured</span><span class="l-ko">주 등록 · 보험</span></span></div>
+      <div class="fa"><b>PROCON</b><span><span class="l-en">Group company</span><span class="l-ko">그룹사</span></span></div>
+    </div>
+  </div>
+</div>
+
+<section id="scope">
+  <div class="grid-bg"></div>
+  <div class="in">
+    <div class="reveal">
+      <div class="eb"><span class="ln"></span><span class="lab"><span class="l-en">Scope</span><span class="l-ko">분야</span></span></div>
+      <h2><span class="l-en">What we put on site.</span><span class="l-ko">어떤 사람을 넣습니까.</span></h2>
+      <p class="lede"><span class="l-en">Inspection and quality personnel by discipline, embedded in your team and reporting on your format.</span><span class="l-ko">분야별 검사·품질 인력을 팀에 넣고, 쓰시는 양식으로 보고합니다.</span></p>
+    </div>
+    <div class="dcs"><div class="dc reveal"><span class="dn">01</span>
+      <h3><span class="l-en">WELDING</span><span class="l-ko">용접</span></h3>
+      <p><span class="l-en">AWS D1.1 · D1.6 structural and stainless, visual and dimensional</span><span class="l-ko">AWS D1.1·D1.6 구조·스테인리스, 외관·치수</span></p></div><div class="dc reveal"><span class="dn">02</span>
+      <h3><span class="l-en">CONCRETE</span><span class="l-ko">콘크리트</span></h3>
+      <p><span class="l-en">Placement, sampling, cylinders, and field cure records</span><span class="l-ko">타설 입회, 시료 채취, 공시체, 현장 양생 기록</span></p></div><div class="dc reveal"><span class="dn">03</span>
+      <h3><span class="l-en">COATINGS</span><span class="l-ko">도장</span></h3>
+      <p><span class="l-en">Surface prep, DFT, holiday and adhesion testing</span><span class="l-ko">소지 처리, 건조도막두께, 핀홀·부착력 시험</span></p></div><div class="dc reveal"><span class="dn">04</span>
+      <h3><span class="l-en">MECHANICAL</span><span class="l-ko">기계 · 배관</span></h3>
+      <p><span class="l-en">Piping, supports, pressure test witness and punch</span><span class="l-ko">배관, 지지대, 압력시험 입회, 펀치</span></p></div><div class="dc reveal"><span class="dn">05</span>
+      <h3><span class="l-en">ELECTRICAL</span><span class="l-ko">전기</span></h3>
+      <p><span class="l-en">Raceway, terminations, megger and continuity witness</span><span class="l-ko">레이스웨이, 결선, 절연저항·도통 입회</span></p></div><div class="dc reveal"><span class="dn">06</span>
+      <h3><span class="l-en">CLEANROOM</span><span class="l-ko">클린룸</span></h3>
+      <p><span class="l-en">Panel and ceiling grid, penetrations, pre-certification walk</span><span class="l-ko">패널·천장 그리드, 관통부, 인증 전 점검</span></p></div></div>
+  </div>
+</section>
+
+<section id="creds">
+  <div class="grid-bg"></div>
+  <div class="in">
+    <div class="reveal">
+      <div class="eb"><span class="ln"></span><span class="lab"><span class="l-en">Credentials</span><span class="l-ko">자격</span></span></div>
+      <h2><span class="l-en">Certifications on the bench.</span><span class="l-ko">보유 자격증.</span></h2>
+      <p class="lede"><span class="l-en">Current certificates and expiry dates are provided with every submittal, before mobilization.</span><span class="l-ko">투입 전 제출 서류에 유효한 증명서와 만료일을 함께 냅니다.</span></p>
+    </div>
+    <div class="crs reveal"><div class="cr"><span class="cn">AWS CWI</span><span class="cq">[ 보유 인원 확인 필요 ]</span></div><div class="cr"><span class="cn">ACI Field Technician</span><span class="cq">[ 보유 인원 확인 필요 ]</span></div><div class="cr"><span class="cn">AMPP (NACE) Coating Inspector</span><span class="cq">[ 보유 인원 확인 필요 ]</span></div><div class="cr"><span class="cn">ASNT NDT Level II</span><span class="cq">[ 보유 인원 확인 필요 ]</span></div><div class="cr"><span class="cn">ICC Special Inspector</span><span class="cq">[ 보유 인원 확인 필요 ]</span></div><div class="cr"><span class="cn">OSHA 30</span><span class="cq">[ 보유 인원 확인 필요 ]</span></div></div>
+    <div class="note reveal"><b><span class="l-en">Before this page goes public:</span><span class="l-ko">공개 전에:</span></b>
+      <span class="l-en"> replace every bracket with the number actually held. A certification listed and not held is found on the first call, and it is the one thing a general contractor will not forgive.</span><span class="l-ko"> 대괄호를 실제 보유 인원으로 바꿔야 합니다. 없는 자격증을 적으면 첫 통화에서 들통나고, GC가 유일하게 용서하지 않는 것이 그것입니다.</span></div>
+  </div>
+</section>
+
+<section id="mobilize">
+  <div class="grid-bg"></div>
+  <div class="in">
+    <div class="reveal">
+      <div class="eb"><span class="ln"></span><span class="lab"><span class="l-en">Mobilizing</span><span class="l-ko">투입</span></span></div>
+      <h2><span class="l-en">The question you are actually asking.</span><span class="l-ko">실제로 궁금한 것.</span></h2>
+      <p class="lede"><span class="l-en">Nobody shortlists an inspection firm on a brochure. They ask whether somebody can be on site Monday, and what arrives with them.</span><span class="l-ko">회사 소개서 보고 정하는 사람은 없습니다. 월요일에 사람이 올 수 있는지, 올 때 뭘 들고 오는지를 묻습니다.</span></p>
+    </div>
+    <div class="mob">
+      <div class="mb reveal"><span class="lab">01</span><b>[ 00 hrs ]</b>
+        <p><span class="l-en">From your call to a named inspector with certificates attached.</span><span class="l-ko">연락부터 증명서 붙은 검사원 배정까지.</span></p></div>
+      <div class="mb reveal"><span class="lab">02</span><b>[ 00 days ]</b>
+        <p><span class="l-en">From accepted submittal to first day on site.</span><span class="l-ko">제출 서류 승인부터 현장 첫날까지.</span></p></div>
+      <div class="mb reveal"><span class="lab">03</span><b>[ 00 M ]</b>
+        <p><span class="l-en">General liability and workers compensation limits, certificate on request.</span><span class="l-ko">배상책임·산재 보험 한도. 요청 시 증명서 발급.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="grid-bg"></div>
+  <div class="in cwrap">
+    <div class="reveal">
+      <div class="eb"><span class="ln"></span><span class="lab"><span class="l-en">Contact</span><span class="l-ko">문의</span></span></div>
+      <h2><span class="l-en">Tell us the project and the discipline.</span><span class="l-ko">현장과 분야만 알려 주십시오.</span></h2>
+      <p class="lede"><span class="l-en">Name the site, the discipline and the start date. We come back with names, certificates and a rate. There is no form.</span><span class="l-ko">현장, 분야, 시작일만 주시면 사람 이름과 증명서와 단가로 회신합니다. 신청 양식은 없습니다.</span></p>
+    </div>
+    <div class="reveal">
+      <a class="btn" href="mailto:info@proconus.com?subject=Blueanchor%20QA%2FQC%20inquiry"><span class="l-en">Email us</span><span class="l-ko">이메일 보내기</span></a>
+      <div class="crow"><span class="k"><span class="l-en">Email</span><span class="l-ko">이메일</span></span><span class="v">[ 확인 필요 ]</span></div>
+      <div class="crow"><span class="k"><span class="l-en">Phone</span><span class="l-ko">전화</span></span><span class="v">[ 확인 필요 ]</span></div>
+      <div class="crow"><span class="k"><span class="l-en">Entity</span><span class="l-ko">법인</span></span><span class="v">PROCON Blueanchor LLC</span></div>
+      <div class="crow"><span class="k"><span class="l-en">Served</span><span class="l-ko">영업 지역</span></span><span class="v">Georgia</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="foot">
+  <span>PROCON BLUEANCHOR LLC</span>
+  <span><span class="l-en">DRAFT — NOT PUBLIC</span><span class="l-ko">시안 — 미공개</span></span>
+</div>
+
+<script>
+try { if (sessionStorage.getItem('ba-intro') === '1') document.documentElement.setAttribute('data-intro','skip');
+      else sessionStorage.setItem('ba-intro','1'); } catch (e) {}
+(function () {
+  const el = document.getElementById('intro');
+  if (el) {
+    const kill = () => el.remove();
+    if (document.documentElement.getAttribute('data-intro') === 'skip') kill();
+    else setTimeout(kill, 3300);
+  }
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .15 });
+  document.querySelectorAll('.reveal').forEach((n, i) => { n.style.transitionDelay = (i % 4) * 60 + 'ms'; io.observe(n); });
+  document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => {
+    const l = b.dataset.l;
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.setAttribute('lang', l);
+    document.querySelectorAll('.lang button').forEach(x => x.classList.toggle('on', x === b));
+  }));
+})();
+</script>
+</body>
+</html>

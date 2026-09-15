@@ -36,20 +36,20 @@ def head_for(lang):
     other = 'ko' if lang == 'en' else 'en'
     self_url = ORIGIN + ('/' if lang == 'en' else '/ko/')
     if lang == 'en':
-        title = 'Weave — Your systems stay. The work between them goes.'
-        desc = ('Weave connects the accounting, payroll and field systems you already run and takes '
+        title = 'Relai — Your systems stay. The work between them goes.'
+        desc = ('Relai connects the accounting, payroll and field systems you already run and takes '
                 'over the work between them. Nothing reaches your books until a person approves it. '
                 'Retail, restaurants, custom fabrication and construction.')
-        ogt = 'Weave — Your systems stay. The work between them goes.'
+        ogt = 'Relai — Your systems stay. The work between them goes.'
         ogd = ('We connect the systems you already run and take over the work between them. '
                'Nothing reaches your books until a person approves it.')
         loc, alt = 'en_US', 'ko_KR'
     else:
-        title = 'Weave — 쓰던 시스템은 그대로. 그 사이 일은 저희가 합니다.'
+        title = 'Relai — 쓰던 시스템은 그대로. 그 사이 일은 저희가 합니다.'
         desc = ('지금 쓰시는 Accounting, Payroll, 현장 시스템 그대로 두고 그 사이에서 옮겨 적고 맞춰 보던 일만 '
                 '가져갑니다. 장부에 올라가는 건 사람이 한 번 보고 눌러야 들어갑니다. 소매·도매, 식당, '
                 '주문 제작, 건설.')
-        ogt = 'Weave — 쓰던 시스템은 그대로. 그 사이 일은 저희가 합니다.'
+        ogt = 'Relai — 쓰던 시스템은 그대로. 그 사이 일은 저희가 합니다.'
         ogd = '쓰시던 시스템 그대로 두고 그 사이 일만 저희가 맡습니다. 장부에 올라가는 건 사람이 눌러야 들어갑니다.'
         loc, alt = 'ko_KR', 'en_US'
     return f'''<title>{title}</title>
@@ -73,7 +73,7 @@ def head_for(lang):
 <meta property="og:locale:alternate" content="{alt}">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{{"@context":"https://schema.org","@type":"Organization","name":"Slay Solution","url":"{ORIGIN}/","email":"info@slaysolution.com","telephone":"+1-571-419-2673","areaServed":"US","makesOffer":{{"@type":"Offer","itemOffered":{{"@type":"SoftwareApplication","name":"Weave","applicationCategory":"BusinessApplication","operatingSystem":"Web"}}}}}}
+{{"@context":"https://schema.org","@type":"Organization","name":"Slay Solution","url":"{ORIGIN}/","email":"info@slaysolution.com","telephone":"+1-571-419-2673","areaServed":"US","makesOffer":{{"@type":"Offer","itemOffered":{{"@type":"SoftwareApplication","name":"Relai","applicationCategory":"BusinessApplication","operatingSystem":"Web"}}}}}}
 </script>'''
 
 def build(lang):
@@ -99,7 +99,7 @@ def build(lang):
                   '.lang a{display:block;min-width:46px;text-align:center}')
 
     # 로고를 홈 링크로
-    s = s.replace('<div class="badge">', f'<a class="badge" href="{home}" aria-label="Weave — home">', 1)
+    s = s.replace('<div class="badge">', f'<a class="badge" href="{home}" aria-label="Relai — home">', 1)
     s = s.replace('</svg></div>\n  <nav class="rnav">', '</svg></a>\n  <nav class="rnav">', 1)
 
     # 전환 스크립트 제거 (링크가 대신한다)
@@ -109,8 +109,8 @@ def build(lang):
     # 인트로는 한 방문에 한 번만. 로고로 돌아오거나 언어를 바꿀 땐 바로 화면이 뜬다.
     # (깜빡임이 없도록 <head> 에서 먼저 판단한다)
     s = s.replace('</head>', '''<script>
-try { if (sessionStorage.getItem('weave-intro') === '1') document.documentElement.setAttribute('data-intro','skip');
-      else sessionStorage.setItem('weave-intro','1'); } catch (e) {}
+try { if (sessionStorage.getItem('relai-intro') === '1') document.documentElement.setAttribute('data-intro','skip');
+      else sessionStorage.setItem('relai-intro','1'); } catch (e) {}
 </script>
 </head>''', 1)
     s = s.replace('</script>\n</body>', '''(function () {

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /blueanchor/
 
 Sitemap: https://www.slaysolution.com/sitemap.xml
