@@ -135,6 +135,68 @@ html[data-lang="ko"] h2{font-size:clamp(22px,3vw,34px);line-height:1.34}
 .mb .lab{color:var(--ink-3);display:block;margin-bottom:12px}
 .mb p{margin:0;font-size:13.5px;line-height:1.72;color:var(--ink-2)}
 
+
+.eb .num{font-family:var(--mo);font-size:12px;letter-spacing:.12em;color:var(--hv);font-weight:500}
+.sectors{background:var(--deep);color:var(--paper);border-top:1px solid rgba(244,246,247,.14);
+  padding:22px 40px}
+.sectors .in{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.sectors .lab{color:rgba(244,246,247,.45);flex:none}
+.sg{display:flex;gap:0;flex-wrap:wrap;flex:1}
+.sg span{font-family:var(--ar);font-weight:600;font-size:13.5px;letter-spacing:-.01em;
+  padding:0 18px;border-left:1px solid rgba(244,246,247,.18)}
+.sg span:first-child{border-left:0;padding-left:0}
+.sg .reg{color:var(--hv)}
+.band{position:relative;background:var(--deep);color:var(--paper);padding:92px 40px;overflow:hidden;
+  border-bottom:1px solid var(--rule)}
+.bq{position:relative;z-index:2;margin:0;max-width:20ch;font-family:var(--ar);font-weight:700;
+  font-size:clamp(26px,4.2vw,52px);line-height:1.14;letter-spacing:-.035em}
+html[data-lang="ko"] .bq{font-size:clamp(21px,3.2vw,38px);line-height:1.42;max-width:24ch}
+.doc{background:#fff;border:1px solid rgba(11,22,32,.2);box-shadow:0 1px 0 rgba(11,22,32,.06)}
+.dhead{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:2px solid var(--deep)}
+.dhead > div{padding:14px 16px;border-right:1px solid rgba(11,22,32,.12)}
+.dhead > div:last-child{border-right:0}
+.dl{display:block;font-family:var(--mo);font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(11,22,32,.45);margin-bottom:5px}
+.dv{font-size:13px;font-weight:500}
+.rr{display:grid;grid-template-columns:140px minmax(0,1fr) 92px;gap:14px;padding:13px 16px;
+  border-bottom:1px solid rgba(11,22,32,.1);align-items:center}
+.rr.hd{background:#eef1f3;border-bottom:1px solid rgba(11,22,32,.18)}
+.rr.hd span{font-family:var(--mo);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(11,22,32,.5)}
+.rr .k{font-family:var(--mo);font-size:12px;letter-spacing:.04em}
+.rr .t{font-size:13.5px}
+.rr .v{font-family:var(--mo);font-size:11px;letter-spacing:.14em;text-align:right;color:var(--deep)}
+.rr.h{background:rgba(226,102,31,.07)}
+.rr.h .v{color:var(--hv);font-weight:500}
+.rr.h .t{font-weight:600}
+.dfoot{padding:18px 16px 16px;display:flex;justify-content:space-between;gap:26px;align-items:flex-end;
+  border-top:1px solid rgba(11,22,32,.18);flex-wrap:wrap}
+.dfoot p{margin:0;font-size:12.5px;line-height:1.7;color:rgba(11,22,32,.68);max-width:62ch}
+.dfoot b{color:var(--hv)}
+.dsign{display:flex;flex-direction:column;gap:7px;align-items:flex-end;flex:none}
+.dstamp{border:1.6px solid var(--deep);padding:7px 11px;font-family:var(--mo);font-size:8.5px;
+  letter-spacing:.14em;color:var(--deep);transform:rotate(-1.6deg)}
+@media(max-width:980px){
+  .sectors{padding:18px 20px} .sg span{padding:0 12px;font-size:12.5px}
+  .band{padding:60px 20px}
+  .dhead{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rr{grid-template-columns:100px 1fr;gap:6px 12px} .rr .v{grid-column:2;text-align:left}
+  .dfoot{flex-direction:column;align-items:flex-start} .dsign{align-items:flex-start}
+}
+
+.band{position:relative}
+.bph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;
+  z-index:0;filter:saturate(.35) contrast(1.05)}
+.band::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(12,33,56,.94) 0%,rgba(12,33,56,.86) 46%,rgba(12,33,56,.55) 100%)}
+.band .grid-bg{z-index:2;opacity:.5}
+.band .in{position:relative;z-index:3}
+.lead{margin:0 0 34px;position:relative}
+.lead img{display:block;width:100%;height:clamp(240px,34vw,420px);object-fit:cover;object-position:center 46%;
+  border:1px solid rgba(11,22,32,.16);filter:saturate(.62)}
+.lead figcaption{margin-top:9px;font-family:var(--mo);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(11,22,32,.45)}
+@media(max-width:980px){ .lead img{height:220px} }
 .contact{background:var(--deep);color:var(--paper);border-bottom:0}
 .contact .grid-bg{background-image:linear-gradient(rgba(244,246,247,.05) 1px,transparent 1px),
   linear-gradient(90deg,rgba(244,246,247,.05) 1px,transparent 1px)}
@@ -208,14 +270,31 @@ html[data-lang="ko"] h2{font-size:clamp(22px,3vw,34px);line-height:1.34}
   </div>
 </div>
 
+<div class="sectors">
+  <div class="in">
+    <span class="lab"><span class="l-en">Where we work</span><span class="l-ko">일하는 곳</span></span>
+    <div class="sg">
+      <span><span class="l-en">Battery</span><span class="l-ko">배터리</span></span>
+      <span><span class="l-en">EV assembly</span><span class="l-ko">전기차 조립</span></span>
+      <span><span class="l-en">Semiconductor</span><span class="l-ko">반도체</span></span>
+      <span><span class="l-en">Life science</span><span class="l-ko">바이오·제약</span></span>
+      <span><span class="l-en">Cleanroom fit-out</span><span class="l-ko">클린룸</span></span>
+      <span class="reg"><span class="l-en">Georgia &amp; the Southeast</span><span class="l-ko">조지아와 남동부</span></span>
+    </div>
+  </div>
+</div>
 <section id="scope">
   <div class="grid-bg"></div>
   <div class="in">
     <div class="reveal">
-      <div class="eb"><span class="ln"></span><span class="lab"><span class="l-en">Scope</span><span class="l-ko">분야</span></span></div>
+      <div class="eb"><span class="num">01</span><span class="ln"></span><span class="lab"><span class="l-en">Scope</span><span class="l-ko">분야</span></span></div>
       <h2><span class="l-en">What we put on site.</span><span class="l-ko">어떤 사람을 넣습니까.</span></h2>
       <p class="lede"><span class="l-en">Inspection and quality personnel by discipline, embedded in your team and reporting on your format.</span><span class="l-ko">분야별 검사·품질 인력을 팀에 넣고, 쓰시는 양식으로 보고합니다.</span></p>
     </div>
+    <figure class="lead reveal">
+      <img src="photo-overhead.webp" srcset="photo-overhead-800.webp 800w, photo-overhead.webp 1600w" sizes="(max-width:980px) 100vw, 1160px" alt="Overhead cable tray and ceiling grid in a completed plant space" loading="lazy" decoding="async">
+      <figcaption><span class="l-en">Overhead rough-in, inspected before the ceiling closes.</span><span class="l-ko">천장이 닫히기 전에 보는 천장 위 배관·배선.</span></figcaption>
+    </figure>
     <div class="dcs"><div class="dc reveal"><span class="dn">01</span>
       <h3><span class="l-en">WELDING</span><span class="l-ko">용접</span></h3>
       <p><span class="l-en">AWS D1.1 · D1.6 structural and stainless, visual and dimensional</span><span class="l-ko">AWS D1.1·D1.6 구조·스테인리스, 외관·치수</span></p></div><div class="dc reveal"><span class="dn">02</span>
@@ -236,7 +315,7 @@ html[data-lang="ko"] h2{font-size:clamp(22px,3vw,34px);line-height:1.34}
   <div class="grid-bg"></div>
   <div class="in">
     <div class="reveal">
-      <div class="eb"><span class="ln"></span><span class="lab"><span class="l-en">Why it matters</span><span class="l-ko">왜 이중언어인가</span></span></div>
+      <div class="eb"><span class="num">02</span><span class="ln"></span><span class="lab"><span class="l-en">Why it matters</span><span class="l-ko">왜 이중언어인가</span></span></div>
       <h2><span class="l-en">The specification is in Korean. The record is not.</span><span class="l-ko">스펙은 한국어로 오고, 기록은 영문으로 남습니다.</span></h2>
       <p class="lede"><span class="l-en">On a Korean-owned plant the drawings, the specification and the project manager are Korean. The general contractor, the authority having jurisdiction and the permanent record are English. Most firms staff one side of that line. What sits on the other side is an interpreter between an inspector and a foreman — and a week of rework when a note is read the wrong way.</span><span class="l-ko">한국계 공장은 도면도 스펙도 PM도 한국어입니다. GC와 검사기관과 남는 기록은 영문입니다. 대부분의 회사는 이 선의 한쪽만 댑니다. 반대쪽에 앉는 건 검사원과 반장 사이의 통역이고, 메모 한 줄을 잘못 읽으면 일주일이 다시 갑니다.</span></p>
     </div>
@@ -253,11 +332,18 @@ html[data-lang="ko"] h2{font-size:clamp(22px,3vw,34px);line-height:1.34}
     </div>
   </div>
 </section>
+<div class="band">
+  <img class="bph" src="photo-structure.webp" srcset="photo-structure-800.webp 800w, photo-structure.webp 1600w" sizes="100vw" alt="Structural steel and overhead work on a plant project" loading="lazy" decoding="async">
+  <div class="grid-bg"></div>
+  <div class="in">
+    <p class="bq"><span class="l-en">An inspector who needs an interpreter is two people on the wall, and only one of them read the drawing.</span><span class="l-ko">통역이 필요한 검사원은 벽 앞에 선 두 사람이고, 도면을 읽은 건 그중 한 명뿐입니다.</span></p>
+  </div>
+</div>
 <section id="how">
   <div class="grid-bg"></div>
   <div class="in">
     <div class="reveal">
-      <div class="eb"><span class="ln"></span><span class="lab"><span class="l-en">How it runs</span><span class="l-ko">일이 어떻게 진행되나</span></span></div>
+      <div class="eb"><span class="num">03</span><span class="ln"></span><span class="lab"><span class="l-en">How it runs</span><span class="l-ko">일이 어떻게 진행되나</span></span></div>
       <h2><span class="l-en">Four steps from your call to the first report.</span><span class="l-ko">연락부터 첫 보고서까지 네 단계.</span></h2>
       <p class="lede"><span class="l-en">No proposal deck and no discovery phase. You tell us the site and the discipline; we come back with people.</span><span class="l-ko">제안서도 사전 조사 단계도 없습니다. 현장과 분야만 주시면 사람으로 회신합니다.</span></p>
     </div>
@@ -273,11 +359,41 @@ html[data-lang="ko"] h2{font-size:clamp(22px,3vw,34px);line-height:1.34}
     </div>
   </div>
 </section>
+<section id="report">
+  <div class="grid-bg"></div>
+  <div class="in">
+    <div class="reveal">
+      <div class="eb"><span class="num">04</span><span class="ln"></span><span class="lab"><span class="l-en">What you get</span><span class="l-ko">받으시는 것</span></span></div>
+      <h2><span class="l-en">A report your authority can file as it is.</span><span class="l-ko">검사기관이 그대로 철할 수 있는 보고서.</span></h2>
+      <p class="lede"><span class="l-en">Written on site, in your format, the same day. A held item names the clause it failed and what has to happen before it clears — not "see attached".</span><span class="l-ko">현장에서, 쓰시는 양식으로, 그날 안에 씁니다. 보류 항목에는 어느 조항에 걸렸고 무엇이 되어야 풀리는지 적습니다. "첨부 참조"가 아니라.</span></p>
+    </div>
+    <div class="doc reveal">
+      <div class="dhead">
+        <div><span class="dl"><span class="l-en">Project</span><span class="l-ko">현장</span></span><span class="dv">[ PROJECT ]</span></div>
+        <div><span class="dl"><span class="l-en">Discipline</span><span class="l-ko">분야</span></span><span class="dv">Structural welding · AWS D1.1</span></div>
+        <div><span class="dl"><span class="l-en">Inspector</span><span class="l-ko">검사원</span></span><span class="dv">[ NAME ] · CWI [ NO. ]</span></div>
+        <div><span class="dl"><span class="l-en">Date</span><span class="l-ko">일자</span></span><span class="dv">[ DATE ]</span></div>
+      </div>
+      <div class="dbody">
+        <div class="rr hd"><span class="k"><span class="l-en">Grid / Mark</span><span class="l-ko">그리드 / 부재</span></span><span class="t"><span class="l-en">Observation</span><span class="l-ko">관찰</span></span><span class="v"><span class="l-en">Result</span><span class="l-ko">판정</span></span></div>
+        <div class="rr p"><span class="k">A-3 / 12</span><span class="t">Fillet weld · column base</span><span class="v">PASS</span></div><div class="rr p"><span class="k">A-3 / 14</span><span class="t">Fillet weld · column base</span><span class="v">PASS</span></div><div class="rr h"><span class="k">B-1 / 07</span><span class="t">Undercut 0.9 mm &gt; spec</span><span class="v">HOLD</span></div><div class="rr p"><span class="k">B-1 / 09</span><span class="t">Fillet weld · brace</span><span class="v">PASS</span></div><div class="rr p"><span class="k">B-2 / 02</span><span class="t">Arc strike, ground and retested</span><span class="v">PASS</span></div>
+      </div>
+      <div class="dfoot">
+        <p><span class="l-en"><b>B-1 / 07 held.</b> Undercut exceeds AWS D1.1 Table 6.1. Grind and re-test before the next lift. Re-inspection requested for [ DATE ].</span><span class="l-ko"><b>B-1 / 07 보류.</b> 언더컷이 AWS D1.1 표 6.1 허용치를 넘습니다. 다음 양중 전에 그라인딩 후 재시험. [ 일자 ] 재검사 요청.</span></p>
+        <div class="dsign">
+          <span class="dl"><span class="l-en">Signed</span><span class="l-ko">서명</span></span>
+          <span class="dstamp">PROCON BLUEANCHOR &nbsp;·&nbsp; QA / QC</span>
+        </div>
+      </div>
+    </div>
+    <p class="lede" style="margin-top:22px"><span class="l-en">Sample layout — the fields are real, the values are placeholders.</span><span class="l-ko">양식 예시입니다. 항목은 실제이고 값은 자리표시입니다.</span></p>
+  </div>
+</section>
 <section id="creds">
   <div class="grid-bg"></div>
   <div class="in">
     <div class="reveal">
-      <div class="eb"><span class="ln"></span><span class="lab"><span class="l-en">Credentials</span><span class="l-ko">자격</span></span></div>
+      <div class="eb"><span class="num">05</span><span class="ln"></span><span class="lab"><span class="l-en">Credentials</span><span class="l-ko">자격</span></span></div>
       <h2><span class="l-en">Certifications on the bench.</span><span class="l-ko">보유 자격증.</span></h2>
       <p class="lede"><span class="l-en">Current certificates and expiry dates are provided with every submittal, before mobilization.</span><span class="l-ko">투입 전 제출 서류에 유효한 증명서와 만료일을 함께 냅니다.</span></p>
     </div>
@@ -291,7 +407,7 @@ html[data-lang="ko"] h2{font-size:clamp(22px,3vw,34px);line-height:1.34}
   <div class="grid-bg"></div>
   <div class="in">
     <div class="reveal">
-      <div class="eb"><span class="ln"></span><span class="lab"><span class="l-en">Mobilizing</span><span class="l-ko">투입</span></span></div>
+      <div class="eb"><span class="num">06</span><span class="ln"></span><span class="lab"><span class="l-en">Mobilizing</span><span class="l-ko">투입</span></span></div>
       <h2><span class="l-en">The question you are actually asking.</span><span class="l-ko">실제로 궁금한 것.</span></h2>
       <p class="lede"><span class="l-en">Nobody shortlists an inspection firm on a brochure. They ask whether somebody can be on site Monday, and what arrives with them.</span><span class="l-ko">회사 소개서 보고 정하는 사람은 없습니다. 월요일에 사람이 올 수 있는지, 올 때 뭘 들고 오는지를 묻습니다.</span></p>
     </div>
@@ -310,7 +426,7 @@ html[data-lang="ko"] h2{font-size:clamp(22px,3vw,34px);line-height:1.34}
   <div class="grid-bg"></div>
   <div class="in">
     <div class="reveal">
-      <div class="eb"><span class="ln"></span><span class="lab"><span class="l-en">What arrives</span><span class="l-ko">함께 오는 것</span></span></div>
+      <div class="eb"><span class="num">07</span><span class="ln"></span><span class="lab"><span class="l-en">What arrives</span><span class="l-ko">함께 오는 것</span></span></div>
       <h2><span class="l-en">Every inspector arrives with the paperwork already done.</span><span class="l-ko">검사원은 서류를 다 갖추고 옵니다.</span></h2>
       <p class="lede"><span class="l-en">The chasing that usually follows a staffing request happens before mobilization, not after.</span><span class="l-ko">보통 인력 요청 뒤에 따라오는 서류 독촉이, 투입 전에 끝나 있습니다.</span></p>
     </div>
