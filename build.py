@@ -122,7 +122,7 @@ try { if (sessionStorage.getItem('relai-intro') === '1') document.documentElemen
   el.addEventListener('animationend', (e) => {
     if (e.target === el && e.animationName === 'introOut') kill();
   });
-  setTimeout(kill, 3850);
+  setTimeout(kill, 1500);
 })();
 </script>
 </body>''', 1)
